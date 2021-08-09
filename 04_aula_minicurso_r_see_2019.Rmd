@@ -1,0 +1,1208 @@
+---
+title: "XXX Semana de Estudos da Ecologia <br><br> Introdução à linguagem R: manipulação e visualização de dados"
+subtitle: "<br> 4 Introdução ao tidyverse <br>"
+author: "Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>"
+date: "<br> 07/11/2019"
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    css: metropolis
+    lib_dir: libs
+    nature:
+      highlightStyle: rainbow
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"
+    includes:
+      in_header: header.html
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = TRUE)
+```
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tidyverse.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4 Introdução ao tidyverse
+## Tópicos
+4.1 tidyverse
+<br>
+4.2 magrittr (pipe - %>%)
+<br>
+4.3 readr
+<br>
+4.4 readxl e writexl
+<br>
+4.5 tibble
+<br>
+4.6 tidyr
+<br>
+4.7 dplyr
+
+---
+
+# 4 Introdução ao tidyverse
+## Script
+
+<br><br><br><br><br><br>
+
+## .center[`script_aula_04.R`]
+
+
+---
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tidyverse.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.1 tidyverse
+
+### O tidyverse é um **pacote** com a função de **instalar** e **carregar** outros pacotes
+
+--
+
+### O **conjunto** desses pacotes forma o **tidyverse**
+
+--
+
+### É considerado um “universo” à parte do R, pois todas as suas **ferramentas** possuem formas de uso consistentes e **funcionam** muito bem em conjunto
+
+--
+
+### Seu uso é mais voltado para a **Ciência de Dados**
+
+--
+
+### E depois que vocês **aprenderem**, nunca mais usaram o R de outra forma...
+
+---
+
+class: inverse, center
+background-image: url(https://media.giphy.com/media/D3l1DgR5ah5hm/giphy.gif)
+background-size: 800px
+
+# Iniciativa Vingadores do R
+
+---
+
+background-image: url(img/tidyverse_total3.png)
+background-size: 700px
+
+# 4.1 tidyverse
+
+---
+
+background-image: url(http://hadley.nz/hadley-wickham.jpg)
+background-size: 600px
+background-position: 50% 65%
+
+# 4.1 tidyverse
+
+## O idealizador foi o **Hadley Wickham** e atualmente **muitas pessoas** têm contribuído para sua expansão
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] http://hadley.nz/
+
+---
+
+background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/artigo_tidy.png)
+background-size: 400px
+background-position: 50% 60%
+
+# 4.1 tidyverse
+
+## Artigo: **Tidy Data (2014)** - *Journal of Statistics Software*
+
+### Hadley Wickham
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] http://vita.had.co.nz/papers/tidy-data.pdf
+
+---
+
+background-image: url(https://d33wubrfki0l68.cloudfront.net/b88ef926a004b0fce72b2526b0b5c4413666a4cb/24a30/cover.png)
+background-size: 250px
+background-position: 50% 50%
+
+# 4.1 tidyverse
+
+## Livro: **R for Data Science (2017)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] https://r4ds.had.co.nz/
+
+---
+
+background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/tidyverse.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.1 tidyverse
+
+## Sites
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] https://www.tidyverse.org/
+
+---
+
+background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/tidyverse2.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.1 tidyverse
+
+## Sites
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] https://rpubs.com/modelthinkingbr/dados
+
+---
+
+# 4.1 tidyverse
+
+## Para utilizar os pacotes do **tidyverse** é preciso instalar e carregar o pacote `tidyverse`
+
+--
+
+```{r,eval=FALSE}
+# instalar o pacote
+install.packages("tidyverse")
+```
+
+---
+
+# 4.1 tidyverse
+
+## Notem a saída do carregamento do pacote
+```{r}
+# carregar o pacote
+library(tidyverse)
+```
+
+---
+
+background-image: url(img/snake_case2.png)
+background-size: 500px
+background-position: 80% 80%
+
+# 4.1 tidyverse
+
+## IMPORTANTE
+
+### Todas as funções dos pacotes atrelados ao **tidyverse** usam `_` para separar os nomes internos das funções (snack_code)
+
+<br><br>
+
+`read_csv`
+
+`read_xlsx`
+
+`as_tibble`
+
+`left_join`
+
+`group_by`
+
+---
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/magrittr.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.2 magrittr (pipe - %>%)
+
+### O operador pipe (*%>%*) permite o “encadeamento” de várias funções e **não é preciso de objetos** para armazenar resultados intermediários
+
+--
+
+### Essa função torna os códigos em R **mais simples**, pois realizamos **múltiplas operações** em uma **única linha**
+
+--
+
+### Ele captura o **resultado de uma declaração** e o **torna a entrada da próxima declaração**. Podemos pensar como *“EM SEGUIDA FAÇA”*
+
+--
+
+### O operador pipe é o **%>%** (atalho: `crtl + shift + M`)
+
+---
+
+# 4.2 magrittr (pipe - %>%)
+
+### Atalho: `crtl + shift + M`
+```{r}
+# sem pipe
+sqrt(sum(1:100))
+```
+
+--
+
+background-image: url(https://i.ytimg.com/vi/UiTZp86c04o/maxresdefault.jpg)
+background-size: 500px
+background-position: 50% 80%
+
+---
+
+# 4.2 magrittr (pipe - %>%)
+
+### Atalho: `crtl + shift + M`
+```{r}
+# sem pipe
+sqrt(sum(1:100))
+```
+
+```{r}
+# com pipe
+1:100 %>% 
+  sum() %>% 
+  sqrt()
+```
+
+---
+
+class: clear, inverse, center, middle
+background-image: url(https://media.giphy.com/media/7ND8xzTlR5b8s/giphy.gif)
+background-size: 800px
+background-position: 50% 50%
+
+---
+
+# 4.2 magrittr (pipe - %>%)
+
+### Atalho: `crtl + shift + M`
+```{r}
+# fixar amostragem
+set.seed(42)
+
+# sem pipe
+ve <- sum(sqrt(sort(log10(rpois(100, 10)))))
+ve
+```
+--
+```{r}
+# fixar amostragem
+set.seed(42)
+
+# com pipe
+ve <- rpois(100, 10) %>% 
+  log10() %>%
+  sort() %>% 
+  sqrt() %>% 
+  sum()
+ve  
+```
+
+---
+
+class: clear, inverse, center, middle
+background-image: url(https://i.4pcdn.org/pol/1483757174562.gif)
+background-size: 700px
+background-position: 50% 50%
+
+---
+
+class: inverse, center, middle
+
+# Exercícios
+
+---
+
+# Exercício 12
+
+## Reescreva as operações utilizando pipes `%>%`:
+`log10(cumsum(1:100))`
+
+`sqrt(abs(rnorm(100)))`
+
+`range(sort(sample(1:10, 10000, rep = TRUE)))`
+
+---
+
+# Exercício 12
+## Solução
+```{r,eval=FALSE}
+# solucao
+# 1.
+log10(cumsum(1:100))
+
+1:100 %>%
+  cumsum %>% 
+  log10
+```
+---
+
+# Exercício 12
+## Solução
+  
+```{r,eval=FALSE}
+# 2.
+sqrt(abs(rnorm(100)))
+
+100 %>% 
+  rnorm %>% 
+  abs %>% 
+  sqrt
+```
+---
+
+# Exercício 12
+## Solução
+
+```{r,eval=FALSE}
+# 3.
+range(sort(sample(1:10, 10000, rep = TRUE)))
+
+1:10 %>% 
+  sample(10000, rep = TRUE) %>% 
+  sort %>% 
+  range
+```
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/readr.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.3 readr
+
+### **Carrega e salva** grandes arquivos de forma **mais rápida** no formato **.csv**
+
+--
+
+### As funções **read.csv()** e **read.csv2()** são substituídas pelas funções **read_csv()** e **read_csv2()**
+
+--
+
+### Essas funções fornecem **medidores de progresso** (barra do tempo de leitura dos dados)
+
+--
+
+### E também **classificam** automaticamente o **modo** dos dados de cada coluna
+
+--
+
+### A classe do objeto atribuído é **tibble** (data frame lv2)
+
+--
+
+### Para salvar arquivos no formato .csv: **write_csv()** e **write_csv2()**
+
+---
+
+background-image: url(https://miro.medium.com/fit/c/240/240/1*s5rAky37x3iZ5cC7OEKvbw.jpeg)
+background-size: 300px
+background-position: 50% 85%
+
+# Download de dados do GitHub
+
+## ** ATLANTIC AMPHIBIANS: a dataset of amphibian communities from the Atlantic Forests of South America**
+
+### Eu mesmo et al. (2018)
+
+---
+
+# 4.3 readr
+
+## **Formato .csv**
+```{r,eval=FALSE}
+# diretorio
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
+```
+--
+```{r,eval=FALSE}
+# import sites
+si <- readr::read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
+si
+```
+
+```{r,echo=FALSE}
+si <- readr::read_csv("/home/mude/data/github/minicurso-r-sebio-2019/03_dados/ATLANTIC_AMPHIBIANS_sites.csv")
+si
+```
+
+
+---
+
+# 4.3 readr
+
+## **Formato .txt**
+
+```{r,eval=FALSE}
+# diretorio
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
+```
+--
+```{r,eval=FALSE}
+# import sites
+si <- readr::read_tsv("ATLANTIC_AMPHIBIANS_sites.txt")
+si
+```
+
+```{r,echo=FALSE}
+si <- readr::read_csv("/home/mude/data/github/minicurso-r-sebio-2019/03_dados/ATLANTIC_AMPHIBIANS_sites.csv")
+si
+```
+
+---
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/readxl.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.4 readxl e writexl
+
+## São pacotes à parte do **tidyverse**
+
+<br><br><br>
+
+```{r,eval=FALSE}
+install.packages("readxl")
+library("readxl")
+```
+
+<br>
+--
+
+
+```{r,eval=FALSE}
+install.packages("writexl")
+library("writexl")
+```
+
+---
+
+# 4.4 readxl e writexl
+
+### **Carrega e salva** grandes arquivos de forma **mais rápida** no formato **.xlsx**
+
+--
+
+### As funções **read.xlsx()** e **read.xlsx2()** são substituídas pelas funções **read_xlsx()** e **read_xlsx2()**
+
+--
+
+### Essas funções fornecem **medidores de progresso** (barra do tempo de leitura dos dados)
+
+--
+
+### E também **classificam** automaticamente o **modo** dos dados de cada coluna
+
+--
+
+### A classe do objeto atribuído é **tibble** (data frame lv2)
+
+--
+
+### Para salvar arquivos no formato .xlsx: **write_xlsx()** e **write_xlsx2()**
+
+---
+
+# 4.4 readxl e writexl
+
+## **Formato .xlsx**
+
+```{r,eval=FALSE}
+# diretorio
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
+```
+--
+```{r,eval=FALSE}
+# import sites
+si <- readxl::read_xlsx("ATLANTIC_AMPHIBIANS_sites.xlsx")
+si
+```
+
+```{r,echo=FALSE}
+si <- readr::read_csv("/home/mude/data/github/minicurso-r-sebio-2019/03_dados/ATLANTIC_AMPHIBIANS_sites.csv")
+si
+```
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tibble.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.5 tibble
+
+### O tibble (classe *tbl_df*) é um **tipo especial de data frame**
+
+--
+
+### É o **formato** necessário para que as funções do tidyverse **funcionem**
+
+--
+
+### Converter **data frame** em **tibble** usa-se a função `as_tibble()`
+
+--
+
+### Converter **tibble** em **data frame** usa-se a função `as_data_frame()`
+
+--
+
+### Cada variável pode ser do tipo *numbers(int, dbl)*, *character(chr)*, *logical(lgl)* ou *factor(fctr)*
+
+---
+
+# 4.5 tibble
+
+## Descrição dos modos das colunas através da função `glimpse()`
+
+```{r, include = FALSE}
+si <- readr::read_csv("/home/mude/data/github/minicurso-r-sebio-2019/03_dados/ATLANTIC_AMPHIBIANS_sites.csv")
+```
+--
+```{r}
+tibble::glimpse(si)
+```
+
+---
+
+class: inverse, middle, center
+
+# Dúvidas?
+
+---
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tidyr.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.6 tidyr
+
+### Os conjuntos de dados **tidy** (organizados) são fáceis de manipular, modelar e visualizar
+
+--
+
+### Um conjunto de dados está **arrumado ou não**, dependendo de como linhas, colunas e células são combinadas com observações, variáveis e valores
+
+--
+
+## Nos dados tidy:
+### 1 Cada variável em uma coluna
+### 2 Cada observação em uma linha
+### 3 Cada valor como uma célula
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/tidy1.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.6 tidyr
+
+---
+
+# 4.6 tidyr
+
+## Funções
+
+#### **1 unite()**: junta dados de múltiplas colunas em uma
+
+#### **2 separate()**: separa caracteres em múlplica colunas
+
+#### **3 drop_na()**: retira linhas com NA
+
+#### **4 replace_na()**: substitui NA
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/unite.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.6 tidyr
+
+---
+
+# 4.6 tidyr
+
+## **1 unite**
+
+### unir as colunas latirude e longitude separadas por uma vírgula
+```{r,eval=FALSE}
+si_unite <- si %>% 
+  tidyr::unite("lat_lon", latitude:longitude, sep = ",")
+si_unite$lat_lon
+```
+
+```{r,echo=FALSE}
+si_unite <- si %>% 
+  tidyr::unite("lat_lon", latitude:longitude, sep = ",")
+si_unite$lat_lon
+```
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/separate.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.6 tidyr
+
+---
+
+# 4.6 tidyr
+
+## **2 separate**
+
+### separar os dados de "period" em quatro colunas dos seus valores
+```{r,eval=FALSE}
+si_separate <- si %>% 
+  tidyr::separate("period", c("mo", "da", "tw", "ni"), remove = FALSE)
+si_separate[, c(1, 9:13)]
+```
+
+```{r,echo=FALSE}
+si_separate <- si %>% 
+  tidyr::separate("period", c("mo", "da", "tw", "ni"), remove = FALSE)
+si_separate[, c(1, 9:13)]
+```
+
+---
+
+# 4.6 tidyr
+
+## **3 drop_na()**
+
+### remove as linhas com NA de todas as colunas
+```{r,eval=FALSE}
+si_drop_na <- si %>% 
+  tidyr::drop_na()
+si_drop_na
+```
+
+```{r,echo=FALSE}
+si_drop_na <- si %>% 
+  tidyr::drop_na()
+si_drop_na
+```
+
+---
+
+# 4.6 tidyr
+
+## **3 drop_na()**
+### remove as linhas com NA da coluna "year_start"
+```{r,eval=FALSE}
+si_drop_na <- si %>% 
+  tidyr::drop_na(year_start)
+si_drop_na
+```
+
+```{r,echo=FALSE}
+si_drop_na <- si %>% 
+  tidyr::drop_na(year_start)
+si_drop_na
+```
+
+---
+
+# 4.6 tidyr
+
+## **4 replace_na()**
+
+### substituir os NAs da coluna "year_start" por 0 
+```{r,eval=FALSE}
+si_replace_na <- si %>% 
+  tidyr::replace_na(list(year_start = 0))
+si_replace_na
+```
+
+```{r,echo=FALSE}
+si_replace_na <- si %>% 
+  tidyr::replace_na(list(year_start = 0))
+si_replace_na
+```
+
+---
+
+class: inverse, center, middle
+
+# Exercícios
+
+---
+
+# Exercício 13
+
+### Combine as colunas `country`, `state`, `state_abbreviation`, `municipality`, `site`, em uma coluna chamada `local_total` separadas por `, (vírgula + espaço)`, atribuindo o resultado a um novo objeto, utilizando o formato tidyverse
+
+---
+
+# Exercício 13
+## Solução
+```{r}
+si_local <- si %>% 
+  tidyr::unite("local_total", c(country, state, state_abbreviation, 
+                         municipality, site), sep = ", ")
+si_local$local_total
+```
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: clear, center, middle
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/dplyr.png)
+background-size: 400px
+background-position: 50% 50%
+
+---
+
+# 4.7 dplyr
+
+### O **dplyr** é um pacote que **facilita** o trabalho com dados, com uma **gramática de manipulação** de dados **simples e flexível** (filtragem, reordenamento, seleção, entre outras)
+
+--
+
+### Ele foi construído com o intuito de obter uma forma **mais rápida** e **expressiva** de tratar os dados 
+
+--
+
+### O **tibble** é a **versão de data frame** mais **conveniente** para **se usar** com dplyr
+
+---
+
+# 4.7 dplyr
+
+### Sua gramática simples contém **funções verbais** para manipulação de dados
+
+--
+
+## Funções
+**1 select()**: seleciona colunas pelo nome gerando um tibble<br>
+**2 mutate()**: adiciona novas colunas ou adiciona resultados em colunas existentes<br>
+**3 arrange()**: reordenar as linhas com base nos valores de colunas<br>
+**4 filter()**: seleciona linhas com base em valores<br>
+**5 summarise()**: agrega ou resume os dados através de funções, podendo considerar valores das colunas<br>
+
+---
+
+# 4.7 dplyr
+
+### O **tibble** é sempre o **primeiro argumento** das funções verbais
+
+--
+
+### Todas seguem a mesma sintaxe: 
+
+### 1. tibble
+
+### 2. operador pipe 
+
+### 3. nome da função verbal com os argumentos entre parênteses 
+
+--
+
+<br> 
+
+### As funções verbais **não modificam** o tibble original
+
+--
+
+```{r,eval=FALSE}
+sp_dplyr <- sp %>% 
+  funcao_verbal(argumento1, argumento2)
+```
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/select.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.7 dplyr
+
+## **1 select**
+
+---
+
+# 4.7 dplyr
+
+## **1 select**
+
+### Seleciona colunas pelo nome
+
+```{r}
+si_select <- si %>% 
+  dplyr::select(id, longitude, latitude)
+si_select
+```
+
+---
+
+# 4.7 dplyr
+
+## **1 select**
+
+### Remove as colunas pelo nome
+
+```{r}
+si_select <- si %>% 
+  dplyr::select(-c(id, longitude, latitude))
+si_select
+```
+---
+
+# 4.7 dplyr
+
+## **1 select**
+
+### Seleciona colunas por um padrão
+
+```{r}
+#  starts_with(), ends_with() e contains()
+si_select <- si %>% 
+  dplyr::select(contains("sp"))
+si_select
+```
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/mutate.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.7 dplyr
+
+## **2 mutate**
+
+---
+
+# 4.7 dplyr
+
+## **2 mutate**
+
+### Adiciona colunas novas ou vindas de operações
+```{r}
+# add colum record as factor
+si_mutate <- si %>% 
+  dplyr::mutate(record_factor = as.factor(record))
+si_mutate
+```
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/arrange.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.7 dplyr
+
+## **3 arrange**
+
+---
+
+# 4.7 dplyr
+
+## **3 arrange**
+
+### Ordenar de forma crescente pela coluna **species_number**
+```{r,eval=FALSE}
+si_arrange <- si %>% 
+  dplyr::arrange(species_number)
+si_arrange
+```
+
+--
+
+### Ordenar de forma decrescente pela coluna **species_number**
+```{r,eval=FALSE}
+si_arrange <- si %>% 
+  dplyr::arrange(desc(species_number))
+si_arrange
+```
+--
+```{r,eval=FALSE}
+si_arrange <- si %>% 
+  dplyr::arrange(-species_number)
+si_arrange
+```
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/filter.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.7 dplyr
+
+## **4 filter**
+
+---
+
+# 4.7 dplyr
+
+## **4 filter** 
+
+### operadores: >, >=, <, <=, ==, !=, is.na, !is.na, %in%
+### Filtrar para locais com mais de 5 espécies
+```{r,eval=FALSE}
+si_filter <- si %>% 
+  dplyr::filter(species_number > 5)
+si_filter
+```
+--
+### Filtrar para locais centre 1 e 5 espécies
+```{r,eval=FALSE}
+si_filter <- si %>% 
+  dplyr::filter(between(species_number, 1, 5))
+si_filter
+```
+
+---
+
+# 4.7 dplyr
+
+## **4 filter** 
+### Filtrar para locais sem NA no métodos passivos
+```{r,eval=FALSE}
+si_filter <- si %>% 
+  dplyr::filter(is.na(passive_methods))
+si_filter
+```
+--
+### Filtrar para locais sem NA no métodos ativos **E** passivos
+```{r,eval=FALSE}
+si_filter <- si %>% 
+  dplyr::filter(is.na(active_methods) & is.na(passive_methods))
+si_filter
+```
+
+---
+
+# 4.7 dplyr
+
+## **4 filter** 
+### Filtrar para locais amostrados com mais de 5 espécies **E** em Pernambuco
+```{r,eval=FALSE}
+si_filter <- si %>% 
+  dplyr::filter(species_number > 5 & state_abbreviation == "BR-PE") 
+si_filter
+```
+--
+### Filtrar para locais amostrados com mais de 5 espécies **OU** em Pernambuco
+```{r,eval=FALSE}
+si_filter <- si %>% 
+  dplyr::filter(species_number > 5 | state_abbreviation == "BR-PE")
+si_filter
+```
+
+---
+
+background-image: url(http://www.flutterbys.com.au/stats/tut/images/summarize.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 4.7 dplyr
+
+## **5 summarise**
+
+---
+
+# 4.7 dplyr
+
+## **5 summarise**
+
+### Média e desvio padrão do número de espécies total
+
+```{r}
+si_summarise <- si %>% 
+  dplyr::summarise(mean_sp = mean(species_number), sd_sp = sd(species_number))
+si_summarise
+```
+
+---
+
+# 4.7 dplyr
+
+## **5 summarise**
+### Média e desvio padrão do número de espécies por país
+```{r}
+si_summarise_group <- si %>% 
+  dplyr::group_by(country) %>% 
+  dplyr::summarise(mean_sp = mean(species_number), sd_sp = sd(species_number))
+si_summarise_group
+```
+
+---
+
+# 4.7 dplyr
+## Permite manipular os dados de forma mais simples
+```{r}
+da <- si %>% 
+  dplyr::select(id, state_abbreviation, species_number)
+da
+```
+
+---
+
+# 4.7 dplyr
+## Permite manipular os dados de forma mais simples
+```{r}
+da <- si %>% 
+  dplyr::select(id, state_abbreviation, species_number) %>% 
+  dplyr::filter(species_number > 5)
+da
+```
+
+---
+
+# 4.7 dplyr
+## Permite manipular os dados de forma mais simples
+```{r}
+da <- si %>% 
+  dplyr::select(id, state_abbreviation, species_number) %>% 
+  dplyr::filter(species_number > 5) %>% 
+  dplyr::group_by(state_abbreviation) %>% 
+  dplyr::summarise(nsp_state_abb = n())
+da
+```
+
+---
+
+# 4.7 dplyr
+## Permite manipular os dados de forma mais simples
+```{r}
+da <- si %>% 
+  dplyr::select(id, state_abbreviation, species_number) %>% 
+  dplyr::filter(species_number > 5) %>% 
+  dplyr::group_by(state_abbreviation) %>% 
+  dplyr::summarise(nsp_state_abb = n()) %>% 
+  dplyr::arrange(nsp_state_abb)
+da
+```
+
+---
+
+class: inverse, center, middle
+
+# Exercícios
+
+---
+
+# Exercício 14
+
+### Adicione essas novas colunas `alt_log, tem_log e pre_log`, que são a operação `log10` das colunas `altitude,	temperature e	precipitation` e atribua ao mesmo objeto `si` utilizando o formato tidyverse
+
+---
+
+# Exercício 14
+## Solução
+```{r}
+# solucao
+si <- si %>% 
+  dplyr::mutate(alt_log = log10(altitude),
+                tem_log = log10(temperature),
+                pre_log = log10(precipitation))
+si[, 25:28]
+```
+
+---
+
+# Exercício 15
+
+### Ordene os dados em forma decrescente pela coluna `altitude`, atribuindo o resultado a um novo objeto utilizando o formato tidyverse
+
+---
+
+# Exercício 15
+## Solução
+```{r}
+# solucao
+si_ar <- si %>% 
+  dplyr::arrange(-altitude)
+si_ar
+```
+
+---
+
+# Exercício 16
+
+###  Filtre as linhas com `altitude` maior que 1000 mm, `temperature` menor que 15 ºC e `precipitation` maior que 1000 mm, atribuindo o resultado a um novo objeto utilizando o formato tidyverse
+
+---
+
+# Exercício 16
+## Solução
+```{r}
+# solucao
+si_fi <- si %>% 
+  dplyr::filter(altitude > 1000,
+                temperature < 15,
+                precipitation > 1000)
+si_fi
+```
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: clear, middle
+
+## Maurício Vancine
+
+<br>
+
+Contatos:
+
+|                                                                                           |                               |
+| :---------------------------------------------------------------------------------------- | :---------------------------- |
+| <a href="mailto:mauricio.vancine@gmail.com">.RUred[<i class="fa fa-envelope fa-fw"></i>]  | mauricio.vancine@gmail.com    |
+| <a href="https://mauriciovancine.netlify.com/">.RUred[<i class="fa fa-link fa-fw"></i>]   | mauriciovancine.netlify.com   |
+| <a href="http://twitter.com/mauriciovancine">.RUred[<i class="fa fa-twitter fa-fw"></i>]  | @mauriciovancine              |
+| <a href="http://gitlab.com/mauriciovancine">.RUred[<i class="fa fa-gitlab fa-fw"></i>]    | @mauriciovancine              |
+| <a href="http://github.com/mauriciovancine">.RUred[<i class="fa fa-github fa-fw"></i>]    | @mauriciovancine              |
+
+Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [Metropolis](https://github.com/pat-s/xaringan-metropolis)
