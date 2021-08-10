@@ -2,7 +2,7 @@
 
 ## Semana de Estudos da Biologia
 
-**Docente responsável**  
+**Docente**  
 Prof. Maurício Vancine
 
 **Duração**  
@@ -52,8 +52,8 @@ sudo apt install -y qgis
 
 ## Material
 
-[Slides]()  
+[Slides](https://mauriciovancine.github.io/short-course-qgis/01_slides/slide_intro_qgis.html)  
 
-[Conjunto de dados]()
+[Conjunto de dados](https://github.com/mauriciovancine/short-course-qgis/blob/master/02_conjunto_dados.zip)
 
 ---

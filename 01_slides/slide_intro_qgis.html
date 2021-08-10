@@ -43,7 +43,7 @@ background-position: 45% 70%, 90% 20%, 98% 85%
 1. Apresentações
 1. Minicurso
 1. Slides
-1. Dados
+1. Conjunto de dados
 1. Conferindo os computadores
 
 ---
@@ -69,6 +69,7 @@ background-position: 90% 75%
 1. Formato de arquivos vetoriais
 1. Dados matriciais (gride ou raster)
 1. Formatos de arquivos matriciais (raster)
+1. Banco de dados geoespaciais
 1. Conversão de dados geoespaciais (vetor-raster)
 1. Principais fontes de dados geoespaciais
 1. Material para estudo sobre geoprocessamento
@@ -207,7 +208,7 @@ background-position: 90% 60%
 
 ### 2. Formação
 
-### 3. Com o que trabalha?
+### 3. O que faz ou pensa em fazer?
 
 ### 4. Conhece algo de geoprocessamento ou QGIS?
 
@@ -221,17 +222,22 @@ background-position: 95% 45%
 
 # 1.2 Minicurso
 
-## Carga horária: 03 horas
+&lt;br&gt;
 
-&lt;br&gt;&lt;br&gt;
+## Carga horária
 
-### Tudo vai ser muito rápido
+### - 03 horas
 
-### O conteúdo é bastante extenso
+&lt;br&gt;
 
-### O principal intuito é fazer uma introdução ao tema
+## Diânima
 
-### Disponibilizar e indicar material para vocês se aprofundarem
+### - Tudo vai ser muito rápido
+
+### - O principal intuito é fazer uma introdução ao tema
+
+### - Disponibilizar e indicar material
+
 
 ---
 
@@ -243,15 +249,23 @@ background-position: 50% 80%
 
 ## Todos os slides estão disponibilizados em .html e .pdf
 
+.footnote[
+[xaringan](https://slides.yihui.org/xaringan)
+]
+
 ---
 
 background-image: url(img/general_rio_claro.jpg), url(img/general_rio_claro2.jpg), url(img/geo_rio_claro-removebg-preview.png)
 background-size: 350px, 350px, 500px
-background-position: 10% 30%, 30% 90%, 80% 90%
+background-position: 10% 30%, 30% 90%, 85% 90%
 
-# 1.4 Dados
+# 1.4 Conjunto de dados
 
 ## Vamos usar os dados de Rio Claro/SP
+
+.footnote[
+[FBDS](https://www.fbds.org.br/)
+]
 
 ---
 
@@ -294,37 +308,23 @@ background-position: 80% 75%
 1. Formato de arquivos vetoriais
 1. Dados matriciais (gride ou raster)
 1. Formatos de arquivos matriciais (raster)
+1. Banco de dados geoespaciais
+1. Conversão de dados geoespaciais (vetor-raster)
 1. Principais fontes de dados geoespaciais
-1. Material para estudo sobre dados geoespacias
+1. Material para estudo sobre geoprocessamento
 
 
 ---
 
-background-image: url(img/geo_geotec_geoprocess03.png)
-background-size: 400px
-background-position: 20% 90%
+background-image: url(img/geo_geoprocessing04.jpg)
+background-size: 550px
+background-position: 98% 90%
 
 # 2.1 Geoprocessamento
 
 ## Engloba quatro Geotecnologias:
 
-### 1. Cartografia digital (CD)
-
-### 2. Global Positioning System (GPS)
-
-### 3. Sensoriamento Remoto (RS)
-
-### 4. Sistemas de Informações Geográficas (SIG)
-
----
-
-background-image: url(img/geo_geotec_geoprocess03.png), url(img/geo_geoprocessing03.png), url(img/geo_geoprocessing04.jpg)
-background-size: 400px, 300px, 600px
-background-position: 20% 90%, 85% 10%, 100% 90%
-
-# 2.1 Geoprocessamento
-
-## Engloba quatro Geotecnologias:
+&lt;br&gt;
 
 ### 1. Cartografia digital (CD)
 
@@ -389,7 +389,7 @@ background-position: 85% 70%
 ---
 
 background-image: url(img/geo_geographic.png)
-background-size: 600px
+background-size: 700px
 background-position: 85% 60%
 
 # 2.2 Cartografia
@@ -514,7 +514,7 @@ background-position: 75% 55%
 
 ## Sistemas de referências (Datum)
 
-## Datum
+### Datum
 
 &lt;br&gt;
 
@@ -532,7 +532,7 @@ background-position: 75% 55%
 
 background-image: url(img/geo_src.png)
 background-size: 800px
-background-position: 70% 90%
+background-position: 75% 90%
 
 # 2.2 Cartografia
 
@@ -547,7 +547,7 @@ background-position: 70% 90%
 
 ---
 
-background-image: url(img/geo_src.png)
+background-image: url(img/geo_projection_reprojection.png)
 background-size: 700px
 background-position: 85% 60%
 
@@ -572,7 +572,7 @@ background-position: 85% 60%
 
 class: inverse, center, middle
 
-# Para facilitar o trabalho, existem códigos numéricos para cada CRS
+# Para facilitar nosso trabalho, existem códigos numéricos para cada CRS
 
 ---
 
@@ -586,9 +586,9 @@ background-position: 50% 80%
 
 ### Possui códigos numéricos para quase todos os CRSs
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-https://epsg.io/
+.footnote[
+[epsg.io](https://epsg.io/)
+]
 
 ---
 
@@ -608,9 +608,9 @@ background-position: 90% 85%
 
 ### EPSG:31983 [SRC UTM 23S Datum WGS 84](https://epsg.io/31983)
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-*[https://epsg.io/]
+.footnote[
+[epsg.io](https://epsg.io/)
+]
 
 ---
 
@@ -635,8 +635,8 @@ background-position: 5% 80%, 90% 80%
 ---
 
 background-image: url(img/geo_kml_gpx.png)
-background-size: 300px
-background-position: 50% 80%
+background-size: 250px
+background-position: 50% 75%
 
 # 2.3 *Global Positioning System* (GPS)
 
@@ -646,9 +646,10 @@ background-position: 50% 80%
 
 **2. Formato do google earth (.kml ou .kmz)**: linguagem XML focada em visualização geográfica, incluindo anotações de mapas e imagens, usado para exibir dados geográficos no Google Earth e/ou Google Maps
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-### **Conversão**: https://kml2gpx.com/
+.footnote[
+[**Conversão**](https://kml2gpx.com/)
+]
 
 ---
 
@@ -675,7 +676,7 @@ class: inverse, center, middle
 ---
 
 background-image: url(img/geo_rs.jpg)
-background-size: 700px
+background-size: 600px
 background-position: 85% 70%
 
 # 2.4 Sensoriamento Remoto
@@ -692,7 +693,7 @@ background-position: 85% 70%
 
 ---
 
-background-image: url(img/geo_sr_passive_systems.png), url(img/geo_rs_active_systems.png)
+background-image: url(img/geo_rs_passive_systems.png), url(img/geo_rs_active_systems.png)
 background-size: 700px, 700px
 background-position: 50% 70%, 120% 70%
 
@@ -709,8 +710,8 @@ background-position: 50% 70%, 120% 70%
 ---
 
 background-image: url(img/geo_rs_spectrum.png)
-background-size: 1000px
-background-position: 50% 80%
+background-size: 900px
+background-position: 70% 70%
 
 # 2.4 Sensoriamento Remoto
 
@@ -718,11 +719,15 @@ background-position: 50% 80%
 
 ### Espectro eletromagnético e bandas
 
+.footnote[
+[Wegmman et al. 2016](http://book.ecosens.org/rsebook/)
+]
+
 ---
 
 background-image: url(img/geo_rs_response.png)
 background-size: 800px
-background-position: 50% 80%
+background-position: 60% 80%
 
 # 2.4 Sensoriamento Remoto
 
@@ -730,9 +735,13 @@ background-position: 50% 80%
 
 ### Respostas espectrais
 
+.footnote[
+[Wegmman et al. 2016](http://book.ecosens.org/rsebook/)
+]
+
 ---
 
-background-image: url(img/geo_sr_spatial_resolution.png), url(img/geo_rs_res_spatial.png)
+background-image: url(img/geo_rs_spatial_resolution.png), url(img/geo_rs_res_spatial.png)
 background-size: 600px, 400px
 background-position: 10% 55%, 90% 60%
 
@@ -748,7 +757,7 @@ background-position: 10% 55%, 90% 60%
 
 ---
 
-background-image: url(img/geo_rs_res_temporal.png), url(img/geo_rs_orbit_geostat.png), url(img/geo_sr_orbit_polar.png)
+background-image: url(img/geo_rs_res_temporal.png), url(img/geo_rs_orbit_geostat.png), url(img/geo_rs_orbit_polar.png)
 background-size: 400px, 350px, 350px
 background-position: 10% 60%, 60% 5%, 95% 80%
 
@@ -776,7 +785,7 @@ background-position: 5% 82%, 53% 80%, 95% 5%, 95% 83%
 
 ---
 
-background-image: url(img/geo_sr_bits.png), url(img/geo_rs_res_rad.png), url(img/geo_rs_res_radio.png)
+background-image: url(img/geo_rs_bits.png), url(img/geo_rs_res_rad.png), url(img/geo_rs_res_radio.png)
 background-size: 600px, 300px, 400px
 background-position: 10% 60%, 95% 3%, 85% 90%
 
@@ -849,12 +858,16 @@ background-position: 10% 60%, 95% 75%
 ---
 
 background-image: url(img/geo_rs_processamento_imagens.png)
-background-size: 1000px
+background-size: 800px
 background-position: 50% 75%
 
 # 2.4 Sensoriamento Remoto
 
 ## 5. Funcionamento
+
+.footnote[
+[Zanotta et al. 2019](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/)
+]
 
 ---
 
@@ -883,9 +896,9 @@ class: inverse, center, middle
 
 ---
 
-background-image: url(img/qgis_logo.png), url(img/arcgis_logo.png), url(img/grassgis_logo.png), url(img/r_logo.svg), url(img/earth_engine_logo.png)
-background-size: 350px, 250px, 250px, 250px, 230px
-background-position: 30% 25%, 70% 25%, 10% 85%, 50% 85%, 90% 85%
+background-image: url(img/qgis_logo.png), url(img/arcgis_logo.png), url(img/grassgis_logo.png), url(img/r_logo.svg), url(img/earth_engine_logo.png), url(img/gvsig_logo.svg)
+background-size: 350px, 250px, 250px, 250px, 230px, 230px
+background-position: 30% 25%, 70% 25%, 10% 85%, 45% 85%, 90% 85%, 97% 30%
 
 # 2.5 Sistema de Informação Geográfica
 
@@ -1062,7 +1075,29 @@ background-position: 50% 60%
 
 class: inverse, center, middle
 
-# 2.12 Conversão de dados geoespaciais (vetor-raster)
+# 2.12 Banco de dados geoespaciais
+
+---
+
+background-image: url(img/geodatabase.webp), url(img/geo_geopackage.png)
+background-size: 500px, 500px
+background-position: 10% 80%, 90% 80%
+
+# 2.12 Banco de dados geoespaciais
+
+## Geopackage
+
+### Formato aberto para armazenamento de dados espaciais
+
+#### **.gdb**: objetos espaciais e não espaciais criados pelo ArcGIS, armazenando várias classes de recursos e topologia
+
+#### **.gpkg**: armazena dados vetoriais, matriciais, metadados, dados alfanuméricos, entre outros aspectos internos do banco
+
+---
+
+class: inverse, center, middle
+
+# 2.13 Conversão de dados geoespaciais (vetor-raster)
 
 ---
 
@@ -1070,7 +1105,7 @@ background-image: url(img/geo_data_convert.png), url(img/geo_data_convert.jpg)
 background-size: 400px, 550px
 background-position: 15% 85%, 85% 80%
 
-# 2.12 Conversão de dados geoespaciais (vetor-raster)
+# 2.13 Conversão de dados geoespaciais (vetor-raster)
 
 ## Conversão entre dados vetoriais e matriciais
 
@@ -1083,6 +1118,10 @@ class: inverse, center, middle
 # 2.14 Principais fontes de dados geoespaciais
 
 ---
+
+background-image: url(img/geo_vector_types.jpg)
+background-size: 400px
+background-position: 95% 50%
 
 # 2.14 Principais fontes de dados geoespaciais
 
@@ -1105,6 +1144,10 @@ class: inverse, center, middle
 - **[Global Roads Inventory Project (GRIP)](https://www.globio.info/download-grip-dataset)**: dados de estradas do mundo todo 
 
 ---
+
+background-image: url(img/geo_raster.jpg)
+background-size: 400px
+background-position: 95% 70%
 
 # 2.14 Principais fontes de dados geoespaciais
 
@@ -1130,7 +1173,7 @@ class: inverse, center, middle
 
 class: inverse, center, middle
 
-# 2.14. Material para estudo sobre geoprocessamento
+# 2.15. Material para estudo sobre geoprocessamento
 
 ---
 
@@ -1138,7 +1181,7 @@ background-image: url(img/cover_geoprocessamento.jpg)
 background-size: 250px
 background-position: 50% 65%
 
-# 2.14. Material para estudo sobre geoprocessamento
+# 2.15. Material para estudo sobre geoprocessamento
 
 ## Livos
 
@@ -1154,7 +1197,7 @@ background-image: url(img/cover_qgis_abc.jpg),url(img/cover_qgis_geoprocessament
 background-size: 250px,250px
 background-position: 8% 65%, 58% 65%
 
-# 2.14. Material para estudo sobre geoprocessamento
+# 2.15. Material para estudo sobre geoprocessamento
 
 ## Livos
 
@@ -1170,7 +1213,7 @@ background-image: url(img/cover_explorando_qgis.png)
 background-size: 280px
 background-position: 50% 65%
 
-# 2.14. Material para estudo sobre geoprocessamento
+# 2.15. Material para estudo sobre geoprocessamento
 
 ## Livos
 
@@ -1186,7 +1229,7 @@ background-image: url(img/cover_remote_sensing_and_gis.jpg)
 background-size: 230px
 background-position: 50% 65%
 
-# 2.14. Material para estudo sobre geoprocessamento
+# 2.15. Material para estudo sobre geoprocessamento
 
 ## Livros
 
@@ -1202,7 +1245,7 @@ background-image: url(img/cover_introduction_spatial_data_analysis.jpg)
 background-size: 230px
 background-position: 50% 65%
 
-# 2.14. Material para estudo sobre geoprocessamento
+# 2.15. Material para estudo sobre geoprocessamento
 
 ## Livros
 
@@ -1211,6 +1254,44 @@ background-position: 50% 65%
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 http://book.ecosens.org/gsbook/
+
+---
+
+background-image: url(img/geo_curso_sig_bio.jpg)
+background-size: 600px
+background-position: 50% 55%
+
+# 2.15. Material para estudo sobre geoprocessamento
+
+## Cursos
+
+### SIG para estudos de biodiversidade e conservação (31 vídeos)
+ 
+.footnote[
+https://www.youtube.com/playlist?list=PLo25BjoudnByh9PGT8JqqFtwf2M5w8CxU
+]
+
+---
+
+background-image: url(img/geo_curso_sig_open.jpg)
+background-size: 600px
+background-position: 50% 55%
+
+# 2.15. Material para estudo sobre geoprocessamento
+
+## Cursos
+
+### Aulas de SIG com Software Livre (20 vídeos)
+ 
+.footnote[
+https://www.youtube.com/playlist?list=PL9GztlLGb7RpQbw2_W9MxVdBfDtPKSy-G
+]
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
 
 ---
 
@@ -1342,7 +1423,7 @@ background-position: 50% 60%, 95% 10%
 
 ## Instalar
 
-&gt; MapBiomas Collection (Coleção do MapBiomas)
+&gt; MapBiomas Collection ([Coleção do MapBiomas](https://mapbiomas.org/))
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 https://plugins.qgis.org/plugins/mapbiomascollection/
@@ -1372,7 +1453,7 @@ background-position: 50% 85%
 
 ## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
 
-&gt; Por default o CRS do projeto é WGS84 / Geográfico
+&gt; Por default o CRS do projeto é WGS84 / Geográfico (EPSG: 4326)
 
 ---
 
@@ -1384,7 +1465,7 @@ background-position: 50% 85%
 
 ## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
 
-&gt; Project &gt; Properties &gt; CRS &gt; SIRGAS 2000 / UTM 23 S
+&gt; Project &gt; Properties &gt; CRS &gt; SIRGAS 2000 / UTM 23 S  (EPSG: 31983)
 
 ---
 
@@ -1412,7 +1493,23 @@ background-position: 50% 85%
 
 class: inverse, center, middle
 
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
 # 4 Importação, criação e edição de dados vetoriais
+
+---
+
+background-image: url(img/geo_vector_data.png), url(img/geo_vector_types.jpg)
+background-size: 500px, 500px
+background-position: 15% 80%, 90% 70%
+
+# 4 Importação, criação e edição de dados vetoriais
+
+## Ponto, linha e polígono
 
 ---
 

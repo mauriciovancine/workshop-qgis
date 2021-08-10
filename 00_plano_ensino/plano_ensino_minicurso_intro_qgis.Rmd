@@ -141,4 +141,4 @@ Xavier-da-Silva J, Zaidan RT. 2004. Geoprocessamento & análise ambiental: aplic
 
 Xavier-da-Silva J, Zaidan RT. 2011. Geoprocessamento & meio ambiente. Bertrand Brasil. [[link]](https://www.lojaofitexto.com.br/geoprocessamento-e-meio-ambiente/p)
 
-Zanotta DC, Ferreira MP, Zortea M. (2019). Processamento de imagens de satélite. Oficina de Textos. [[link]](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/)
+Zanotta DC, Ferreira MP, Zortea M. 2019. Processamento de imagens de satélite. Oficina de Textos. [[link]](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/)
