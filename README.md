@@ -22,7 +22,7 @@ O municurso oferecerá alguns dos principais conceitos teórico-práticos para m
 08/10/2021 das 08 h - 11 h
 
 **Plano de ensino**  
-[pdf](https://github.com/mauriciovancine/short-course-qgis/plano_ensino/plano_ensino_minicurso_intro_qgis.pdf)
+[pdf](https://raw.githubusercontent.com/mauriciovancine/short-course-qgis/master/00_plano_ensino/plano_ensino_minicurso_intro_qgis.pdf)
 
 **Contato**  
 Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauricio.vancine@gmail.com)
