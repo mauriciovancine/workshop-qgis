@@ -1,4 +1,4 @@
-# Minicurso de QGIS
+# Introdução ao geoprocessamento com QGIS
 
 ## Semana de Estudos da Biologia
 
@@ -22,7 +22,7 @@ O municurso oferecerá alguns dos principais conceitos teórico-práticos para m
 08/10/2021 das 08 h - 11 h
 
 **Plano de ensino**  
-[pdf](https://raw.githubusercontent.com/mauriciovancine/short-course-qgis/master/00_plano_ensino/plano_ensino_minicurso_intro_qgis.pdf)
+[pdf](https://raw.githubusercontent.com/mauriciovancine/short-course-qgis/master/00_plano_ensino/plano_ensino_workshop_qgis.pdf)
 
 **Contato**  
 Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauricio.vancine@gmail.com)
@@ -52,8 +52,8 @@ sudo apt install -y qgis
 
 ## Material
 
-[Slides](https://mauriciovancine.github.io/short-course-qgis/01_slides/slide_intro_qgis.html)  
+[Slides](https://mauriciovancine.github.io/workshop-qgis/01_slides/slide_workshop_qgis.html)  
 
-[Conjunto de dados](https://github.com/mauriciovancine/short-course-qgis/blob/master/02_conjunto_dados.zip)
+[Conjunto de dados](https://github.com/mauriciovancine/workshop-qgis/blob/master/02_conjunto_dados.zip)
 
 ---
