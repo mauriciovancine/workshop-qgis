@@ -1,0 +1,1528 @@
+---
+title: "Introdução ao uso de dados geoespaciais no R <br><br><br>"
+subtitle: "3 Introdução ao R <br><br><br>"
+author: "Maurício H. Vancine"
+date: "19/06/2021"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: rainbow
+      highlightLines: false
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, encoding = "UTF-8")
+
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+```
+
+class: clear
+background-image: url(img/r_rollercoaster.png)
+background-size: 800px
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+Fonte: [@allison_horst](https://twitter.com/allison_horst)
+
+---
+
+name: contents-slide
+
+background-image: url(img/r_rstudio.png)
+background-size: 450px
+background-position: 80% 75%
+
+# 3 Introdução ao R
+
+## Conteúdo
+
+[3.1 Linguagem R](#1.) <br>
+[3.2 RStudio](#2.) <br>
+[3.3 Console](#3.) <br>
+[3.4 Scripts](#4.) <br>
+[3.5 Operadores](#5.) <br>
+[3.6 Objetos](#6.) <br>
+[3.7 Funções](#7.) <br>
+[3.8 Pacotes](#8.) <br>
+[3.9 Ajuda (*Help*)](#9.) <br>
+[3.10 Citações](#10.) <br>
+[3.11 Diretório de trabalho](#11.) <br>
+[3.12 Importar e exportar dados](#12.) <br>
+[3.13 *tidyverse*](#13.) <br>
+[3.14 Principais erros de iniciantes](#14.) <br>
+
+---
+
+name: 1.
+
+class: inverse, center, middle
+
+# 3.1 Linguagem R
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+background-image: url(img/r_power.jpeg)
+background-size: 400px
+background-position: 50% 90%
+
+# 3.1 Linguagem R
+
+## Definições
+
+O R é uma **linguagem de programação livre** (*open source*), direcionada à **manipulação, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos**
+
+---
+
+# 3.1 Linguagem R
+
+## Por que usar o R?
+
+<br>
+
+### 1. É **grátis**!
+
+--
+
+### 2. Implementação de **rotinas** (repetir várias operações)!
+
+--
+
+### 3. Faz **gráficos** de forma eficiente
+
+--
+
+### 4. Atualmente é uma das **principais linguagens** utilizadas para análise de dados
+
+---
+
+background-image: url(img/r_rollercoaster.png)
+background-size: 850px
+background-position: 70% 90%
+
+# 3.1 Linguagem R
+
+## É legal, mas nem sempre é fácil...
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+Fonte: [@allison_horst](https://twitter.com/allison_horst)
+
+---
+
+background-image: url(img/general_directory_meme.jpg)
+background-size: 700px
+background-position: 50% 75%
+
+# 3.1 Linguagem R
+
+## É legal, mas nem sempre é fácil...
+
+---
+
+background-image: url(img/general_code_meme.jpg)
+background-size: 800px
+background-position: 50% 75%
+
+# 3.1 Linguagem R
+
+## É legal, mas nem sempre é fácil...
+
+---
+
+name: 2.
+
+class: inverse, center, middle
+
+# 3.2 RStudio
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+background-image: url(img/r_rstudio_vs01.png)
+background-size: 600px
+background-position: 50% 70%
+
+# 3.2 RStudio
+
+## Todos conhecem o R e o RStudio?
+
+---
+
+background-image: url(img/r_rstudio_vs02.png),url(img/r_rstudio_vs03.png)
+background-size: 800px,800px
+background-position: 50% 15%,50% 80%
+
+# 3.2 RStudio
+
+---
+
+background-image: url(img/rstudio.png)
+background-size: 800px
+background-position: 50% 70%
+
+# 3.2 RStudio
+
+## RStudio
+
+---
+
+background-image: url(img/rstudio.png)
+background-size: 500px
+background-position: 95% 85%
+
+# 3.2 RStudio
+
+## Janelas e abas
+
+- **1. Editor/Script**: é onde escrevemos nossos códigos em R ou R Markdown
+- **2. Console**: é onde os códigos são rodados e vemos as saídas
+- **3. Environment**: painel com todos os objetos criados na sessão
+- **3. History**: painel com o histórico dos comandos rodados
+- **3. Connection**: painel para conectar banco de dados
+- **3. Git**: painel de controle de versão
+- **3. Tutorial**: painel de tutoriais
+- **4. Files**: painel que mostra os arquivos no diretório de trabalho
+- **4. Plots**: painel onde os gráficos são apresentados
+- **4. Packages**: painel que lista os pacotes
+- **4. Help**: painel onde a documentação das funções é exibida
+- **4. Help**: painel onde a documentação das funções é exibida
+
+---
+
+background-image: url(img/rstudio.png)
+background-size: 500px
+background-position: 90% 25%
+
+# 3.2 RStudio
+
+## Atalhos
+
+- **f1**: abre o painel de *Help*
+- **ctrl + Enter**: roda a linha selecionada no script
+- **ctrl + Shift + N**: abre um novo script
+- **ctrl + S**: salva um script
+- **ctrl + Z**: desfaz uma operação
+- **ctrl + shift + Z**: refaz uma operação
+- **alt + -**: insere um sinal de atribuição (<-)
+- **ctrl + Shift + M**: insere um operador pipe (%>%) 
+- **ctrl + Shift + C**: comenta uma linha no script - insere um (#) 
+- **ctrl + Shift + R**: insere uma sessão (# ----------------------)
+- **ctrl + Shift + H**: abre uma janela para selecionar o diretório de trabalho
+- **ctrl + Shift + f10**: reinicia o console
+- **ctrl + L**: limpa os comandos do console 
+- **alt + Shift + K**: abre uma janela com todos os atalhos disponíveis
+
+---
+
+background-image: url(img/rstudio_project.png), url(img/rstudio_project_logo.png)
+background-size: 700px, 100px
+background-position: 60% 80%, 95% 10%
+
+# 3.2 RStudio
+
+## Projeto R (.Rproj)
+
+- Facilita o trabalho em múltiplos ambientes 
+- Cada projeto possui seu diretório, documentos e workspace
+- Permite versionamento
+
+---
+
+background-image: url(img/rstudio_project.webp)
+background-size: 430px
+background-position: 50% 90%
+
+# 3.2 RStudio
+
+## Projeto R (.Rproj)
+
+### Sempre **abram o RStudio** pelo arquivo **.Rproj**
+
+### Ou **definam o projeto** depois de abrir o RStudio
+
+---
+
+name: 3.
+
+class: inverse, center, middle
+
+# 3.3 Console
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+background-image: url(img/rstudio_script.png)
+background-size: 500px
+background-position: 50% 90%
+
+# 3.3 Console
+
+## Console
+
+### O console é onde a versão da linguagem R instalada é carregada para executar os códigos da linguagem R
+
+---
+
+# 3.3 Console
+
+## Console
+
+### O console é onde a versão da linguagem R instalada é carregada para executar os códigos da linguagem R
+
+<br>
+
+```{r}
+10 + 2
+```
+
+<br>
+
+--
+
+```{r}
+1:42
+```
+
+---
+
+name: 4.
+
+class: inverse, center, middle
+
+# 3.4 Scripts
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+background-image: url(img/rstudio_script.jpg)
+background-size: 700px
+background-position: 50% 100%
+
+# 3.4 Scripts
+
+## Script (.R)
+
+**Atalho**: `ctrl + shift + N`
+
+- são **rascunhos** dos comandos
+- será neles que os **códigos serão escritos** e depois **enviados ao console do R**
+- são **arquivos de texto simples**, que serão salvos no formato .R
+
+---
+
+# 3.4 Scripts
+
+## Esclarecimentos
+
+<br>
+
+### Isso é texto, não digite no R!
+
+--
+
+<br>
+
+### Digitar no script
+
+```{r eval=FALSE}
+print("Isso é o resultado que deve aparecer no console")
+```
+
+--
+
+### Resultado no console
+
+```{r echo=FALSE}
+print("Isso é o resultado que deve aparecer no console")
+```
+
+---
+
+background-image: url(img/rstudio_script.jpg)
+background-size: 900px
+background-position: 50% 110%
+
+# 3.4 Scripts
+
+## Salvar um script
+
+**Atalho**: `ctrl + S`
+
+---
+
+# 3.4 Scripts
+
+### Todos os **comandos** serão digitados no **script**!
+
+--
+
+### Deixem o **cursor** em **qualquer local da linha** e executem essa linha utilizando essa **combinação**: 
+
+### **Atalho**: `ctrl + Enter`
+
+--
+
+### Vamos testar:
+
+--
+
+```{r}
+1
+```
+
+--
+
+```{r}
+1 + 2
+```
+
+---
+
+class: inverse, center, middle
+
+# E é isso que faremos pelo resto de nossas vidas...
+
+---
+
+# 3.4 Scripts
+
+## Script
+
+<br><br><br><br>
+
+## .center[`03_script_intro_geodata_r.R`]
+
+---
+
+# 3.4 Scripts
+
+## Comentários (#)
+
+### Comentários **não são lidos** pelo R e **descrevem informações**
+
+--
+
+### São representados pelo **#** (hash) ou **#'** (hash-linha)
+
+### Informações sobre os comandos
+
+```{r}
+## comentarios
+# o r nao le o codigo depois do # (hash)
+
+42 # essas palavras nao sao executadas, apenas o 42
+```
+
+---
+
+# 3.4 Scripts
+
+## Comentários (#)
+
+### Comentários **não são lidos** pelo R e **descrevem informações**
+
+### São representados pelo **#** (hash) ou **#'** (hash-linha)
+
+### Cabeçalho
+
+```{r}
+#' ---
+#' title: introducao ao uso de dados geoespaciais no R
+#' author: seu nome
+#' date: 2021-05-22
+#' ---
+```
+
+---
+
+name: 5.
+
+class: inverse, center, middle
+
+# 3.5 Operadores
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.5 Operadores
+
+## Operadores aritméticos
+
+```{r}
+## operadores aritmeticos (+, -, *, /, ^)
+10 + 2 # adicao
+```
+--
+```{r}
+10 * 2 # multiplicacao
+```
+--
+```{r}
+10 / 2 # divisao
+```
+--
+```{r}
+10 ^ 2 # potenciacao
+```
+
+---
+
+# 3.5 Operadores
+
+### Ordem das operações aritméticas 
+
+<br>
+
+### .center[`^  >>  * ou /  >>  + ou -`]
+
+<br>
+
+```{r}
+# sem especificar - segue a ordem
+1 * 2 + 2 / 2 ^ 2
+```
+
+--
+
+```{r}
+# especificando - segue os parênteses
+((1 * 2) + (2 / 2)) ^ 2
+```
+
+---
+
+# 3.5 Operadores
+
+## Operadores aritméticos
+
+### Resultados numéricos
+
+<br>
+
+| Operador |       Descrição      |   Uso   |
+|:--------:|:--------------------:|:-------:|
+|     +    | Adição               |  a + b  |
+|     –    | Subtração            |  a - b  |
+|     *    | Multiplicação        |  a * b  |
+|     /    | Divisão              |  a / b  |
+|    %%    | Resto da divisão     |  a %% b |
+|    %/%   | Quociente da divisão | a %/% b |
+|     ^    | Potenciação          |   a^b   |
+
+
+---
+
+# 3.5 Operadores
+
+## Operadores relacionais
+
+### Resultados booleanos (TRUE ou FALSE)
+
+<br>
+
+| Operador |       Descrição       |   Uso   |
+|:--------:|:---------------------:|:-------:|
+|     <    | Menor                 |  a < b  |
+|     >    | Maior                 |  a > b  |
+|    ==    | Igual                 |  a == b |
+|    <=    | Menor ou igual        |  a <= b |
+|    >=    | Maior ou igual        | a > = b |
+|    !=    | Não igual (diferente) |   a!=b  |
+
+---
+
+name: 6.
+
+class: inverse, center, middle
+
+# 3.6 Objetos
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.6 Objetos
+
+## Atribuição (<-)
+
+### Objetos são palavras que atribuímos dados
+
+--
+
+### A atribuição possibilita a manipulação de dados ou resultados de análises
+
+--
+
+### Utilizaremos o símbolo **"<" (menor)** seguido de **"-" (menos)**, **sem espaço**!!!
+
+<br>
+
+--
+
+## **palavra <- dados**
+
+### Atalho: `alt + -`
+
+--
+
+background-image: url(img/r_assignment.jpg)
+background-size: 450px
+background-position: 70% 90%
+
+---
+
+# 3.6 Objetos
+
+### Vamos atribuir o **valor 10** à palavra **obj10**
+
+--
+
+```{r}
+## atribuicao - simbolo (<-)
+obj10 <- 10 
+```
+
+--
+
+### Agora a palavra **obj10** vale **10**
+
+#### Mas não aconteceu nada....
+
+--
+
+background-image: url(img/gif_where.gif)
+background-size: 500px
+background-position: 50% 90%
+
+---
+
+# 3.6 Objetos
+
+## Sempre **confira** a atribuição!!!
+
+## Chame o objeto **novamente**!!!
+
+--
+
+```{r}
+## atribuicao - simbolo (<-)
+obj10 <- 10 
+obj10
+```
+
+--
+
+## Outro exemplo
+
+```{r}
+## atribuicao - simbolo (<-)
+obj2 <- 2
+obj2
+```
+
+---
+
+class: inverse, center, middle
+
+# Os objetos podem ser visualizados no painel *Environment*
+
+---
+
+# 3.6 Objetos
+
+## CUIDADO!
+### O R **sobrescreve** os valores dos objetos com o **mesmo nome**!
+
+--
+
+```{r}
+# sobrescreve o valor dos objetos
+obj <- 100
+obj
+```
+
+--
+
+```{r}
+# obj agora vale 2
+obj <- 2
+obj
+```
+
+---
+
+# 3.6 Objetos
+
+## CUIDADO!
+### O R tem **limitações** ao nomear objetos!
+
+--
+
+<br>
+
+1. Nome de objetos só podem **começar por letras (a-z ou A-Z) ou pontos (.)**
+1. Nome de objetos só podem **conter letras (a-z ou A-Z), números (0-9), underscores (_) ou pontos (.)**
+1.  R é *case-sensitive*, i.e., ele difere **letras maiúsculas** de **minúsculas**. Assim, um objeto chamado *"resposta"* é diferente do objeto *"RESPOSTA"*
+1. Evitem utilizar **letras maiúsculas**, **acentos** ou **cedilha (ç)**
+1. Nome de objetos não podem ser iguais a **nomes especiais**: 
+
+`break, else, FALSE, for, function, if, Inf, NA, NaN, next, repeat, return, TRUE, while`
+
+---
+
+name: 7.
+
+class: inverse, center, middle
+
+# 3.7 Funções
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.7 Funções
+
+## Funções
+
+### **Códigos** que realizam **operações** em **argumentos**
+
+--
+
+<br>
+
+## Estrutura de uma função:
+
+> nome_da_funcao(argumento1, argumento2)
+
+1. **Nome da função**: remete ao que ela faz
+1. **Parênteses**: limitam a função
+1. **Argumentos**: onde a função atuará 
+1. **Vírgulas**: separam os argumentos
+
+---
+
+# 3.7 Funções
+
+## Os **argumentos** de uma função podem ser de **dois tipos**
+
+### 1. **Valores** ou **Objetos**: a função irá **alterar os valores** em si ou os valores **atribuídos** aos objetos
+
+--
+
+```{r}
+# funcoes - argumentos como valores
+# soma
+sum(10, 2)
+
+# funcoes - argumentos como objetos
+# soma
+sum(obj10, obj2)
+```
+
+---
+
+# 3.7 Funções
+
+## Os **argumentos** de uma função podem ser de **dois tipos**
+
+### 2. **Parâmetros**: valores fixos que informam um **método** ou a realização de uma **operação**. Informa-se o **nome desse argumento**, seguido de **"="** e um *número*, *texto* ou *TRUE* ou *FALSE*
+
+```{r}
+# funcoes - argumentos como valores
+# repeticao - todos
+rep(x = 1:5, times = 10)
+```
+
+```{r}
+# repeticao - cada
+rep(x = 1:5, each = 10)
+```
+
+---
+
+# 3.7 Funções
+
+## Atribuir resultados das funções a objetos
+
+### Podemos atribuir os resultados de operações a objetos
+
+```{r}
+# repeticao - todos
+rep_times <- rep(x = 1:5, times = 10)
+rep_times
+```
+
+--
+
+```{r}
+## atribuicao dos resultados
+# repeticao - todos
+rep_each <- rep(x = 1:5, each = 10)
+rep_each
+```
+
+---
+
+# 3.7 Funções
+
+## Atribuição, função e linha temporal
+
+### Esse é o processo de programação no R: 
+
+1. **Atribuição** de dados a objetos
+1. **Funções** que **operam e mudam** esses dados
+1. Nova **atribuição** desses resultados a novos objetos
+
+```{r eval=FALSE}
+# atribuicao dos resultados
+# repeticao
+rep_times <- rep(x = 1:5, times = 10)
+rep_times
+
+# somar e atribuir
+rep_times_soma <- sum(rep_times)
+rep_times_soma
+
+# raiz e atribuir
+rep_times_soma_raiz <- sqrt(rep_times_soma)
+rep_times_soma_raiz
+```
+
+---
+
+class: inverse, center, middle
+
+# Nesse momento vocês devem estar se perguntando: como vou saber o nome das funções?!
+
+---
+
+class: clear, inverse
+background-image: url(img/gif_google_it.gif)
+background-size: 1000px
+
+---
+
+class: clear
+background-image: url(img/general_ajuda_google.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 3.7 Funções
+
+## Uma **maracutaia** para ajudar!
+
+---
+
+class: inverse, center, middle
+
+# E de onde vêm as funções?!
+
+---
+
+name: 8.
+
+class: inverse, center, middle
+
+# 3.8 Pacotes
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+background-image: url(img/package_r.png)
+background-size: 250px
+background-position: 90% 105%
+
+# 3.8 Pacotes
+
+## **Coleção de funções** para executar **tarefas específicas**
+
+### Duas fontes: 
+- **CRAN** (*finalizados*)
+- **GitHub** (em *desenvolvimento*)
+
+### Verificar **pacotes carregados**
+```{r}
+# verificar pacotes carregados
+search()
+```
+
+---
+
+background-image: url(img/package_r.png)
+background-size: 250px
+background-position: 90% 105%
+
+# 3.8 Pacotes
+
+## **Coleção de funções** para executar **tarefas específicas**
+
+### Duas fontes: 
+- **CRAN** (*finalizados*)
+- **GitHub** (em *desenvolvimento*)
+
+### Verificar **pacotes instalados**
+
+```{r eval=FALSE}
+# verificar pacotes instalados
+library()
+```
+
+---
+
+background-image: url(img/package_r.png)
+background-size: 250px
+background-position: 90% 105%
+
+# 3.8 Pacotes
+
+## Ex.: pacote `vegan` 
+
+<br>
+
+## Fontes:
+
+### Pacotes do CRAN
+https://cran.r-project.org/web/packages/vegan/index.html
+
+<br>
+
+### Pacotes do GitHub
+https://github.com/vegandevs/vegan
+
+---
+
+# 3.8 Pacotes
+
+## Instalar pacotes
+
+### 1. Instala-se apenas **uma vez**
+
+### 2. **Precisa** estar conectado à **internet**
+
+### 3. O **nome do pacote precisa** estar entre **aspas**
+
+### 4. Função (CRAN): 
+`install.packages()`
+
+```{r eval=FALSE}
+# instalar pacotes
+install.packages("vegan")
+```
+
+---
+
+# 3.8 Pacotes
+
+##  Carregar pacotes
+
+### 1. Carrega-se **toda vez** que se abre **uma nova sessão do R**
+
+### 2. **Não precisa** estar conectado à **internet**
+
+### 3. O **nome do pacote não precisa** estar entre **aspas**
+
+### 4. Funções: 
+`library()` ou `require()`
+
+```{r}
+# carregar pacotes
+library(vegan)
+```
+
+---
+
+# 3.8 Pacotes
+
+## Instalar pacotes do GitHub
+
+### 1. Instalar pacote **devtools**
+
+```{r eval=FALSE}
+# instalar pacote devtools
+install.packages("devtools")
+
+# carregar pacote devtools
+library(devtools)
+```
+
+--
+
+### 2. Instalar usando a função `install_github`
+
+### Atentar para usar essa forma **usuário/repositório**
+
+```{r eval=FALSE}
+# instalar pacote do github
+install_github("vegandevs/vegan")
+
+# carregar pacote do github
+library(vegan)
+```
+
+---
+
+class: inverse, center, middle
+
+# E onde ficam esses pacotes no meu notebook?
+
+---
+
+background-image: url(img/package_r.png)
+background-size: 250px
+background-position: 90% 105%
+
+# 3.8 Pacotes
+
+## Diretório dos pacotes instalados
+
+## Windows
+C:/Users/**nome_do_computador**/Documentos/R/win-library/**numero_da_versao_r**
+
+<br>
+
+## Unix (Linux e MacOS):
+/home/**nome_do_computador**/R/**tipo_do_computador**/**numero_da_versao_r**
+
+---
+
+background-image: url(img/package_r.png)
+background-size: 250px
+background-position: 90% 105%
+
+# 3.8 Pacotes
+
+## Exemplos:
+
+### **vegan** – análises de comunidades
+### **sf** – manipulação de vetores
+### **raster** – manipulação de rasters
+### **ggplot2** – gráficos
+### **tmaps** – mapas temáticos
+### **bblme** – seleção de modelos (AIC)
+### **tidyverse** – data science
+
+---
+
+name: 9.
+
+class: inverse, center, middle
+
+# 3.9 Ajuda (*Help*)
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.9 Ajuda (*Help*)
+
+## Descreve as informações de uma função
+
+```{r eval=FALSE}
+## ajuda
+# descreve as informacoes de uma funcao
+help("mean") # arquivo .html
+
+?mean
+```
+
+- **Description**: resumo da função
+- **Usage**: como utilizar a função e quais os seus argumentos
+- **Arguments**: detalha os argumentos e como os mesmos devem ser especificados
+- **Details**: detalhes importantes para se usar a função
+- **Value**: mostra como interpretar a saída (*output*) da função (os resultados)
+- **Note**: notas gerais sobre a função
+- **Authors**: autores da função
+- **References**: referências bibliográficas para os métodos usados para construção da função
+- **See also**: funções relacionadas
+- **Examples**: exemplos do uso da função. Às vezes pode ser útil copiar esse trecho e colar no R para ver como funciona e como usar a função
+
+---
+
+background-image: url(img/rstudio_help.png)
+background-size: 600px
+background-position: 50% 50%
+
+# 3.9 Ajuda (*Help*)
+
+---
+
+name: 10.
+
+class: inverse, center, middle
+
+# 3.10 Citações
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.10 Citações
+
+## Como citar o R e os pacotes em trabalhos?
+
+```{r}
+## citacao do r e dos pacotes
+# citacao do R
+citation()
+```
+
+---
+
+# 3.10 Citações
+
+## Como citar o R e os pacotes em trabalhos?
+
+```{r}
+# citacao dos pacotes
+citation("vegan")
+```
+
+---
+
+name: 11.
+
+class: inverse, center, middle
+
+# 3.11 Diretório de trabalho
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.11 Diretório de trabalho
+
+### O diretório de trabalho é o endereço da pasta (ou diretório) de onde o R importará ou exportará nossos dados
+
+<br>
+
+### Podemos utilizar o próprio RStudio para tal tarefa, indo em: 
+
+<br>
+
+> Session > Set Work Directory > Choose Directory... 
+
+<br>
+
+### Atalho: `ctrl + shift + H`
+
+---
+
+# 3.11 Diretório de trabalho
+
+### O diretório de trabalho é o endereço da pasta (ou diretório) de onde o R importará ou exportará nossos dados
+
+<br>
+
+### Podemos utilizar funções no script
+
+```{r eval=FALSE}
+# definir o diretorio de trabalho
+setwd("/home/mude/data/github/short-curse-geospatial-data-r/04_dados/01_tabela")
+
+# verificar o diretorio
+getwd()
+
+# listar os arquivos no diretorio
+dir()
+```
+
+---
+
+name: 12.
+
+class: inverse, center, middle
+
+# 3.12 Importar e exportar dados
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 3.12 Importar e exportar dados
+
+## Vamos importar dados tabulares (planilha)
+
+```{r eval=FALSE}
+# importar tabela de locais
+aa_locais <- read.csv("ATLANTIC_AMPHIBIANS_sites.csv")
+aa_locais
+```
+
+```{r echo=FALSE}
+# importar tabela de locais
+aa_locais <- read.csv(here::here("04_dados", "01_tabela", "ATLANTIC_AMPHIBIANS_sites.csv"))
+aa_locais
+```
+
+---
+
+name: 13.
+
+class: inverse, center, middle
+
+# 3.13 *tidyverse*
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+background-image: url(img/general_data_science_r4ds.png)
+background-size: 900px
+background-position: 50% 75%
+
+# 3.13 *tidyverse*
+
+## O tidyverse é um **fluxo de trabalho** designado para **Data Science**
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+Fonte: [@allison_horst](https://twitter.com/allison_horst)
+
+---
+
+background-image: url(img/tidyverse_packages.png)
+background-size: 650px
+background-position: 50% 60%
+
+# 3.13 *tidyverse*
+
+## Pacotes
+
+---
+
+background-image: url(img/cover_data_science_r.png)
+background-size: 280px
+background-position: 50% 55%
+
+# 3.13 *tidyverse*
+
+## R for Data Science (2017)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] https://r4ds.had.co.nz/
+
+---
+
+class: clear
+background-image: url(img/package_magrittr.png)
+background-size: 400px
+
+---
+
+background-image: url(img/person_rene_magritte.jpg), url(img/tidyverse_magritte_pipe.jpg)
+background-size: 350px, 550px
+background-position: 7% 60%, 85% 75%
+
+# 3.13 *tidyverse*
+
+## magrittr (pipe - %>%)
+
+### René Magritte (1898-1967)
+
+---
+
+background-image: url(img/general_fog01.jpg)
+background-size: 500px
+background-position: 50% 90%
+
+# 3.13 *tidyverse*
+
+## magrittr (pipe - %>%)
+
+### Atalho: `Crtl + Shift + M`
+
+```{r}
+# sem pipe
+sqrt(sum(1:100))
+```
+
+---
+
+background-image: url(img/general_fog02.jpg)
+background-size: 300px
+background-position: 50% 90%
+
+# 3.13 *tidyverse*
+
+## magrittr (pipe - %>%)
+
+### Atalho: `Crtl + Shift + M`
+
+```{r}
+# sem pipe
+sqrt(sum(1:100))
+```
+
+---
+
+background-image: url(img/gif_mario.gif)
+background-size: 300px
+background-position: 50% 90%
+
+# 3.13 *tidyverse*
+
+## magrittr (pipe - %>%)
+
+### Atalho: `Crtl + Shift + M`
+
+```{r}
+# com pipe
+1:100 %>% 
+  sum() %>% 
+  sqrt()
+```
+
+---
+
+background-image: url(img/gif_mario.gif)
+background-size: 300px
+background-position: 50% 90%
+
+# 3.13 *tidyverse*
+
+## magrittr (pipe - |>) - R 4.1
+
+### Atalho: `Crtl + Shift + M`
+
+```{r}
+# com pipe
+1:100 |>
+  sum() |>
+  sqrt()
+```
+
+---
+
+name: 14.
+
+class: inverse, center, middle
+
+# 3.14 Principais erros de iniciantes
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+class: clear
+background-image: url(img/general_make_impossible.jpeg)
+background-size: 600px
+background-position: 50% 40%
+
+---
+
+class: clear
+background-image: url(img/gif_bugcat_error.gif)
+background-size: 800px
+background-position: 50% 40%
+
+---
+
+# 3.14 Principais erros de iniciantes
+
+## 1. Esquecer de completar um comando (+)
+
+Parênteses
+```{r error=TRUE}
+sum(1, 2
+    +
+      ```
+    
+    Aspas
+    ```{r error=TRUE}
+    "string
++
+```
+
+---
+
+# 3.14 Principais erros de iniciantes
+
+## 2. Esquecer da vírgula
+
+```{r error=TRUE}
+sum(1 2)
+```
+
+---
+
+# 3.14 Principais erros de iniciantes
+
+## 3. Chamar um objeto errado
+
+```{r error=TRUE}
+obj <- 10
+OBJ
+```
+
+---
+
+# 3.14 Principais erros de iniciantes
+
+## 4. Esquecer de carregar um pacote
+
+```{r echo=FALSE}
+detach("package:vegan", unload = TRUE)
+```
+
+```{r error=TRUE}
+# carregar dados
+data(dune)
+
+# funcao do pacote vegan
+decostand(dune[1:6, 1:6], "hell")
+```
+
+---
+
+# 3.14 Principais erros de iniciantes
+
+## 4. Esquecer de carregar um pacote
+
+```{r}
+# carregar o pacote
+library(vegan)
+
+# carregar dados
+data(dune)
+
+# funcao do pacote vegan
+decostand(dune[1:6, 1:6], "hell")
+```
+
+---
+
+background-image: url(img/code_camel_case.png)
+background-size: 350px
+background-position: 90% 90%
+
+# 3.14 Principais erros de iniciantes
+
+## 5. Usar o nome da função de forma errônea
+
+```{r error=TRUE}
+colsums(dune)
+```
+
+---
+
+background-image: url(img/code_camel_case.png)
+background-size: 350px
+background-position: 90% 90%
+
+# 3.14 Principais erros de iniciantes
+
+## 5. Usar o nome da função de forma errônea
+```{r error=TRUE}
+colSums(dune)
+```
+
+---
+
+background-image: url(img/code_coding_cases.png)
+background-size: 800px
+background-position: 50% 30%
+
+# Cases
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+Fonte: [@allison_horst](https://twitter.com/allison_horst)
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: clear, middle
+background-image: url(img/gif_frog.gif),url(img/gif_frogs.gif), url(img/package_xaringan.png)
+background-size: 250px, 500px, 130px
+background-position: 35% 50%, 90% 55%, 5% 86%
+
+## Maurício Vancine
+
+<br><br>
+
+Contatos:
+
+`r icons::icon_style(icons::fontawesome(name = "envelope", style = "solid"), fill = "#23373b")` [mauricio.vancine@gmail.com]()  
+`r icons::icon_style(icons::fontawesome("twitter"), fill = "#23373b")` [@mauriciovancine](https://twitter.com/mauriciovancine)  
+`r icons::icon_style(icons::fontawesome(name = "github"), fill = "#23373b")` [mauriciovancine](https://github.com/mauriciovancine)
+`r icons::icon_style(icons::fontawesome(name = "link", style = "solid"), fill = "#23373b")` [mauriciovancine.github.io](https://mauriciovancine.github.io)
+
+<br><br><br><br><br>
+
+Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [Metropolis](https://github.com/pat-s/xaringan-metropolis). Animação dos sapos por [@probzz](https://twitter.com/probzz/status/1367613720294170627).

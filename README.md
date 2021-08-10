@@ -11,18 +11,18 @@ Prof. Maurício Vancine
 **Vagas**  
 15 alunos(as)
 
-**Resumo** <br>
-O municurso oferecerá alguns dos principais conceitos teórico-práticos para manejo e visualização de dados geoespaciais no QGIS. Serão abordados os seguintes tópicos: (1) conceitos gerais de geoprocessamento, (2) interface e projeto do QGIS, (3) importação, criação e edição de dados vetoriais, (4) importação, criação e edição de dados matriciais, (5) composição de mapas. Após a realização do minicurso, espera-se que os alunos e alunas adquiram conceitos gerais da estrutura, manipulação e visualização de dados geoespaciais, assim como habilidades básicas para produzir mapas simples.
+**Resumo**  
+O municurso oferecerá alguns dos principais conceitos teórico-práticos para manejo e visualização de dados geoespaciais no QGIS. Serão abordados os seguintes tópicos: (1) apresentações, (2) conceitos gerais de geoprocessamento, (3) interface e projeto do QGIS, (4) importação, criação e edição de dados vetoriais, (5) importação, criação e edição de dados matriciais, (6) composição de mapas. Após a realização do minicurso, espera-se que os alunos e alunas adquiram conceitos gerais da estrutura, manipulação e visualização de dados geoespaciais, assim como habilidades básicas para produzir mapas simples.
 
 ---
 
 ### Informações aos participantes
 
 **Datas e horários**  
-
+08/10/2021 das 08 h - 11 h
 
 **Plano de ensino**  
-[pdf]()
+[pdf](https://github.com/mauriciovancine/short-course-qgis/plano_ensino/plano_ensino_minicurso_intro_qgis.pdf)
 
 **Contato**  
 Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauricio.vancine@gmail.com)
@@ -35,9 +35,8 @@ Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauric
 Será necessário que todos usem seus notebooks ou desktops
 
 **Softwares**  
-Instalar a versão mais recente do [QGIS (4.0.x)](https://www.r-project.org)
-- [Vídeo de instalação do R e do RStudio](https://youtu.be/l1bWvZMNMCM)
-- [Curso da linguagem R](https://www.youtube.com/playlist?list=PLucm8g_ezqNq0RMHvzZ8M32xhopFhmsr6)
+Instalar a versão mais recente do [QGIS (3.16)](https://www.qgis.org/pt_BR/site/)
+- [Vídeo de instalação do QGIS](https://youtu.be/--CLlUXfFIM)
 
 #### GNU/Linux (Ubuntu e derivados)
 
@@ -53,7 +52,8 @@ sudo apt install -y qgis
 
 ## Material
 
-[Slides]()
-[Dados]()
+[Slides]()  
+
+[Conjunto de dados]()
 
 ---
