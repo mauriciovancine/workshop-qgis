@@ -1,0 +1,1812 @@
+---
+title: "Introdução ao geoprocessamento com QGIS <br><br><br>"
+subtitle: "32ª Semana de Estudos da Biologia"
+author: "Maurício H. Vancine"
+institute: "UNESP - Rio Claro <br> Laborário de Ecologia Espacial e Conservação (LEEC)"
+date: "08/10/2021"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, custom.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: rainbow
+      highlightLines: false
+      highlightSpans: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, encoding = "UTF-8")
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+```
+
+class: inverse, center, middle
+
+# Primeiramente, gostaria de agradecê-los pela presença no minicurso, sejam muito bem-vindas e bem-vindos!
+
+---
+
+class: inverse, center, middle
+
+# Gostaria de agradecer também à SEB pelo convite!
+
+---
+
+background-image: url(img/general_licenca.png)
+background-size: 400px
+background-position: 50% 90%
+
+# Licença
+
+## Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)
+
+- **Atribuição** — Você deve dar o crédito apropriado, prover um link para a licença e indicar se mudanças foram feitas. Você deve fazê-lo em qualquer circunstância razoável, mas de nenhuma maneira que sugira que o licenciante apoia você ou o seu uso
+
+- **NãoComercial** — Você não pode usar o material para fins comerciais
+
+- **CompartilhaIgual** — Se você remixar, transformar, ou criar a partir do material, tem de distribuir as suas contribuições sob a mesma licença que o original. 
+
+### Saiba mais em: [Creative Commons](https://br.creativecommons.net/licencas/)
+
+---
+
+class: inverse, center, middle
+
+# 1 Apresentações
+
+---
+
+background-image: url(img/general_unesp_logo.jpg), url(img/person_mauricio_vancine.jpg), url(img/gif_frog.gif)
+background-size: 300px, 250px, 250px
+background-position: 85% 31%, 84% 85%, 60% 90%
+
+# 1.1 Apresentações
+
+## Maurício Vancine
+
+### Ecólogo (2014) | Mestre em Zoologia (2018) | Doutorando em Ecologia (2020)
+
+**Pesquisa**
+- Ecologia Espacial
+- Modelagem Ecológica
+- Ecologia e Conservação de Anfíbios
+
+**Habilidades**
+- Modelos de Distribuição de Espécies (SDMs)
+- Análise de Dados Ecológicos e Geoespaciais
+- *Open source* [R, QGIS, GRASS GIS, GNU/Linux, ...]
+
+**Informações:**
+
+[mauriciovancine.github.io](https://mauriciovancine.github.io)
+
+---
+
+background-image: url(img/general_introduce_yourself.jpg)
+background-size: 400px
+background-position: 90% 60%
+
+# 1.1 Apresentações
+
+## Participantes (~10 segundos)
+
+<br>
+
+### 1. Nome
+
+### 2. Formação
+
+### 3. O que faz ou pensa em fazer?
+
+### 4. Conhece algo de geoprocessamento ou QGIS?
+
+### 5. O que espera desse minicurso?
+
+---
+
+background-image: url(img/general_master_meme.jpg)
+background-size: 300px
+background-position: 95% 45%
+
+# 1.2 Minicurso
+
+<br>
+
+## Carga horária bem enxuta
+
+### - 03 horas
+
+<br>
+
+## Diânima
+
+### - Tudo vai ser muito rápido
+
+### - O principal intuito é fazer uma introdução ao tema
+
+### - Vou indicar material para estudo
+
+---
+
+background-image: url(img/general_starwars_teamwork.png)
+background-size: 500px
+background-position: 50% 80%
+
+# 1.2 Minicurso
+
+## Espaço seguro e amigável
+
+### Sintam-se à vontade para me interromper e tirar dúvidas
+
+---
+
+background-image: url(img/general_sig.png)
+background-size: 300px
+background-position: 90% 75%
+
+# 1.2 Minicurso
+
+## Conteúdo
+
+### 2 Conceitos gerais de geoprocessamento (30 min.)
+
+1. Geoprocessamento
+1. Cartografia
+1. *Global Positioning System* (GPS)
+1. Sensoriamento Remoto
+1. Sistema de Informação Geográfica (SIG)
+1. Dados geoespaciais
+1. Dados vetoriais
+1. Dados matriciais (gride ou raster)
+1. Conversão de dados geoespaciais (vetor-raster)
+1. Banco de dados geoespaciais
+1. Principais fontes de dados geoespaciais
+1. Material para estudo sobre geoprocessamento
+
+[Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1)
+
+---
+
+background-image: url(img/qgis_logo.png)
+background-size: 600px
+background-position: 85% 60%
+
+# 1.2 Minicurso
+
+## Conteúdo
+
+### 3 Instalação, interface e projeto do QGIS  (20 min.)
+
+1. Instalação do QGIS 
+1. Interface do QGIS
+1. Plugins do QGIS
+1. Projeto do QGIS
+
+<br><br><br><br><br><br><br><br>
+[QGIS logo](https://qgis.org/en/site/getinvolved/styleguide.html)
+
+---
+
+background-image: url(img/geo_vector_types.jpg)
+background-size: 400px
+background-position: 85% 80%
+
+# 1.2 Minicurso
+
+## Conteúdo
+
+### 4 Importação, criação, edição e operações de dados vetoriais  (40 min.)
+
+1. Importar dados vetoriais
+1. Propriedades de dados vetoriais
+1. Tabela de atributos
+1. Criar dados vetoriais
+1. Editar dados vetoriais
+1. Operações de dados vetoriais
+1. Converter CRS de dados vetoriais
+1. Exportar dados vetoriais
+
+<br><br><br><br>
+[Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1)
+
+---
+
+background-image: url(img/geo_raster.png)
+background-size: 400px
+background-position: 85% 75%
+
+# 1.2 Minicurso
+
+## Conteúdo
+
+### 5 Importação, criação, edição e operações de dados matriciais (40 min.)
+
+1. Importar dados matriciais
+1. Propriedades de dados matriciais
+1. Editar dados matriciais
+1. Interação raster-vetor
+1. Conversão raster-vetor
+1. Converter CRS de dados matriciais
+1. Exportar dados matriciais
+
+<br><br><br><br><br>
+[National Ecological Observatory Network (NEON)](https://www.neonscience.org/resources/learning-hub/tutorials/dc-raster-data-r)
+
+---
+
+background-image: url(img/geo_map_elements.png)
+background-size: 600px
+background-position: 85% 70%
+
+# 1.2 Minicurso
+
+## Conteúdo
+
+### 6 Composição de mapas (40 min.)
+
+1. Compositor de mapas
+1. Principais elementos de um mapa
+1. Mapa principal
+1. Mapa secundário
+1. Título
+1. Legenda
+1. Barra de escala
+1. Indicador de orientação (Norte)
+1. Gride de coordenadas
+1. Descrição do CRS
+1. Fonte dos dados
+1. Exportar mapa
+
+[Gimond (2021)](https://mgimond.github.io/Spatial/index.html)
+
+---
+
+background-image: url(img/package_xaringan.png)
+background-size: 350px
+background-position: 50% 65%
+
+# 1.3 Slides
+
+## Todos os slides estão disponibilizados em .html e .pdf
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[slides](https://mauriciovancine.github.io/workshop-r-sdm/01_slides/slides_workshop_r_sdm.html#1)
+<br>
+[xaringan](https://slides.yihui.org/xaringan)
+
+---
+
+background-image: url(img/github_download.png), url(img/github_logo.png)
+background-size: 1000px, 120px
+background-position: 50% 60%, 98% 5%
+
+# 1.4 Material
+
+## O material da oficina pode ser acessado nesse repositório
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Repositório no GitHub](https://github.com/mauriciovancine/workshop-qgis)
+
+---
+
+background-image: url(img/general_rio_claro01.jpg), url(img/general_rio_claro02.jpg), url(img/geo_data_fbds.png), url(img/geo_rio_claro-removebg-preview.png)
+background-size: 350px, 350px, 300px, 500px
+background-position: 10% 30%, 51% 90%, 12% 80%, 90% 90%
+
+# 1.4 Material
+
+## Vamos usar dados geoespaciais de Rio Claro/SP
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[FBDS](https://www.fbds.org.br/),
+[SRTM](https://srtm.csi.cgiar.org/)
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
+# 2 Conceitos gerais de geoprocessamento
+
+---
+
+background-image: url(img/geo_geoprocessing.jpg)
+background-size: 600px
+background-position: 50% 80%
+
+# 2.1 Geoprocessamento
+
+## Definição
+
+“...Geoprocessamento é um **conjunto de técnicas computacionais** que opera sobre **bases de dados georreferenciados** (que são registros de ocorrências), para os transformar em **informações relevantes** (que é um acréscimo de conhecimento)...” (alterado de Xavier-da-Silva (2001) p.12-13) 
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+[Xavier-da-Silva (2001)](https://leitura.com.br/geoprocessamento-e-analise-ambiental-aplicacoes-L030-9788528610765),
+[Xavier-da-Silva (2009)](http://www.ufrrj.br/lga/tiagomarino/artigos/oqueegeoprocessamento.pdf),
+[Adeus a Jorge Xavier da Silva](https://ufrj.br/2021/07/adeus-a-jorge-xavier-da-silva/)
+
+---
+
+background-image: url(img/geo_geoprocessamento.png)
+background-size: 550px
+background-position: 90% 60%
+
+# 2.1 Geoprocessamento
+
+## Aplicações
+
+### O geoprocessamento busca entender os **padrões espaciais** como o ambiente físico, fenômenos climáticos, humanos, sociais ou econômicos, a partir de dados **dados espaciais** para gerar **informações espaciais**
+
+1. Mapeamento temático (municípios, bacias hidrográficas, países, etc.)
+1. Zoneamento (ambiental, socioeconômico, turístico, etc.)
+1. Monitoramento de áreas de risco ou de proteção ambiental
+1. Avaliação e proteção de impacto ambiemtal
+1. Manejo e conservação de recursos naturais
+1. Ordenamento territorial
+1. Estruturaão de redes de energia, água ou esgoto
+1. Estudos e modelagens de expansão urbana
+1. Controle de ocupações e construções irregulares
+1. Estabelicimento e/ou adequação de transporte
+
+<br><br><br><br>
+[Fitz et al. (2008)](https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/),
+[O que é geoprocessamento - GeoAplicada](https://www.geoaplicada.com/geoinformatica-geoprocessamento-e-geotecnologias/o_que_e_geoprocessamento/)
+
+---
+
+background-image: url(img/geo_geoprocessamento_mapas.png), url(img/geo_geoprocessamento_dados.png), url(img/geo_geoprocessamento_analises.png), url(img/geo_geoprocessamento_apps.png)
+background-size: 250px, 250px, 250px, 250px
+background-position: 5% 70%, 35% 70%, 65% 70%, 95% 70%
+
+# 2.1 Geoprocessamento
+
+## Elementos
+
+1. Cartografia digital (CD)
+1. *Global Positioning System* (GPS)
+1. Sensoriamento Remoto (RS)
+1. Sistemas de Informações Geográficas (SIG)
+
+<br><br><br><br><br><br><br><br><br><br>
+[Xavier-da-Silva (2009)](http://www.ufrrj.br/lga/tiagomarino/artigos/oqueegeoprocessamento.pdf),
+[ESRI](https://www.esri.com/en-us/what-is-gis/overview)
+
+---
+
+background-image: url(img/geo_cartografia.jpg)
+background-size: 400px
+background-position: 90% 80%
+
+# 2.2 Cartografia
+
+## Conceitos
+
+## 1. Escala
+
+## 2. Sistemas de coordenadas 
+
+## 3. Datum
+
+## 4. Sistema de Referência de Coordenadas
+
+---
+
+background-image: url(img/geo_scale_bar.png)
+background-size: 500px
+background-position: 85% 70%
+
+# 2.2 Cartografia
+
+## Escala
+
+### **Relação** entre a **medida de um objeto ou lugar** representado no papel (medida gráfica) e sua **medida real**
+
+--
+
+<br>
+
+### **D (distância real)**: 250 m
+### **d (distância gráfica)**: 0.01 m (1 cm)
+
+<br>
+
+--
+
+### A **escala (E)** = 0.01 m / 250 m 
+
+### E = 1/25000 ou 1:25000
+
+---
+
+background-image: url(img/geo_coordenadas_geograficas.png)
+background-size: 600px
+background-position: 85% 60%
+
+# 2.2 Cartografia
+
+## Sistema de coordenadas 
+
+### Geográfico (graus)
+
+**1. Graus, minutos e segundos**
+- Longitude: 42°42'42" O
+- Latitude: 23°23'23" S
+
+**2. Graus decimais**
+- Longitude: -42.71167
+- Latitude: -23.38972
+
+**Conversão**: 42 + (42/60) + (42/3600) = 42.71167 <br>
+**Conversão**: 23 + (23/60) + (23/3600) = 23.38972
+
+<br>
+
+[5 Themes of Geography](https://spark.adobe.com/page/WXwQFzH7DqYAw/)
+
+---
+
+background-image: url(img/geo_projection_families01.png), url(img/geo_orange_world.png), url(img/geo_proj.png)
+background-size: 450px, 200px, 500px
+background-position: 15% 65%, 78% 30%, 90% 85%
+
+# 2.2 Cartografia
+
+## Sistema de coordenadas 
+
+### Projetado (metros)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Guia do Usuário QGIS 3.16](https://docs.qgis.org/3.16/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html),
+[Tennekes & Nowosad (in prep.)](https://r-tmap.github.io/tmap-book/index.html)
+
+---
+
+background-image: url(img/geo_utm_coords.png), url(img/geo_utm_zones.png)
+background-size: 300px, 600px
+background-position: 25% 75%, 90% 50%
+
+# 2.2 Cartografia
+
+## Sistema de coordenadas 
+
+### Projetado (metros) - Universal Transversa de Mercator (UTM)
+
+**1. Zona e metros**
+- X UTM: 706832 m E
+- Y UTM: 4344683 m N
+- Zona: 10S
+
+<br><br><br><br><br><br><br><br>
+[Guia do Usuário QGIS 3.16](https://docs.qgis.org/3.16/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html)
+
+---
+
+background-image: url(img/geo_geoide_elipsoide.png)
+background-size: 1100px
+background-position: 50% 80%
+
+# 2.2 Cartografia
+
+## Datum
+
+### Geoide, esferoide e elipsoide
+
+---
+
+background-image: url(img/geo_datum01.jpeg)
+background-size: 700px
+background-position: 70% 60%
+
+# 2.2 Cartografia
+
+## Datum
+
+### Relação do sistema de coordenadas com a superfície da Terra
+
+### **1. Geocêntricos**
+- WGS 84
+- SIRGAS 2000
+
+### **2. Topocêntricos**
+- SAD 69
+- Córrego Alegre
+
+<br>
+
+### **Conversão**: não é trivial e requer muita trigonometria
+
+---
+
+background-image: url(img/geo_datum_sad_sirgas.jpg)
+background-size: 500px
+background-position: 75% 80%
+
+# 2.2 Cartografia
+
+## Datum
+
+### Relação do sistema de coordenadas com a superfície da Terra
+
+### **1. Geocêntricos**
+- SIRGAS 2000
+
+### **2. Topocêntricos**
+- SAD 69
+
+<br><br><br>
+
+### **Diferença**: cerca de 65 metros
+
+---
+
+class: inverse, center, middle
+
+# Recapitulando: o Sistema de Referência de Coordenadas (*Coordinate Reference System* - CRS) é composto por:
+<br><br><br>
+# 1. Sistema de coordenadas (geográfico ou projetado)
+<br><br>
+# 2. Datum (relação do sistema de coordenadas com a superfície da Terra)
+
+---
+
+background-image: url(img/crs.png)
+background-size: 800px
+background-position: 40% 75%
+
+# 4.1 Dados geoespaciais
+
+### Sistema de Referência de Coordenadas (*Coordinate Reference System* - CRS)
+
+### Datum + Sistema de Coordenadas (geográfico ou projetado)
+
+---
+
+background-image: url(img/geo_projection_reprojection.png)
+background-size: 500px
+background-position: 85% 60%
+
+# 2.2 Cartografia
+
+## Sistemas de referências de coordenadas (CRS)
+
+<br>
+
+**Sistema de Referência de Coordenadas - Geográfico**
+- WGS84 23°23’23”S 42°42’42”O
+- SIRGAS2000 23°23’23”S 42°42’42”O; 
+- WGS 84 -23.38972, -42.71167
+
+<br>
+
+**Sistema de Referência de Coordenadas - Projetado (UTM)**
+- WGS84 23K 733876E, 7411482S
+- SIRGAS2000 23K 733876E, 7411482S
+
+---
+
+class: inverse, center, middle
+
+# Para facilitar nosso trabalho, existem códigos numéricos para cada CRS
+
+---
+
+background-image: url(img/geo_epsg.png)
+background-size: 1000px
+background-position: 50% 80%
+
+# 2.2 Cartografia
+
+## EPSG (*European Petroleum Survey Group*)
+
+### Possui códigos numéricos para quase todos os CRSs
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+[EPSG](https://epsg.io/)
+
+---
+
+background-image: url(img/geo_epsg.png)
+background-size: 500px
+background-position: 90% 85%
+
+# 2.2 Cartografia
+
+## EPSG (*European Petroleum Survey Group*)
+
+<br>
+
+### EPSG: 4326 [WGS84 Geográfico](https://epsg.io/4326)
+
+### EPSG: 4674 [SIRGAS2000 Geográfico](https://epsg.io/4674)
+
+### EPSG: 32723 [WGS84 UTM23S](https://epsg.io/32723)
+
+### EPSG: 31983 [SIRGAS2000 UTM23S](https://epsg.io/31983)
+
+<br><br><br><br>
+
+[EPSG](https://epsg.io/)
+
+---
+
+background-image: url(img/geo_gps.jpg), url(img/geo_gps.png)
+background-size: 400px, 700px
+background-position: 5% 80%, 90% 80%
+
+# 2.3 *Global Positioning System* (GPS)
+
+## Indica sua localização no planeta
+
+### 3 satélites - localização
+
+### 4 satélites - altitude
+
+---
+
+background-image: url(img/geo_kml_gpx.png)
+background-size: 250px
+background-position: 50% 75%
+
+# 2.3 *Global Positioning System* (GPS)
+
+## Formatos
+
+**1. Formato de saída (.gpx)**: formato XML leve para transferência de dados de GPS (waypoints, rotas e trilhas), usado em aparelhos, como Garmin, dentre outros
+
+**2. Formato do google earth (.kml ou .kmz)**: linguagem XML focada em visualização geográfica, incluindo anotações de mapas e imagens, usado para exibir dados geográficos no Google Earth e/ou Google Maps
+
+
+.footnote[
+[**Conversão**](https://kml2gpx.com/)
+]
+
+---
+
+background-image: url(img/geo_gps_aparelho.jpg), url(img/geo_gps_way_rout_track.png)
+background-size: 500px, 280px
+background-position: 20% 90%, 85% 90%
+
+# 2.3 *Global Positioning System* (GPS)
+
+## Tipos de dados em GPSs
+
+**1. Waypoints**: **ponto de interesse**, contendo longitude e latitude, além de informações como elevação, nome, descrição, etc.
+
+**2. Rotas**: sequência de waypoints, representa uma **sugestão da trajetória** entre os waypoints
+
+**3. Trilhas**: sequência de trackpoints, representa a **trajetória percorrida**
+
+---
+
+background-image: url(img/geo_rs_landsat8.png), url(img/geo_geoprocessamento_sr.png)
+background-size: 300px, 500px
+background-position: 75% 10%, 75% 100%
+
+# 2.4 Sensoriamento Remoto
+
+## Conceitos
+
+### 1. Sistemas sensores
+### 2. Bandas
+### 3. Funcionamento
+### 4. Satélites
+### 5. Aplicações
+
+<br><br><br>
+[ESRI](https://www.esri.com/en-us/what-is-gis/overview)
+
+---
+
+background-image: url(img/geo_sr_sensores.png)
+background-size: 900px
+background-position: 50% 60%
+
+# 2.4 Sensoriamento Remoto
+
+## 1. Sistemas sensores
+
+### Passivo e ativo
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Edusat](https://www.edu-sat.com/?lang=en)
+
+---
+
+background-image: url(img/geo_sr_espectro.png), url(img/geo_sr_bandas.png)
+background-size: 550px, 500px
+background-position: 10% 70%, 90% 80%
+
+# 2.4 Sensoriamento Remoto
+
+## 2. Bandas
+
+### Espectro eletromagnético e bandas
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Edusat](https://www.edu-sat.com/?lang=en)
+
+---
+
+background-image: url(img/geo_sr_resposta_espectral.png)
+background-size: 400px
+background-position: 50% 80%
+
+# 2.4 Sensoriamento Remoto
+
+## 2. Bandas
+
+### Respostas espectrais
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Edusat](https://www.edu-sat.com/?lang=en)
+
+---
+
+background-image: url(img/geo_rs_processamento_imagens.png)
+background-size: 850px
+background-position: 50% 50%
+
+# 2.4 Sensoriamento Remoto
+
+## 3. Funcionamento
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Zanotta et al. 2019](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/)
+
+---
+
+background-image: url(img/geo_rs_satelites01.png)
+background-size: 600px
+background-position: 85% 40%
+
+# 2.4 Sensoriamento Remoto
+
+## 4. Satélites
+
+### [Landsat (1-9)](https://landsat.gsfc.nasa.gov/)
+
+### [Sentinel (1-5)](https://sentinels.copernicus.eu/web/sentinel/home)
+
+### [MODIS](https://modis.gsfc.nasa.gov/)
+
+### [CHIRPS](https://chc.ucsb.edu/data/chirps)
+
+### [CBERS (1-4)](http://www.cbers.inpe.br/)
+
+### [AMAZONIA (1)](http://www.inpe.br/amazonia1/)
+
+<br>
+
+https://webapps.itc.utwente.nl/sensor/default.aspx?view=searchsat
+
+---
+
+background-image: url(img/geo_sr_mapbiomas_queimadas.jpg), url(img/geo_rs_animapeq.gif)
+background-size: 500px, 500px
+background-position: 11% 87%, 85% 55%
+
+# 2.4 Sensoriamento Remoto
+
+## 5. Aplicações
+
+- Monitoramento de desmatamentos e queimadas
+- Mapeamentos do uso e cobertura da terra
+- Características do solo e da vegetação (agricultura)
+- Meteorologia e climatologia (temperatura e precipitação)
+- Relevo (topografia, declividade, curvas de nível)
+- Hidrografia (rios e limites de bacias)
+
+---
+
+background-image: url(img/qgis_logo.png), url(img/arcgis_logo.png), url(img/grassgis_logo.png), url(img/r_logo.svg), url(img/earth_engine_logo.png), url(img/gvsig_logo.svg)
+background-size: 350px, 250px, 250px, 250px, 230px, 230px
+background-position: 5% 25%, 50% 25%, 10% 85%, 50% 85%, 90% 85%, 90% 30%
+
+# 2.5 Sistema de Informação Geográfica
+
+## Hardware + Softwares (APPs)
+
+---
+
+background-image: url(img/geo_sig.png), url(img/geo_projection_families02.jpg), url(img/geo_rs_processamento_imagens.png), url(img/qgis_logo.png)
+background-size: 800px, 200px, 400px, 300px
+background-position: 50% 20%, 15% 80%, 50% 80%, 95% 75%
+
+# 2.5 Sistema de Informação Geográfica
+
+## Integração e manipulação das informações espaciais
+
+---
+
+background-image: url(img/general_sig.jpg), url(img/geo_data.jpg)
+background-size: 300px, 480px
+background-position: 32% 70%, 80% 70%
+
+# 2.6 Dados geoespaciais
+
+## Tipos de dados - Vetor e Raster
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Campbell & Shin (2012)](https://2012books.lardbucket.org/books/geographic-information-system-basics/index.html),
+<br>
+[ESRI (2019)](https://learn.arcgis.com/en/arcgis-book/)
+
+---
+
+background-image: url(img/geo_layers.gif)
+background-size: 550px
+background-position: 50% 65%
+
+# 2.6 Dados geoespaciais
+
+## Tipos de dados - Manipulados atrás de camadas (*layers*)
+
+---
+
+background-image: url(img/geo_vetor_dados.png), url(img/geo_vector_types.jpg)
+background-size: 650px, 450px
+background-position: 8% 60%, 95% 65%
+
+# 2.7 Dados vetoriais
+
+## Ponto, linha e polígono
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1),
+[Silva et al. (in prep.)](https://paternogbc.github.io/livro_aer/)
+
+---
+
+background-image: url(img/geo_vetor.png)
+background-size: 400px
+background-position: 50% 70%
+
+# 2.7 Dados vetoriais
+
+## Tabela de atributos
+
+### Relação entre as geometrias e suas características
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Tennekes & Nowosad (in prep.)](https://r-tmap.github.io/tmap-book/index.html)
+
+---
+
+background-image: url(img/geo_shp_logo.png), url(img/geo_shp_formats.png)
+background-size: 150px, 650px
+background-position: 95% 10%, 50% 80%
+
+# 2.7 Dados vetoriais
+
+## Formato de arquivos vetoriais
+
+### Shapefile
+
+#### **.shp**: contém as informações da feição (desenho)
+#### **.dbf**: tabela que contém as informações (colunas) sobre cada feição (linhas)
+#### **.shx**: arquivo de índice que une o .shp ao .dbf
+#### **.prj**: contém as informações do sistema de referências de coordenadas
+
+<br><br><br><br><br><br><br>
+[ESRI (1998)](https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf),
+[GIS Resources (2014)](https://gisresources.com/understanding-shapefile-shp-file-format/)
+
+---
+
+background-image: url(img/geo_raster.png), url(img/geo_raster_cont_cat.png)
+background-size: 400px, 600px
+background-position: 10% 65%, 85% 65%
+
+# 2.8 Dados matriciais
+
+## Gride ou raster
+
+### Matriz de valores - contínuos ou categóricos
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[National Ecological Observatory Network (NEON)](https://www.neonscience.org/resources/learning-hub/tutorials/dc-raster-data-r),
+[Lovelace et al. (2020)](https://geocompr.robinlovelace.net/)
+
+---
+
+background-image: url(img/geo_raster.png), url(img/geo_raster_extent.png), url(img/geo_raster_resolution.png), url(img/geo_raster_resolution_diff.png)
+background-size: 400px, 250px, 350px, 600px
+background-position: 10% 65%, 55% 35%, 95% 39%, 85% 90%
+
+# 2.8 Dados matriciais
+
+## Gride ou raster
+
+### Propriedades - Extensão e resolução
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[National Ecological Observatory Network (NEON)](https://www.neonscience.org/resources/learning-hub/tutorials/dc-raster-data-r)
+
+---
+
+background-image: url(img/geo_geotiff_logo.png)
+background-size: 600px
+background-position: 50% 75%
+
+# 2.8 Dados matriciais
+
+## Formato de arquivos matriciais
+
+## GeoTiff
+
+### **.tif**: arquivo matricial georreferenciamento com informações de georreferenciamento
+
+<br><br><br><br><br><br><br><br><br>
+[LuminFire Developers](https://luminfire.com/technologies/geotiff/),
+[GeoTIFF](https://trac.osgeo.org/geotiff)
+
+---
+
+background-image: url(img/geo_data_convert.png), url(img/geo_data_convert.jpg)
+background-size: 400px, 550px
+background-position: 15% 85%, 85% 80%
+
+# 2.9 Conversão de dados geoespaciais (vetor-raster)
+
+## Conversão entre dados vetoriais e matriciais
+
+### É possível converter os dados vetoriais em matriciais e vice-versa
+
+---
+
+background-image: url(img/geo_geopackage.png), url(img/geodatabase.webp)
+background-size: 500px, 500px
+background-position: 10% 80%, 90% 80%
+
+# 2.10 Bancos de dados geoespaciais
+
+## Armazena diferentes tipos de dados em um único arquivo ou formato
+
+### Geopackage (Livre - QGIS) e Geodatabase (ArcGIS)
+
+#### **.gpkg**: armazena dados vetoriais, matriciais, metadados, dados alfanuméricos, entre outros aspectos internos do banco
+
+#### **.gdb**: objetos espaciais e não espaciais criados pelo ArcGIS, armazenando várias classes de recursos e topologia
+
+---
+
+background-image: url(img/geo_vector_types.jpg)
+background-size: 400px
+background-position: 95% 50%
+
+# 2.11 Principais fontes de dados geoespaciais
+
+## Vetoriais
+
+- **[IBGE](https://www.ibge.gov.br/geociencias/downloads-geociencias.html)**: limites territoriais e censitários do Brasil
+- **[FBDS](http://geo.fbds.org.br)**: uso da terra, APP e hidrografia - Mata Atlântica e Cerrado
+- **[GeoBank](http://geosgb.cprm.gov.br/)**: dados geológicos do Brasil
+- **[Pastagem.org](http://maps.lapig.iesa.ufg.br)**: dados de pastagens e gado para o Brasil
+- **[CanaSat](http://www.dsr.inpe.br/laf/canasat/)**: dados de cana-de-açúcar para o Brasil
+- **[CSR Maps](http://maps.csr.ufmg.br)**: diversos dados vetoriais para o Brasil
+- **[OpenStreetMap Data Extracts](http://download.geofabrik.de/index.html)**: dados do OpenStreetMap
+- **[Ecoregions](https://ecoregions2017.appspot.com/)**: dados de biorregiões e biomas do mundo  
+- **[GADM](https://gadm.org/)**: limites de áreas administrativas do mundo
+- **[Natural Earth](https://www.naturalearthdata.com/):** diversos limites para o mundo
+- **[Protected Planet](https://www.protectedplanet.net/en):** áreas protegidas para o mundo
+- **[UN Biodiversity Lab](https://www.unbiodiversitylab.org/)**: Diversas bases de dados para o mundo
+- **[HydroSHEDS](https://www.hydrosheds.org/)**: informações hidrológicas do mundo
+- **[Global Roads Inventory Project (GRIP)](https://www.globio.info/download-grip-dataset)**: dados de estradas do mundo todo 
+
+---
+
+background-image: url(img/geo_raster.jpg)
+background-size: 400px
+background-position: 95% 85%
+
+# 2.11 Principais fontes de dados geoespaciais
+
+## Matriciais
+
+- **[MapBiomas](https://mapbiomas.org)**: uso e cobertura da terra para o Brasil, diversos anos
+- **[Bahlu](ftp://madeira.dea.ufv.br/bdados/bhalu/)**: Distribuições históricas de terras agrícolas e pastagens para todo o Brasil de 1940 a 2012
+- **[USGS](https://www.usgs.gov)**: dados de diversos satélites livres para o mundo
+- **[SRTM](http://srtm.csi.cgiar.org/)**: dados de elevação para o mundo
+- **[Global Forest Watch](https://www.globalforestwatch.org/)**: dados de uso e cobertura para todo o planeta
+- **[Geoservice Maps](https://geoservice.dlr.de/web/maps)**: dados de elevação e florestas para o mundo
+- **[GlobCover](http://due.esrin.esa.int/page_globcover.php)**: dados de uso e cobertura da terra para todo o planeta
+- **[Global Human Footprint](https://wcshumanfootprint.org/)**: dados de pegada ecológica para o mundo
+- **[Land-Use Harmonization (LUH2)](https://luh.umd.edu/)**: dados atuais e previsões de uso da terra
+- **[SoilGrids](https://soilgrids.org/)**: dados de solo para o mundo                         
+- **[WorldClim](https://www.worldclim.org/)**: dados climáticos para o mundo
+- **[CHELSA](https://chelsa-climate.org/)**: dados climáticos para o mundo
+- **[EarthEnv](https://www.earthenv.org/)**: dados de cobertura da terra, nuvens, relevo e hidrografia
+- **[MARSPEC](http://www.marspec.org)**: dados de condições do oceano para o mundo
+- **[Bio-ORACLE](https://www.bio-oracle.org/)**: dados de condições do oceano para o mundo    
+
+---
+
+background-image: url(img/cover_geoprocessamento.jpg)
+background-size: 250px
+background-position: 50% 65%
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Livos
+
+### **Geoprocessamento sem complicação (2008)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/
+
+---
+
+background-image: url(img/cover_qgis_abc.jpg),url(img/cover_qgis_geoprocessamento.jpg)
+background-size: 250px,250px
+background-position: 8% 65%, 58% 65%
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Livos
+
+### **QGIS ABC ao XYZ (2016)  |  QGIS e geoprocessamento na prática (2017)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+https://ecojustus.com.br/livros
+
+---
+
+background-image: url(img/cover_explorando_qgis.png)
+background-size: 280px
+background-position: 50% 65%
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Livos
+
+### **Explorando o QGIS 3.X (2020)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+https://github.com/anadallacorte/LIVROQGIS2020
+
+---
+
+background-image: url(img/cover_remote_sensing_and_gis.jpg)
+background-size: 230px
+background-position: 50% 65%
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Livros
+
+### **Remote Sensing and GIS for Ecologists (2016)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+http://book.ecosens.org/rsebook/
+
+---
+
+background-image: url(img/cover_introduction_spatial_data_analysis.jpg)
+background-size: 230px
+background-position: 50% 65%
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Livros
+
+### **An Introduction to Spatial Data Analysis (2020)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+http://book.ecosens.org/gsbook/
+
+---
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Cursos
+
+### SIG para estudos de biodiversidade e conservação (31 vídeos)
+
+<p align="center">
+<iframe width="60%" height="400" align="center" src="https://www.youtube.com/embed/Ilc2dQQNCbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Cursos
+
+### Aulas de SIG com Software Livre (20 vídeos)
+
+<p align="center">
+<iframe width="60%" height="400" align="center" src="https://www.youtube.com/embed/EyT5zhypBtc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
+# 3. Instalação, interface e projeto do QGIS
+
+---
+
+background-image: url(img/qgis_instalar01.png)
+background-size: 900px
+background-position: 50% 60%
+
+# 3.1 Instalação do QGIS
+
+## LTR (*Long Term Release* - estável) e *Latest Release* (instável)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[QGIS](https://www.qgis.org/pt_BR/site/)
+
+---
+
+background-image: url(img/qgis_instalar02.png)
+background-size: 750px
+background-position: 50% 50%
+
+# 3.1 Instalação do QGIS
+
+## OSGeo4W (vários softwares) e QGIS (apenas o QGIS)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[QGIS Download](https://www.qgis.org/pt_BR/site/forusers/download.html)
+
+---
+
+background-image: url(img/qgis_interface01.png), url(img/geo_qgis_logo.png)
+background-size: 800px, 90px
+background-position: 50% 70%, 95% 5%
+
+# 3.2 Interface do QGIS
+
+## Vamos abrir o QGIS clicando no ícone
+
+---
+
+background-image: url(img/qgis_interface02.png)
+background-size: 550px
+background-position: 50% 75%
+
+# 3.2 Interface do QGIS
+
+## Vamos resetar a interface para o *Padrão Inicial*
+
+> Configurações > Opções... > Sistema > Redefine a interface dos usuário para o padrão inicial (é necessário reiniciar)
+
+---
+
+background-image: url(img/qgis_interface03.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 3.2 Interface do QGIS
+
+## Ativar todas as Barras de Ferramenta
+
+> Cliquem com o direito e tiquem todas as **Barras de Ferramenta**
+
+---
+
+background-image: url(img/qgis_interface04.png), url(img/qgis_toolbox.svg) 
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 3.2 Interface do QGIS
+
+## Ativar a Caixa de Ferramentas
+
+> Cliquem na **Caixa de Ferramentas** (Engrenagem)
+
+---
+
+background-image: url(img/qgis_interface05.png)
+background-size: 800px
+background-position: 50% 70%
+
+# 3.2 Interface do QGIS
+
+## Interface final
+
+---
+
+background-image: url(img/qgis_interface06.png)
+background-size: 800px
+background-position: 50% 70%
+
+# 3.2 Interface do QGIS
+
+## Interface final - Descrição
+
+---
+
+background-image: url(img/qgis_plugin01.png)
+background-size: 700px
+background-position: 50% 60%
+
+# 3.3 Plugins do QGIS
+
+## Plugins - Pequenos programas adicionais
+
+> Plugins > Manage and Install Plugins
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+https://plugins.qgis.org/plugins/
+
+---
+
+background-image: url(img/qgis_plugin02.png), url(img/qgis_plugin_qpstools.svg)
+background-size: 700px, 100px
+background-position: 50% 60%, 95% 10%
+
+# 3.3 Plugins do QGIS
+
+## Instalar
+
+> GPS Tools (Ferramenta de GPS)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+https://docs.qgis.org/3.16/en/docs/user_manual/working_with_gps/plugins_gps.html
+
+---
+
+background-image: url(img/qgis_plugin03.png), url(img/qgis_plugin_mapservices.svg)
+background-size: 700px, 100px
+background-position: 50% 60%, 95% 10%
+
+# 3.3 Plugins do QGIS
+
+## Instalar
+
+> QuickMapServices
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+https://plugins.qgis.org/plugins/quick_map_services/
+
+---
+
+background-image: url(img/qgis_plugin03.png), url(img/qgis_plugin_osm.png)
+background-size: 700px, 100px
+background-position: 50% 60%, 95% 10%
+
+# 3.3 Plugins do QGIS
+
+## Instalar
+
+> OSMDownloader
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+https://plugins.qgis.org/plugins/osmdownloader/
+
+---
+
+background-image: url(img/qgis_plugin04.png), url(img/qgis_plugin_mapswipe.png)
+background-size: 700px, 100px
+background-position: 50% 60%, 95% 10%
+
+# 3.3 Plugins do QGIS
+
+## Instalar
+
+> MapSwipe Tool
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+https://plugins.qgis.org/plugins/mapswipetool_plugin/
+
+---
+
+background-image: url(img/qgis_plugin05.png), url(img/qgis_plugin_mapbiomas.svg)
+background-size: 700px, 100px
+background-position: 50% 60%, 95% 10%
+
+# 3.3 Plugins do QGIS
+
+## Instalar
+
+> MapBiomas Collection ([Coleção do MapBiomas](https://mapbiomas.org/))
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+https://plugins.qgis.org/plugins/mapbiomascollection/
+
+---
+
+background-image: url(img/qgis_plugin06.png), url(img/qgis_plugin_semi.png)
+background-size: 700px, 100px
+background-position: 50% 60%, 95% 10%
+
+# 3.3 Plugins do QGIS
+
+## Instalar
+
+> Semi-Automatic Classification Plugin for QGIS
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+https://fromgistors.blogspot.com/p/semi-automatic-classification-plugin.html
+
+---
+
+# 3.3 Plugins do QGIS
+
+## Principais plugins do QGIS para turbinar seus projetos em SIG
+
+<p align="center">
+<iframe width="60%" height="400" align="center" src="https://www.youtube.com/embed/OymQsu_ATW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+# 3.3 Plugins do QGIS
+
+## Ten QGIS Plugins in 10 minutes
+
+<p align="center">
+<iframe width="60%" height="400" align="center" src="https://www.youtube.com/embed/qmNKs8-OQB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+background-image: url(img/qgis_projeto01.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 3.4 Projeto do QGIS
+
+## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
+
+> Por default o CRS do projeto é WGS84 / Geográfico (EPSG: 4326)
+
+---
+
+background-image: url(img/qgis_projeto02.png)
+background-size: 500px
+background-position: 50% 85%
+
+# 3.4 Projeto do QGIS
+
+## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
+
+> Project > Properties > CRS > SIRGAS 2000 / UTM 23 S  (EPSG: 31983)
+
+---
+
+background-image: url(img/qgis_projeto03.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 3.4 Projeto do QGIS
+
+## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
+
+---
+
+background-image: url(img/qgis_projeto04.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 3.4 Projeto do QGIS
+
+## Salvar o projeto
+
+> Project > Save
+
+---
+
+# 3.4 Projeto do QGIS
+
+## Configuração do setup do QGIS
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/p9XjDdRfDQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
+# 4 Importação, criação e edição de dados vetoriais
+
+---
+
+background-image: url(img/geo_vector_data.png), url(img/geo_vector_types.jpg)
+background-size: 500px, 500px
+background-position: 15% 80%, 90% 70%
+
+# 4 Importação, criação e edição de dados vetoriais
+
+## Ponto, linha e polígono
+
+---
+
+background-image: url(img/qgis_vetor01.png), url(img/qgis_add_vector.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.1 Importar dados vetoriais
+
+## Arquivos vetoriais
+
+> Layer > Add Layer > Add Vector Layer...
+
+---
+
+background-image: url(img/qgis_add_vector.svg), url(img/geo_shp_logo.png), url(img/geo_shp_formats.png)
+background-size: 100px, 150px, 650px
+background-position: 95% 10%, 98% 50%, 50% 90%
+
+# 4.1 Importar dados vetoriais
+
+## Arquivos vetoriais
+
+<br>
+
+## IMPORTANTE!
+
+## Sempre importaremos o arquivo com a **extensão (.shp)**
+
+---
+
+background-image: url(img/qgis_vetor02.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 4.2 Propriedades de dados vetoriais
+
+## Acessar propriedades
+
+> Click botão direito sobre a camada
+
+---
+
+background-image: url(img/qgis_vetor03.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 4.2 Propriedades de dados vetoriais
+
+## Propriedades
+
+> Click botão direito sobre a camada > Properties...
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 55% 80%
+
+# 4.2 Propriedades de dados vetoriais
+
+## Propriedades
+
+- Information
+- Source
+- Symbology
+- Labels
+
+---
+
+background-image: url(img/qgis_vetor05.png), url(img/qgis_vetor_atributos.svg)
+background-size: 800px, 100px
+background-position: 50% 80%, 95% 10%
+
+# 4.1 Tabela de atributos
+
+## Acessar tabela de atributos
+
+> Click botão direito sobre a camada > Open Attribute Table
+
+---
+
+background-image: url(img/qgis_vetor06.png), url(img/qgis_vetor_atributos.svg)
+background-size: 800px, 100px
+background-position: 50% 80%, 95% 10%
+
+# 4.1 Tabela de atributos
+
+## Dados tabulares
+
+---
+
+background-image: url(img/qgis_vetor06.png), url(img/qgis_vetor_atributos.svg)
+background-size: 800px, 100px
+background-position: 50% 80%, 95% 10%
+
+# 4.1 Tabela de atributos
+
+## Editar tabela de atributos
+
+---
+
+background-image: url(img/qgis_vetor07.png), url(img/qgis_vetor_calculate_field.svg)
+background-size: 800px, 100px
+background-position: 50% 80%, 95% 10%
+
+# 4.1 Tabela de atributos
+
+## Calculadora de campo
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 50% 80%
+
+# 4.2 Propriedades de dados vetoriais
+
+## Symbology
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 50% 80%
+
+# 4.4 Criar dados vetoriais
+
+## Importar dados tabulares
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 50% 80%
+
+# 4.4 Criar dados vetoriais
+
+## Criar um arquivo vetorial
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 50% 80%
+
+# 4.4 Editar dados vetoriais
+
+## 
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 50% 80%
+
+# 4.4 Converter CRS de dados vetoriais
+
+## 
+
+---
+
+background-image: url(img/qgis_vetor04.png)
+background-size: 480px
+background-position: 50% 80%
+
+# 4.4 Exportar dados vetoriais
+
+## 
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
+# 5 Importação, criação e edição de dados matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.1 Importar dados matriciais
+
+## Arquivos matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.1 Importar dados matriciais
+
+## Arquivos matriciais
+
+> Layer > Add Layer > Add Raster Layer...
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.1 Importar dados matriciais
+
+## Importar dados matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.2 Propriedades de dados matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.3 Editar dados matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.4 Arquivos matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.5 Interação raster-vetor
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.6 Conversão raster-vetor
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.1 Índices espectrais (NDVI)
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.7 Converter CRS de dados matriciais
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.8 Exportar dados matriciais
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
+# 6 Composição de mapas
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_map_layout_new.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 6.1 Composição de mapas
+
+## Layout manager
+
+> Projeto > New Print Layout
+
+---
+
+background-image: url(img/qgis_raster01.png), url(img/qgis_map_layout_manager.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 6.1 Composição de mapas
+
+## Layout manager
+
+> Project > Layout Manager
+
+---
+
+background-image: url(img/geo_map_elements.png)
+background-size: 800px
+background-position: 95% 60%
+
+# 6.2 Principais elementos de um mapa
+
+## Elementos
+
+<br>
+
+1. Mapa principal
+1. Mapa secundário
+1. Título
+1. Legenda
+1. Barra de escala
+1. Indicador de orientação (Norte)
+1. Gride de coordenadas
+1. Descrição do CRS
+1. Fonte dos dados
+1. Além de outros elementos auxiliares
+
+---
+
+background-image: url(img/qgis_map01.png), url(img/qgis_map_save_image.svg), url(img/qgis_map_save_pdf.svg), url(img/qgis_map_save_svg.svg)
+background-size: 800px, 100px, 100px, 100px
+background-position: 50% 85%, 95% 10%, 95% 35%, 95% 60%
+
+# 6.3 Exportar mapa
+
+## Exportar
+
+---
+
+class: clear, middle
+background-image: url(img/gif_frog.gif),url(img/gif_frogs.gif), url(img/package_xaringan.png)
+background-size: 250px, 500px, 130px
+background-position: 35% 50%, 90% 55%, 5% 86%
+
+## Maurício Vancine
+
+<br><br>
+
+Contatos:
+
+`r icons::icon_style(icons::fontawesome(name = "envelope", style = "solid"), fill = "#23373b")` [mauricio.vancine@gmail.com]()  
+`r icons::icon_style(icons::fontawesome("twitter"), fill = "#23373b")` [@mauriciovancine](https://twitter.com/mauriciovancine)  
+`r icons::icon_style(icons::fontawesome(name = "github"), fill = "#23373b")` [mauriciovancine](https://github.com/mauriciovancine)
+`r icons::icon_style(icons::fontawesome(name = "link", style = "solid"), fill = "#23373b")` [mauriciovancine.github.io](https://mauriciovancine.github.io)
+
+<br><br><br><br><br>
+
+Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [Metropolis](https://github.com/pat-s/xaringan-metropolis). Animação dos sapos por [@probzz](https://twitter.com/probzz/status/1367613720294170627).
