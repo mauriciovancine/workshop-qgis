@@ -181,7 +181,7 @@ background-position: 85% 60%
 
 1. Instalação do QGIS 
 1. Interface do QGIS
-1. Plugins do QGIS
+1. Complementos do QGIS
 1. Projeto do QGIS
 
 <br><br><br><br><br><br><br><br>
@@ -205,7 +205,7 @@ background-position: 85% 80%
 1. Criar dados vetoriais
 1. Editar dados vetoriais
 1. Operações de dados vetoriais
-1. Converter CRS de dados vetoriais
+1. Converter SRC de dados vetoriais
 1. Exportar dados vetoriais
 
 <br><br><br><br>
@@ -228,7 +228,7 @@ background-position: 85% 75%
 1. Editar dados matriciais
 1. Interação raster-vetor
 1. Conversão raster-vetor
-1. Converter CRS de dados matriciais
+1. Converter SRC de dados matriciais
 1. Exportar dados matriciais
 
 <br><br><br><br><br>
@@ -255,7 +255,7 @@ background-position: 85% 70%
 1. Barra de escala
 1. Indicador de orientação (Norte)
 1. Gride de coordenadas
-1. Descrição do CRS
+1. Descrição do SRC
 1. Fonte dos dados
 1. Exportar mapa
 
@@ -388,13 +388,13 @@ background-position: 90% 80%
 
 ## Conceitos
 
-## 1. Escala
+### 1. Escala
 
-## 2. Sistemas de coordenadas 
+### 2. Sistemas de coordenadas 
 
-## 3. Datum
+### 3. Datum
 
-## 4. Sistema de Referência de Coordenadas
+### 4. Sistema de Referência de Coordenadas (SRC)
 
 ---
 
@@ -470,7 +470,7 @@ background-position: 15% 65%, 78% 30%, 90% 85%
 
 background-image: url(img/geo_utm_coords.png), url(img/geo_utm_zones.png)
 background-size: 300px, 600px
-background-position: 25% 75%, 90% 50%
+background-position: 25% 75%, 90% 70%
 
 # 2.2 Cartografia
 
@@ -502,7 +502,7 @@ background-position: 50% 80%
 
 background-image: url(img/geo_datum01.jpeg)
 background-size: 700px
-background-position: 70% 60%
+background-position: 75% 60%
 
 # 2.2 Cartografia
 
@@ -511,11 +511,11 @@ background-position: 70% 60%
 ### Relação do sistema de coordenadas com a superfície da Terra
 
 ### **1. Geocêntricos**
-- WGS 84
-- SIRGAS 2000
+- WGS84
+- SIRGAS2000
 
 ### **2. Topocêntricos**
-- SAD 69
+- SAD69
 - Córrego Alegre
 
 <br>
@@ -535,10 +535,10 @@ background-position: 75% 80%
 ### Relação do sistema de coordenadas com a superfície da Terra
 
 ### **1. Geocêntricos**
-- SIRGAS 2000
+- SIRGAS2000
 
 ### **2. Topocêntricos**
-- SAD 69
+- SAD69
 
 <br><br><br>
 
@@ -548,7 +548,7 @@ background-position: 75% 80%
 
 class: inverse, center, middle
 
-# Recapitulando: o Sistema de Referência de Coordenadas (*Coordinate Reference System* - CRS) é composto por:
+# Recapitulando: o Sistema de Referência de Coordenadas (SRC) é composto por:
 <br><br><br>
 # 1. Sistema de coordenadas (geográfico ou projetado)
 <br><br>
@@ -556,13 +556,13 @@ class: inverse, center, middle
 
 ---
 
-background-image: url(img/crs.png)
+background-image: url(img/SRC.png)
 background-size: 800px
 background-position: 40% 75%
 
 # 4.1 Dados geoespaciais
 
-### Sistema de Referência de Coordenadas (*Coordinate Reference System* - CRS)
+### Sistema de Referência de Coordenadas (SRC)
 
 ### Datum + Sistema de Coordenadas (geográfico ou projetado)
 
@@ -574,7 +574,7 @@ background-position: 85% 60%
 
 # 2.2 Cartografia
 
-## Sistemas de referências de coordenadas (CRS)
+## Sistemas de referências de coordenadas (SRC)
 
 <br>
 
@@ -593,7 +593,7 @@ background-position: 85% 60%
 
 class: inverse, center, middle
 
-# Para facilitar nosso trabalho, existem códigos numéricos para cada CRS
+# Para facilitar nosso trabalho, existem códigos numéricos para cada SRC
 
 ---
 
@@ -605,7 +605,7 @@ background-position: 50% 80%
 
 ## EPSG (*European Petroleum Survey Group*)
 
-### Possui códigos numéricos para quase todos os CRSs
+### Possui códigos numéricos para quase todos os SRCs
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -651,6 +651,22 @@ background-position: 5% 80%, 90% 80%
 
 ---
 
+background-image: url(img/geo_gps_aparelho.jpg), url(img/geo_gps_way_rout_track.png)
+background-size: 500px, 280px
+background-position: 20% 90%, 85% 90%
+
+# 2.3 *Global Positioning System* (GPS)
+
+## Tipos de dados em GPSs
+
+**1. Waypoints**: **ponto de interesse**, contendo longitude e latitude, além de informações como elevação, nome, descrição, etc.
+
+**2. Rotas**: sequência de waypoints, representa uma **sugestão da trajetória** entre os waypoints
+
+**3. Trilhas**: sequência de trackpoints, representa a **trajetória percorrida**
+
+---
+
 background-image: url(img/geo_kml_gpx.png)
 background-size: 250px
 background-position: 50% 75%
@@ -667,22 +683,6 @@ background-position: 50% 75%
 .footnote[
 [**Conversão**](https://kml2gpx.com/)
 ]
-
----
-
-background-image: url(img/geo_gps_aparelho.jpg), url(img/geo_gps_way_rout_track.png)
-background-size: 500px, 280px
-background-position: 20% 90%, 85% 90%
-
-# 2.3 *Global Positioning System* (GPS)
-
-## Tipos de dados em GPSs
-
-**1. Waypoints**: **ponto de interesse**, contendo longitude e latitude, além de informações como elevação, nome, descrição, etc.
-
-**2. Rotas**: sequência de waypoints, representa uma **sugestão da trajetória** entre os waypoints
-
-**3. Trilhas**: sequência de trackpoints, representa a **trajetória percorrida**
 
 ---
 
@@ -736,8 +736,8 @@ background-position: 10% 70%, 90% 80%
 ---
 
 background-image: url(img/geo_sr_resposta_espectral.png)
-background-size: 400px
-background-position: 50% 80%
+background-size: 450px
+background-position: 50% 85%
 
 # 2.4 Sensoriamento Remoto
 
@@ -847,7 +847,7 @@ background-position: 50% 65%
 
 # 2.6 Dados geoespaciais
 
-## Tipos de dados - Manipulados atrás de camadas (*layers*)
+## Dados representados por **camadas** (*layers*)
 
 ---
 
@@ -970,7 +970,7 @@ background-position: 10% 80%, 90% 80%
 
 ## Armazena diferentes tipos de dados em um único arquivo ou formato
 
-### Geopackage (Livre - QGIS) e Geodatabase (ArcGIS)
+### Geopackage (Livre - QGIS) e Geodatabase (Fechado - ArcGIS)
 
 #### **.gpkg**: armazena dados vetoriais, matriciais, metadados, dados alfanuméricos, entre outros aspectos internos do banco
 
@@ -1239,128 +1239,128 @@ background-position: 50% 70%
 
 ---
 
-background-image: url(img/qgis_plugin01.png)
-background-size: 700px
-background-position: 50% 60%
+background-image: url(img/qgis_plugins01.png)
+background-size: 600px
+background-position: 50% 70%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Plugins - Pequenos programas adicionais
+## Complementos (*Plugins*) - Pequenos programas adicionais
 
-> Plugins > Manage and Install Plugins
+> Complementos > Gerenciar e Instalar Complementos...
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-https://plugins.qgis.org/plugins/
+[QGIS Plugins](https://plugins.qgis.org/plugins/)
 
 ---
 
-background-image: url(img/qgis_plugin02.png), url(img/qgis_plugin_qpstools.svg)
-background-size: 700px, 100px
-background-position: 50% 60%, 95% 10%
+background-image: url(img/qgis_plugins02.png), url(img/qgis_plugin_qpstools.svg)
+background-size: 600px, 100px
+background-position: 50% 70%, 95% 10%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Instalar
+## Ativar complementos nativos
 
-> GPS Tools (Ferramenta de GPS)
+> Ferramenta de GPS
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-https://docs.qgis.org/3.16/en/docs/user_manual/working_with_gps/plugins_gps.html
+[Ferramenta de GPS](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_gps/plugins_gps.html)
 
 ---
 
-background-image: url(img/qgis_plugin03.png), url(img/qgis_plugin_mapservices.svg)
-background-size: 700px, 100px
-background-position: 50% 60%, 95% 10%
+background-image: url(img/qgis_plugins03.png), url(img/qgis_plugin_mapservices.svg)
+background-size: 600px, 100px
+background-position: 50% 70%, 95% 10%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Instalar
+## Instalar complementos
 
 > QuickMapServices
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-https://plugins.qgis.org/plugins/quick_map_services/
+[QuickMapServices](https://plugins.qgis.org/plugins/quick_map_services/)
 
 ---
 
-background-image: url(img/qgis_plugin03.png), url(img/qgis_plugin_osm.png)
-background-size: 700px, 100px
-background-position: 50% 60%, 95% 10%
+background-image: url(img/qgis_plugins04.png), url(img/qgis_plugin_osm.png)
+background-size: 600px, 150px
+background-position: 50% 70%, 95% 10%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Instalar
+## Instalar complementos
 
 > OSMDownloader
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-https://plugins.qgis.org/plugins/osmdownloader/
+[OSMDownloader](https://plugins.qgis.org/plugins/osmdownloader/)
 
 ---
 
-background-image: url(img/qgis_plugin04.png), url(img/qgis_plugin_mapswipe.png)
-background-size: 700px, 100px
-background-position: 50% 60%, 95% 10%
+background-image: url(img/qgis_plugins05.png), url(img/qgis_plugin_mapswipe.png)
+background-size: 600px, 100px
+background-position: 50% 70%, 95% 10%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Instalar
+## Instalar complementos
 
 > MapSwipe Tool
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-https://plugins.qgis.org/plugins/mapswipetool_plugin/
+[MapSwipe Tool](https://plugins.qgis.org/plugins/mapswipetool_plugin/)
 
 ---
 
-background-image: url(img/qgis_plugin05.png), url(img/qgis_plugin_mapbiomas.svg)
-background-size: 700px, 100px
-background-position: 50% 60%, 95% 10%
+background-image: url(img/qgis_plugins06.png), url(img/qgis_plugin_mapbiomas.svg)
+background-size: 600px, 100px
+background-position: 50% 70%, 95% 10%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Instalar
+## Instalar complementos
 
 > MapBiomas Collection ([Coleção do MapBiomas](https://mapbiomas.org/))
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
-https://plugins.qgis.org/plugins/mapbiomascollection/
+[MapBiomas Collection](https://plugins.qgis.org/plugins/mapbiomascollection/)
 
 ---
 
-background-image: url(img/qgis_plugin06.png), url(img/qgis_plugin_semi.png)
+background-image: url(img/qgis_plugin07.png), url(img/qgis_plugin_semi.png)
 background-size: 700px, 100px
 background-position: 50% 60%, 95% 10%
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
-## Instalar
+## Instalar complementos
 
-> Semi-Automatic Classification Plugin for QGIS
+> Semi-Automatic Classification Plugin
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-https://fromgistors.blogspot.com/p/semi-automatic-classification-plugin.html
+[Semi-Automatic Classification Plugin](https://fromgistors.blogspot.com/p/semi-automatic-classification-plugin.html)
 
 ---
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
 ## Principais plugins do QGIS para turbinar seus projetos em SIG
 
 <p align="center">
-<iframe width="60%" height="400" align="center" src="https://www.youtube.com/embed/OymQsu_ATW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/OymQsu_ATW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </p>
 
 ---
 
-# 3.3 Plugins do QGIS
+# 3.3 Complementos do QGIS
 
 ## Ten QGIS Plugins in 10 minutes
 
 <p align="center">
-<iframe width="60%" height="400" align="center" src="https://www.youtube.com/embed/qmNKs8-OQB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/qmNKs8-OQB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </p>
 
@@ -1372,9 +1372,9 @@ background-position: 50% 85%
 
 # 3.4 Projeto do QGIS
 
-## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
+## Definir o SRC (Sistema de Referência de Coordenadas) do projeto
 
-> Por default o CRS do projeto é WGS84 / Geográfico (EPSG: 4326)
+> Por default o SRC do projeto é WGS84 / Geográfico (EPSG: 4326)
 
 ---
 
@@ -1384,9 +1384,9 @@ background-position: 50% 85%
 
 # 3.4 Projeto do QGIS
 
-## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
+## Definir o SRC (Sistema de Referência de Coordenadas) do projeto
 
-> Project > Properties > CRS > SIRGAS 2000 / UTM 23 S  (EPSG: 31983)
+> Projeto > Propriedades > Sistema de Referência de Coordenadas > **SIRGAS 2000 / UTM 23 S  (EPSG: 31983)**
 
 ---
 
@@ -1396,7 +1396,7 @@ background-position: 50% 85%
 
 # 3.4 Projeto do QGIS
 
-## Definir o CRS (Sistema de Referência de Coordenadas) do projeto
+## Definir o SRC (Sistema de Referência de Coordenadas) do projeto
 
 ---
 
@@ -1408,7 +1408,7 @@ background-position: 50% 85%
 
 ## Salvar o projeto
 
-> Project > Save
+> Projeto > Salvar
 
 ---
 
@@ -1453,19 +1453,29 @@ background-position: 50% 85%, 95% 10%
 
 ## Arquivos vetoriais
 
-> Layer > Add Layer > Add Vector Layer...
+> Camada > Adicionar Camada > Adicionar Camada Vetorial...
 
 ---
 
-background-image: url(img/qgis_add_vector.svg), url(img/geo_shp_logo.png), url(img/geo_shp_formats.png)
-background-size: 100px, 150px, 650px
-background-position: 95% 10%, 98% 50%, 50% 90%
+background-image: url(img/qgis_vetor02.png), url(img/qgis_add_vector.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
 
 # 4.1 Importar dados vetoriais
 
 ## Arquivos vetoriais
 
-<br>
+> Navegar até o diretório 02_dados > 02_vetor > SP_3543907_USO_sirgas2000_utm23s.shp
+
+---
+
+background-image: url(img/qgis_add_vector.svg), url(img/geo_shp_logo.png), url(img/geo_shp_formats.png)
+background-size: 100px, 150px, 650px
+background-position: 95% 10%, 98% 50%, 50% 80%
+
+# 4.1 Importar dados vetoriais
+
+## Arquivos vetoriais
 
 ## IMPORTANTE!
 
@@ -1598,7 +1608,7 @@ background-image: url(img/qgis_vetor04.png)
 background-size: 480px
 background-position: 50% 80%
 
-# 4.4 Converter CRS de dados vetoriais
+# 4.4 Converter SRC de dados vetoriais
 
 ## 
 
@@ -1710,7 +1720,7 @@ background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.7 Converter CRS de dados matriciais
+# 5.7 Converter SRC de dados matriciais
 
 ---
 
@@ -1755,29 +1765,6 @@ background-position: 50% 85%, 95% 10%
 ## Layout manager
 
 > Project > Layout Manager
-
----
-
-background-image: url(img/geo_map_elements.png)
-background-size: 800px
-background-position: 95% 60%
-
-# 6.2 Principais elementos de um mapa
-
-## Elementos
-
-<br>
-
-1. Mapa principal
-1. Mapa secundário
-1. Título
-1. Legenda
-1. Barra de escala
-1. Indicador de orientação (Norte)
-1. Gride de coordenadas
-1. Descrição do CRS
-1. Fonte dos dados
-1. Além de outros elementos auxiliares
 
 ---
 
