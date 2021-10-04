@@ -2,7 +2,7 @@
 title: "Introdução ao geoprocessamento com QGIS <br><br><br>"
 subtitle: "32ª Semana de Estudos da Biologia"
 author: "Maurício H. Vancine"
-institute: "UNESP - Rio Claro <br> Laborário de Ecologia Espacial e Conservação (LEEC)"
+institute: "UNESP - Rio Claro <br> Laboratório de Ecologia Espacial e Conservação (LEEC)"
 date: "08/10/2021"
 output:
   xaringan::moon_reader:
@@ -251,7 +251,7 @@ background-position: 85% 70%
   1. Legenda
   1. Barra de escala
   1. Indicador de orientação (Norte)
-  1. Gride de coordenadas
+  1. Grade de coordenadas
   1. Descrição do SRC
   1. Fonte dos dados
 1. Compositor de mapas
@@ -345,10 +345,10 @@ background-position: 90% 80%
 1. Mapeamento temático (municípios, bacias hidrográficas, países, etc.)
 1. Zoneamento (ambiental, socioeconômico, turístico, etc.)
 1. Monitoramento de áreas de risco ou de proteção ambiental
-1. Avaliação e proteção de impacto ambiemtal
+1. Avaliação e proteção de impacto ambiental
 1. Manejo e conservação de recursos naturais
 1. Ordenamento territorial
-1. Estruturaão de redes de energia, água ou esgoto
+1. Estruturação de redes de energia, água ou esgoto
 1. Estudos e modelagens de expansão urbana
 1. Controle de ocupações e construções irregulares
 1. Estabelicimento e/ou adequação de transporte
@@ -1219,9 +1219,9 @@ background-position: 90% 15%, 80% 85%
 ## Vantagens
 
 - Software livre (Licença GNU GPL == Grátis!)
-- Multi plataforma (Windows, GNU/Linux e MacOS)
+- Multiplataforma (Windows, GNU/Linux e MacOS)
 - Grande comunidade de desenvolvedores e usuários
-- Diversos complementaos para tarefas específicas
+- Diversos complementos para tarefas específicas
 
 [QGIS](https://www.qgis.org/pt_BR/site/)
 
@@ -1271,7 +1271,7 @@ background-position: 50% 80%
 
 ## Vamos resetar a interface para o *Padrão Inicial*
 
-> Configurações > Opções... > Sistema > Redefine a interface dos usuário para o padrão inicial (é necessário reiniciar)
+> Configurações > Opções... > Sistema > Redefine a interface do usuário para o padrão inicial (é necessário reiniciar)
 
 ---
 
@@ -1685,7 +1685,7 @@ background-position: 80% 85%
 
 ## Acessar detalhes da camada
 
-> Click botão direito sobre o nome da camada
+> Clique com o botão direito sobre o nome da camada
 
 - Aproximar para a camada
 - Copiar camada
@@ -1709,7 +1709,7 @@ background-position: 50% 85%
 
 ## Propriedades
 
-> Click botão direito sobre o nome da camada > Propriedades...
+> Clique com o botão direito sobre o nome da camada > Propriedades...
 
 ---
 
@@ -1760,7 +1760,7 @@ background-position: 50% 85%, 95% 10%
 
 ## Acessar tabela de atributos
 
-> Click botão direito sobre a camada > Abrir tabela de atributos
+> Clique com o botão direito sobre a camada > Abrir tabela de atributos
 
 ---
 
@@ -1928,7 +1928,7 @@ background-position: 50% 85%, 95% 10%
 
 ## Editar 
 
-> Selecionar o nome da camada que irá editar (**vetor_pontos_sirgas2000_utm23s**) e clicar no Editor
+> Selecionar o nome da camada que irá editar (**vetor_pontos_sirgas2000_utm23s**) e clique no Editor
 
 ---
 
@@ -2066,7 +2066,7 @@ background-position: 50% 60%
 
 ## SRC diferentes
 
-> Muitas vezes iremos precisar modificar o SRC das camadas (**reprojeção**)
+> Muitas vezes precisaremos modificar o SRC das camadas (**reprojeção**)
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 [Zobrazovanie GIS údajov v systéme S-JTSK03 v ArcGIS Desktop](https://www.arcgeo.sk/zobrazovanie-gis-udajov-v-systeme-s-jtsk03-v-arcgis-desktop/)
@@ -2275,7 +2275,7 @@ background-position: 50% 85%
 
 ## Propriedades
 
-> Click botão direito sobre o nome da camada > Propriedades...
+> Clique com o botão direito sobre o nome da camada > Propriedades...
 
 ---
 
@@ -2534,7 +2534,7 @@ background-position: 85% 60%
 1. Legenda
 1. Barra de escala
 1. Indicador de orientação (Norte)
-1. Gride de coordenadas
+1. Grade de coordenadas
 1. Descrição do SRC
 1. Fonte dos dados
 
@@ -2560,7 +2560,7 @@ background-position: 50% 85%, 95% 10%
 
 ## Compositor de impressão
 
-> Projeto > Novo Layout de Impressão > **mapa_unesp** (opicional)
+> Projeto > Novo Layout de Impressão > **mapa_unesp** (opcional)
 
 ---
 
@@ -2697,7 +2697,7 @@ background-position: 70% 85%
 
 > Modificar grade > **Moldura**
 
-- Estilo da mpçdura: **Linhas exteriores**
+- Estilo da moldura: **Linhas exteriores**
 -  **Lado esquerdo** e **Lado inferior**
 
 ---
