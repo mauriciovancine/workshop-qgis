@@ -225,9 +225,7 @@ background-position: 85% 75%
 
 1. Importar dados matriciais
 1. Propriedades de dados matriciais
-1. Editar dados matriciais
-1. Interação raster-vetor
-1. Conversão raster-vetor
+1. Operações de dados vetoriais
 1. Converter SRC de dados matriciais
 1. Exportar dados matriciais
 
@@ -330,13 +328,13 @@ background-position: 50% 80%
 <br><br><br><br><br><br><br><br><br><br><br><br>
 [Xavier-da-Silva (2001)](https://leitura.com.br/geoprocessamento-e-analise-ambiental-aplicacoes-L030-9788528610765),
 [Xavier-da-Silva (2009)](http://www.ufrrj.br/lga/tiagomarino/artigos/oqueegeoprocessamento.pdf),
-[Adeus a Jorge Xavier da Silva](https://ufrj.br/2021/07/adeus-a-jorge-xavier-da-silva/)
+[Adeus a Jorge Xavier da Silva (2021)](https://ufrj.br/2021/07/adeus-a-jorge-xavier-da-silva/)
 
 ---
 
 background-image: url(img/geo_geoprocessamento.png)
 background-size: 550px
-background-position: 90% 60%
+background-position: 90% 80%
 
 # 2.1 Geoprocessamento
 
@@ -355,9 +353,8 @@ background-position: 90% 60%
 1. Controle de ocupações e construções irregulares
 1. Estabelicimento e/ou adequação de transporte
 
-<br><br><br><br>
 [Fitz et al. (2008)](https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/),
-[O que é geoprocessamento - GeoAplicada](https://www.geoaplicada.com/geoinformatica-geoprocessamento-e-geotecnologias/o_que_e_geoprocessamento/)
+[O que é geoprocessamento - GeoAplicada (2018)](https://www.geoaplicada.com/geoinformatica-geoprocessamento-e-geotecnologias/o_que_e_geoprocessamento/)
 
 ---
 
@@ -406,7 +403,7 @@ background-position: 85% 70%
 
 ## Escala
 
-### **Relação** entre a **medida de um objeto ou lugar** representado no papel (medida gráfica) e sua **medida real**
+### **Relação** entre a **medida real** (objeto ou lugar) e a **medida gráfica** (representado no papel ou computador)
 
 --
 
@@ -426,7 +423,7 @@ background-position: 85% 70%
 ---
 
 background-image: url(img/geo_coordenadas_geograficas.png)
-background-size: 600px
+background-size: 700px
 background-position: 85% 60%
 
 # 2.2 Cartografia
@@ -443,18 +440,18 @@ background-position: 85% 60%
 - Longitude: -42.71167
 - Latitude: -23.38972
 
+<br>
+
 **Conversão**: 42 + (42/60) + (42/3600) = 42.71167 <br>
 **Conversão**: 23 + (23/60) + (23/3600) = 23.38972
-
-<br>
 
 [5 Themes of Geography](https://spark.adobe.com/page/WXwQFzH7DqYAw/)
 
 ---
 
 background-image: url(img/geo_projection_families01.png), url(img/geo_orange_world.png), url(img/geo_proj.png)
-background-size: 450px, 200px, 500px
-background-position: 15% 65%, 78% 30%, 90% 85%
+background-size: 450px, 250px, 500px
+background-position: 15% 65%, 78% 20%, 90% 85%
 
 # 2.2 Cartografia
 
@@ -489,8 +486,8 @@ background-position: 25% 75%, 90% 70%
 ---
 
 background-image: url(img/geo_geoide_elipsoide.png)
-background-size: 1100px
-background-position: 50% 80%
+background-size: 1000px
+background-position: 50% 65%
 
 # 2.2 Cartografia
 
@@ -498,11 +495,14 @@ background-position: 50% 80%
 
 ### Geoide, esferoide e elipsoide
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Nem plana, nem redonda: definir a forma exata da Terra é um desafio](https://cienciahoje.org.br/artigo/nem-plana-nem-redonda-definir-a-forma-exata-da-terra-e-um-desafio)
+
 ---
 
-background-image: url(img/geo_datum01.jpeg)
+background-image: url(img/geo_datum.jpeg)
 background-size: 700px
-background-position: 75% 60%
+background-position: 75% 55%
 
 # 2.2 Cartografia
 
@@ -522,6 +522,8 @@ background-position: 75% 60%
 
 ### **Conversão**: não é trivial e requer muita trigonometria
 
+[Cartografia para Geoprocessamento](http://www.geomatica.eng.uerj.br/docentes/araujo/cartografia_para_geoprocessamento)
+
 ---
 
 background-image: url(img/geo_datum_sad_sirgas.jpg)
@@ -540,9 +542,12 @@ background-position: 75% 80%
 ### **2. Topocêntricos**
 - SAD69
 
-<br><br><br>
+<br><br>
 
 ### **Diferença**: cerca de 65 metros
+
+[IBGE](http://www.ibge.gov.br/seminario_referencial_geocentrico/portugues/arquivos/
+Duque_Estrada_01dez2004_Impactos_Painel1_II_Seminario.pdf )
 
 ---
 
@@ -560,17 +565,22 @@ background-image: url(img/crs.png)
 background-size: 800px
 background-position: 40% 75%
 
-# 4.1 Dados geoespaciais
+# 2.2 Cartografia
 
 ### Sistema de Referência de Coordenadas (SRC)
 
 ### Datum + Sistema de Coordenadas (geográfico ou projetado)
 
+<br><br><br><br><br><br><br><br><br><br><br><br>
+[Cartografia para Geoprocessamento](http://www.geomatica.eng.uerj.br/docentes/araujo/cartografia_para_geoprocessamento),<br>
+[5 Themes of Geography](https://spark.adobe.com/page/WXwQFzH7DqYAw/),
+[Guia do Usuário QGIS 3.16](https://docs.qgis.org/3.16/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html)
+
 ---
 
 background-image: url(img/geo_projection_reprojection.png)
 background-size: 500px
-background-position: 85% 60%
+background-position: 85% 55%
 
 # 2.2 Cartografia
 
@@ -588,6 +598,9 @@ background-position: 85% 60%
 **Sistema de Referência de Coordenadas - Projetado (UTM)**
 - WGS84 23K 733876E, 7411482S
 - SIRGAS2000 23K 733876E, 7411482S
+
+<br><br>
+[ESRI - Coordinate systems, projections, and transformations](https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/coordinate-systems-and-projections.htm)
 
 ---
 
@@ -639,7 +652,7 @@ background-position: 90% 85%
 
 background-image: url(img/geo_gps.jpg), url(img/geo_gps.png)
 background-size: 400px, 700px
-background-position: 5% 80%, 90% 80%
+background-position: 5% 75%, 90% 75%
 
 # 2.3 *Global Positioning System* (GPS)
 
@@ -649,11 +662,14 @@ background-position: 5% 80%, 90% 80%
 
 ### 4 satélites - altitude
 
+<br><br><br><br><br><br><br><br><br><br><br>
+[Triangulation - National Geography](https://www.nationalgeographic.org/photo/triangulation-sized/), [Como funciona o GPS? - Electricalelibrary](https://www.electricalelibrary.com/2018/03/23/como-funciona-o-gps/)
+
 ---
 
 background-image: url(img/geo_gps_aparelho.jpg), url(img/geo_gps_way_rout_track.png)
-background-size: 500px, 280px
-background-position: 20% 90%, 85% 90%
+background-size: 400px, 280px
+background-position: 20% 75%, 85% 85%
 
 # 2.3 *Global Positioning System* (GPS)
 
@@ -664,6 +680,9 @@ background-position: 20% 90%, 85% 90%
 **2. Rotas**: sequência de waypoints, representa uma **sugestão da trajetória** entre os waypoints
 
 **3. Trilhas**: sequência de trackpoints, representa a **trajetória percorrida**
+
+<br><br><br><br><br><br><br><br><br><br>
+[Foto: Markus Bormann](stock.adobe.com), [Berklas - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/a/a2/Wayroutrackp.png)
 
 ---
 
@@ -679,10 +698,8 @@ background-position: 50% 75%
 
 **2. Formato do google earth (.kml ou .kmz)**: linguagem XML focada em visualização geográfica, incluindo anotações de mapas e imagens, usado para exibir dados geográficos no Google Earth e/ou Google Maps
 
-
-.footnote[
-[**Conversão**](https://kml2gpx.com/)
-]
+<br><br><br><br><br><br><br><br><br><br>
+[Conversor Online para KML e GPX](https://www.clickgeo.com.br/conversor-online-kml-gpx/)
 
 ---
 
@@ -759,7 +776,7 @@ background-position: 50% 50%
 ## 3. Funcionamento
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Zanotta et al. 2019](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/)
+[Zanotta et al. (2019)](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/)
 
 ---
 
@@ -785,13 +802,13 @@ background-position: 85% 40%
 
 <br>
 
-https://webapps.itc.utwente.nl/sensor/default.aspx?view=searchsat
+[ITC Satellite and Sensor Database](https://webapps.itc.utwente.nl/sensor/default.aspx?view=searchsat)
 
 ---
 
 background-image: url(img/geo_sr_mapbiomas_queimadas.jpg), url(img/geo_rs_animapeq.gif)
 background-size: 500px, 500px
-background-position: 11% 87%, 85% 55%
+background-position: 11% 80%, 85% 55%
 
 # 2.4 Sensoriamento Remoto
 
@@ -804,25 +821,35 @@ background-position: 11% 87%, 85% 55%
 - Relevo (topografia, declividade, curvas de nível)
 - Hidrografia (rios e limites de bacias)
 
+<br><br><br><br><br><br><br><br><br>
+[Mapbiomas](https://mapbiomas.org/), [CPTEC](https://www.cptec.inpe.br/)
+
 ---
 
 background-image: url(img/qgis_logo.png), url(img/arcgis_logo.png), url(img/grassgis_logo.png), url(img/r_logo.svg), url(img/earth_engine_logo.png), url(img/gvsig_logo.svg)
 background-size: 350px, 250px, 250px, 250px, 230px, 230px
-background-position: 5% 25%, 50% 25%, 10% 85%, 50% 85%, 90% 85%, 90% 30%
+background-position: 5% 25%, 50% 25%, 10% 80%, 50% 85%, 90% 85%, 90% 30%
 
 # 2.5 Sistema de Informação Geográfica
 
 ## Hardware + Softwares (APPs)
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[QGIS](https://qgis.org/pt_BR/site/), [GRASS GIS](https://grass.osgeo.org/), [ArcGIS](https://www.esri.com/pt-br/home), [R](https://www.r-project.org/), [gvSIG](http://www.gvsig.com/pt/produtos/gvsig-desktop), [Google Earth Engine](https://earthengine.google.com/), 
+
 ---
 
 background-image: url(img/geo_sig.png), url(img/geo_projection_families02.jpg), url(img/geo_rs_processamento_imagens.png), url(img/qgis_logo.png)
 background-size: 800px, 200px, 400px, 300px
-background-position: 50% 20%, 15% 80%, 50% 80%, 95% 75%
+background-position: 50% 20%, 15% 80%, 50% 80%, 92% 75%
 
 # 2.5 Sistema de Informação Geográfica
 
 ## Integração e manipulação das informações espaciais
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[ESRI](https://www.esri.com/en-us/what-is-gis/overview), [Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1), [Zanotta et al. (2019)](https://www.ofitexto.com.br/livro/processamento-de-imagens-de-satelite/),
+[QGIS](https://qgis.org/pt_BR/site/)
 
 ---
 
@@ -843,11 +870,14 @@ background-position: 32% 70%, 80% 70%
 
 background-image: url(img/geo_layers.gif)
 background-size: 550px
-background-position: 50% 65%
+background-position: 50% 55%
 
 # 2.6 Dados geoespaciais
 
 ## Dados representados por **camadas** (*layers*)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[7 GIS terms To Know: Map Making for Designers](https://www.avenza.com/blog/2019/11/)
 
 ---
 
@@ -873,7 +903,7 @@ background-position: 50% 70%
 
 ## Tabela de atributos
 
-### Relação entre as geometrias e suas características
+### Armazena as informações para as geometrias (Dado Tabular Alfanumérico)
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 [Tennekes & Nowosad (in prep.)](https://r-tmap.github.io/tmap-book/index.html)
@@ -888,7 +918,7 @@ background-position: 95% 10%, 50% 80%
 
 ## Formato de arquivos vetoriais
 
-### Shapefile
+### Shapefile (Restrito)
 
 #### **.shp**: contém as informações da feição (desenho)
 #### **.dbf**: tabela que contém as informações (colunas) sobre cada feição (linhas)
@@ -940,7 +970,7 @@ background-position: 50% 75%
 
 ## Formato de arquivos matriciais
 
-## GeoTiff
+## GeoTiff (Livre)
 
 ### **.tif**: arquivo matricial georreferenciamento com informações de georreferenciamento
 
@@ -952,7 +982,7 @@ background-position: 50% 75%
 
 background-image: url(img/geo_data_convert.png), url(img/geo_data_convert.jpg)
 background-size: 400px, 550px
-background-position: 15% 85%, 85% 80%
+background-position: 15% 70%, 85% 65%
 
 # 2.9 Conversão de dados geoespaciais (vetor-raster)
 
@@ -960,21 +990,28 @@ background-position: 15% 85%, 85% 80%
 
 ### É possível converter os dados vetoriais em matriciais e vice-versa
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Zhu (2014)](http://dx.doi.org/10.3390/resources3010235),
+[Gimond (2021)](https://mgimond.github.io/Spatial/index.html)
+
 ---
 
 background-image: url(img/geo_geopackage.png), url(img/geodatabase.webp)
-background-size: 500px, 500px
-background-position: 10% 80%, 90% 80%
+background-size: 550px, 500px
+background-position: 10% 75%, 90% 75%
 
 # 2.10 Bancos de dados geoespaciais
 
 ## Armazena diferentes tipos de dados em um único arquivo ou formato
 
-### Geopackage (Livre - QGIS) e Geodatabase (Fechado - ArcGIS)
+### Geopackage (Livre - QGIS) e Geodatabase (Restrito - ArcGIS)
 
 #### **.gpkg**: armazena dados vetoriais, matriciais, metadados, dados alfanuméricos, entre outros aspectos internos do banco
 
 #### **.gdb**: objetos espaciais e não espaciais criados pelo ArcGIS, armazenando várias classes de recursos e topologia
+
+<br><br><br><br><br><br><br><br><br><br>
+[Geopackage](https://www.geopackage.org/), [Geodatabase](https://gisgeography.com/geodatabase-personal-file/)
 
 ---
 
@@ -1001,11 +1038,12 @@ background-position: 95% 50%
 - **[HydroSHEDS](https://www.hydrosheds.org/)**: informações hidrológicas do mundo
 - **[Global Roads Inventory Project (GRIP)](https://www.globio.info/download-grip-dataset)**: dados de estradas do mundo todo 
 
+[Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1)
 ---
 
 background-image: url(img/geo_raster.jpg)
 background-size: 400px
-background-position: 95% 85%
+background-position: 95% 65%
 
 # 2.11 Principais fontes de dados geoespaciais
 
@@ -1027,6 +1065,8 @@ background-position: 95% 85%
 - **[MARSPEC](http://www.marspec.org)**: dados de condições do oceano para o mundo
 - **[Bio-ORACLE](https://www.bio-oracle.org/)**: dados de condições do oceano para o mundo    
 
+[Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1)
+
 ---
 
 background-image: url(img/cover_geoprocessamento.jpg)
@@ -1041,7 +1081,7 @@ background-position: 50% 65%
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
-https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/
+[Fitz (2008)](https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/)
 
 ---
 
@@ -1057,7 +1097,7 @@ background-position: 8% 65%, 58% 65%
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
-https://ecojustus.com.br/livros
+[Bossle (2016) & Bossle (2017)](https://ecojustus.com.br/livros)
 
 ---
 
@@ -1073,7 +1113,7 @@ background-position: 50% 65%
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
-https://github.com/anadallacorte/LIVROQGIS2020
+[Dalla Corte et al. (2020)](https://github.com/anadallacorte/LIVROQGIS2020)
 
 ---
 
@@ -1089,7 +1129,7 @@ background-position: 50% 65%
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
-http://book.ecosens.org/rsebook/
+[Wegmann et al. (2016)](http://book.ecosens.org/rsebook/)
 
 ---
 
@@ -1105,7 +1145,7 @@ background-position: 50% 65%
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
-http://book.ecosens.org/gsbook/
+[Wegmann et al. (2021)](http://book.ecosens.org/gsbook/)
 
 ---
 
@@ -1148,6 +1188,9 @@ background-position: 50% 70%
 # Não tenha medo de fazer algo errado!
 
 ## Salvo raras exceções, nada explode, então saia fuçando em tudo!
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[@devaneioshq](https://www.instagram.com/devaneioshq/)
 
 ---
 
@@ -1244,7 +1287,7 @@ background-position: 50% 85%
 
 ---
 
-background-image: url(img/qgis_interface04.png), url(img/qgis_toolbox.svg) 
+background-image: url(img/qgis_interface04.png), url(img/processingAlgorithm.svg) 
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
@@ -1264,6 +1307,8 @@ background-position: 50% 85%
 
 ## Interface final
 
+> Interface completa para trabalho
+
 ---
 
 background-image: url(img/qgis_interface06.png)
@@ -1273,6 +1318,8 @@ background-position: 50% 85%
 # 3.2 Interface do QGIS
 
 ## Interface final - Descrição
+
+> Há sete principais janelas de seleção e trabalho
 
 ---
 
@@ -1291,7 +1338,7 @@ background-position: 50% 65%
 
 ---
 
-background-image: url(img/qgis_plugins02.png), url(img/qgis_plugin_qpstools.svg)
+background-image: url(img/qgis_plugins02.png), url(img/mIconGps.svg)
 background-size: 600px, 100px
 background-position: 50% 65%, 95% 10%
 
@@ -1319,6 +1366,55 @@ background-position: 50% 65%, 95% 10%
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 [QuickMapServices](https://plugins.qgis.org/plugins/quick_map_services/)
 
+
+---
+
+background-image: url(img/qgis_complementos_quickmapserver01.png), url(img/qgis_plugin_mapservices.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 3.3 Complementos do QGIS
+
+## QuickMapServices
+
+> Web > QuickMapServices > Settings
+
+---
+
+background-image: url(img/qgis_complementos_quickmapserver02.png), url(img/qgis_plugin_mapservices.svg)
+background-size: 500px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 3.3 Complementos do QGIS
+
+## QuickMapServices
+
+> More services > Get contributed pack
+
+---
+
+background-image: url(img/qgis_complementos_quickmapserver03.png), url(img/qgis_plugin_mapservices.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 3.3 Complementos do QGIS
+
+## QuickMapServices
+
+> Web > QuickMapServices > Google > Google Satellite
+
+---
+
+background-image: url(img/qgis_complementos_quickmapserver04.png), url(img/qgis_plugin_mapservices.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 3.3 Complementos do QGIS
+
+## QuickMapServices
+
+> Mapa do Google Satellite
+
 ---
 
 background-image: url(img/qgis_plugins04.png), url(img/qgis_plugin_osm.png)
@@ -1337,7 +1433,7 @@ background-position: 50% 65%, 95% 10%
 ---
 
 background-image: url(img/qgis_plugins05.png), url(img/qgis_plugin_mapswipe.png)
-background-size: 600px, 100px
+background-size: 600px, 80px
 background-position: 50% 65%, 95% 10%
 
 # 3.3 Complementos do QGIS
@@ -1411,7 +1507,7 @@ background-position: 50% 85%
 
 ## Definir o SRC (Sistema de Referência de Coordenadas) do projeto
 
-> Por default o SRC do projeto é WGS84 / Geográfico (EPSG: 4326)
+> Por default o SRC do projeto assume o SRC da camada adicionada: **WGS84 / Pseudo-Mercatur EPSG: 3857**
 
 ---
 
@@ -1423,7 +1519,7 @@ background-position: 50% 85%
 
 ## Definir o SRC (Sistema de Referência de Coordenadas) do projeto
 
-> Projeto > Propriedades > Sistema de Referência de Coordenadas > **SIRGAS 2000 / UTM 23 S  (EPSG: 31983)**
+> Projeto > Propriedades > Sistema de Referência de Coordenadas > **SIRGAS 2000 / UTM 23 S**
 
 ---
 
@@ -1435,17 +1531,19 @@ background-position: 50% 85%
 
 ## Definir o SRC (Sistema de Referência de Coordenadas) do projeto
 
+> SIRGAS 2000 / UTM 23 S (EPSG: 31983)
+
 ---
 
-background-image: url(img/qgis_projeto04.png)
-background-size: 800px
-background-position: 50% 85%
+background-image: url(img/qgis_projeto04.png), url(img/mActionFileSave.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
 
 # 3.4 Projeto do QGIS
 
 ## Salvar o projeto
 
-> Projeto > Salvar
+> Projeto > Salvar > **projeto_qgis_minicurso_sebio.qgz**
 
 ---
 
@@ -1486,7 +1584,7 @@ background-position: 8% 60%, 95% 65%
 
 ---
 
-background-image: url(img/qgis_vetor01.png), url(img/qgis_add_vector.svg)
+background-image: url(img/qgis_vetor01.png), url(img/mActionAddOgrLayer.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
@@ -1498,7 +1596,7 @@ background-position: 50% 85%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_vetor02.png), url(img/qgis_add_vector.svg)
+background-image: url(img/qgis_vetor02.png), url(img/mActionAddOgrLayer.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
@@ -1510,7 +1608,7 @@ background-position: 50% 85%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_vetor03.png), url(img/qgis_add_vector.svg)
+background-image: url(img/qgis_vetor03.png), url(img/mActionAddOgrLayer.svg)
 background-size: 500px, 100px
 background-position: 50% 75%, 95% 10%
 
@@ -1522,7 +1620,7 @@ background-position: 50% 75%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_add_vector.svg), url(img/geo_shp_logo.png), url(img/geo_shp_formats.png)
+background-image: url(img/mActionAddOgrLayer.svg), url(img/geo_shp_logo.png), url(img/geo_shp_formats.png)
 background-size: 100px, 150px, 650px
 background-position: 95% 10%, 98% 50%, 50% 80%
 
@@ -1538,7 +1636,7 @@ background-position: 95% 10%, 98% 50%, 50% 80%
 
 # 4.1 Importar dados vetoriais
 
-## Exercício - Importem os arquivos:
+## Exercício - Importem os arquivos
 
 ## Shapefiles
 
@@ -1558,7 +1656,7 @@ background-position: 95% 10%, 98% 50%, 50% 80%
 
 background-image: url(img/qgis_vetor_arrastar.png)
 background-size: 800px
-background-position: 80% 75%
+background-position: 85% 75%
 
 # 4.1 Importar dados vetoriais
 
@@ -1610,8 +1708,8 @@ background-position: 50% 85%
 ---
 
 background-image: url(img/qgis_vetor06.png)
-background-size: 600px
-background-position: 55% 80%
+background-size: 500px
+background-position: 50% 80%
 
 # 4.2 Propriedades de dados vetoriais
 
@@ -1644,11 +1742,13 @@ background-position: 50% 85%
 
 ## Simbologia
 
+> Cor representando cada polígono de cada classe de cobertura da terra
+
 ---
 
 background-image: url(img/qgis_vetor09.png), url(img/qgis_vetor_atributos.svg)
 background-size: 800px, 100px
-background-position: 50% 80%, 95% 10%
+background-position: 50% 85%, 95% 10%
 
 # 4.3 Tabela de atributos
 
@@ -1659,7 +1759,7 @@ background-position: 50% 80%, 95% 10%
 ---
 
 background-image: url(img/qgis_vetor_tabela_atributos.png), url(img/qgis_vetor_atributos.svg)
-background-size: 700px, 100px
+background-size: 600px, 100px
 background-position: 50% 80%, 95% 10%
 
 # 4.3 Tabela de atributos
@@ -1668,8 +1768,8 @@ background-position: 50% 80%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_vetor_tabela_atributos_filtro01.png), url(img/qgis_vetor_atributos.svg)
-background-size: 700px, 100px
+background-image: url(img/qgis_vetor_tabela_atributos_filtro01.png), url(img/mActionFilter2.svg)
+background-size: 600px, 100px
 background-position: 50% 80%, 95% 10%
 
 # 4.3 Tabela de atributos
@@ -1678,37 +1778,44 @@ background-position: 50% 80%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_vetor_tabela_atributos_filtro02.png), url(img/qgis_vetor_atributos.svg)
-background-size: 700px, 100px
+background-image: url(img/qgis_vetor_tabela_atributos_filtro02.png), url(img/qgis_vetor_atributos_acoplar.svg)
+background-size: 600px, 100px
 background-position: 50% 80%, 95% 10%
 
 # 4.3 Tabela de atributos
 
-## Filtro de tabela de atributos
+## Acoplar janela de tabela de atributos
 
 ---
 
 background-image: url(img/qgis_vetor_tabela_atributos_filtro03.png), url(img/qgis_vetor_atributos.svg)
 background-size: 800px, 100px
-background-position: 50% 80%, 95% 10%
+background-position: 50% 85%, 95% 10%
 
 # 4.3 Tabela de atributos
 
 ## Filtro de tabela de atributos
 
+> Selecionar as feições (linhas) para colunas, e.g., **formação florestal** da coluna **CLASSE_USO**
+
 ---
 
 background-image: url(img/qgis_vetor_tabela_atributos_edicao.png), url(img/qgis_vetor_atributos.svg)
-background-size: 700px, 100px
-background-position: 50% 80%, 95% 10%
+background-size: 600px, 100px
+background-position: 65% 80%, 95% 10%
 
 # 4.3 Tabela de atributos
 
 ## Editar tabela de atributos
 
+- Alterar valores nas células
+- Criar colunas (campos)
+- Remover colunas (campos) 
+- Organizar colunas (campos)
+
 ---
 
-background-image: url(img/qgis_vetor_tabela_atributos_calculadora.png), url(img/qgis_vetor_calculate_field.svg)
+background-image: url(img/qgis_vetor_tabela_atributos_calculadora01.png), url(img/qgis_vetor_calculate_field.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
@@ -1720,9 +1827,35 @@ background-position: 50% 85%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_vetor_importa_tabular.png), url(img/qgis_vetor_add_tabular.svg)
+background-image: url(img/qgis_vetor_tabela_atributos_calculadora02.png), url(img/qgis_vetor_calculate_field.svg)
+background-size: 500px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.3 Tabela de atributos
+
+## Calculadora de campo
+
+> Calcular a área dos polígonos 
+
+- area_m2
+- Número decimal
+- $area
+
+---
+
+background-image: url(img/qgis_vetor_importa_tabular01.png), url(img/qgis_vetor_add_tabular.svg)
 background-size: 800px, 100px
-background-position: 50% 80%, 95% 10%
+background-position: 50% 85%, 95% 10%
+
+# 4.4 Criar dados vetoriais
+
+## Importar dados tabulares
+
+---
+
+background-image: url(img/qgis_vetor_importa_tabular02.png), url(img/qgis_vetor_add_tabular.svg)
+background-size: 600px, 100px
+background-position: 50% 85%, 95% 10%
 
 # 4.4 Criar dados vetoriais
 
@@ -1732,43 +1865,270 @@ background-position: 50% 80%, 95% 10%
 
 ---
 
-background-image: url(img/qgis_vetor_criar.png), url(img/qgis_vetor_create.svg)
+background-image: url(img/qgis_vetor_criar01.png), url(img/qgis_vetor_create.svg)
 background-size: 800px, 100px
-background-position: 50% 80%, 95% 10%
+background-position: 50% 85%, 95% 10%
 
 # 4.4 Criar dados vetoriais
 
-## Criar um arquivo vetorial
+## Criar arquivos vetoriais
+
+> Multiponto: **vetor_pontos_sirgas2000_utm23s**
 
 ---
 
-background-image: url(img/qgis_vetor_importa_tabular.png), url(img/qgis_vetor_editar.svg)
+background-image: url(img/qgis_vetor_criar02.png), url(img/qgis_vetor_create.svg)
+background-size: 550px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.4 Criar dados vetoriais
+
+## Criar arquivos vetoriais
+
+> Multiponto: **vetor_pontos_sirgas2000_utm23s**
+
+---
+
+# 4.4 Criar dados vetoriais
+
+## Exercício - Criar arquivos vetoriais
+
+<br>
+
+## Linhas
+
+> Linhas: **vetor_linhas_sirgas2000_utm23s**
+
+<br> 
+
+## Polígono
+
+> Polígono: **vetor_poligono_sirgas2000_utm23s**
+
+---
+
+background-image: url(img/qgis_vetor_editar_pontos.png), url(img/qgis_vetor_editar.svg)
 background-size: 800px, 100px
-background-position: 50% 80%, 95% 10%
+background-position: 50% 85%, 95% 10%
 
-# 4.4 Editar dados vetoriais
+# 4.5 Editar dados vetoriais
 
-## 
+## Editar 
 
----
-
-background-image: url(img/qgis_vetor04.png)
-background-size: 480px
-background-position: 50% 80%
-
-# 4.4 Converter SRC de dados vetoriais
-
-## 
+> Selecionar o nome da camada que irá editar (**vetor_pontos_sirgas2000_utm23s**) e clicar no Editor
 
 ---
 
-background-image: url(img/qgis_vetor04.png)
-background-size: 480px
-background-position: 50% 80%
+background-image: url(img/qgis_vetor_add_pontos01.png), url(img/mActionCapturePoint.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
 
-# 4.4 Exportar dados vetoriais
+# 4.5 Editar dados vetoriais
 
-## 
+## Capturar pontos 
+
+> Selecionar a **Adicionar pontos** e clicar com o botão esquerdo
+
+---
+
+background-image: url(img/qgis_vetor_add_pontos02.png), url(img/mActionCapturePoint.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.5 Editar dados vetoriais
+
+## Capturar pontos 
+
+> Depois de clicar com o botão esquerdo uma janela deve aparecer, basta preencher com as informações
+
+---
+
+background-image: url(img/qgis_vetor_aderencia.png), url(img/mIconSnapping.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.5 Editar dados vetoriais
+
+## Aderência
+
+> Quando ligada, adere o clique à feições já criadas para evitar erros
+
+---
+
+background-image: url(img/qgis_vetor_salvar_edicoes.png), url(img/mActionSaveAllEdits.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.5 Editar dados vetoriais
+
+## Salvar edições
+
+> Uma vez terminado de editar, salve as modificações do vetor
+
+---
+
+background-image: url(img/qgis_vetor_add_linhas.png), url(img/mActionCaptureLine.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.5 Editar dados vetoriais
+
+## Capturar linhas
+
+> Criar as linhas com o **botão esquerdo**, para finalizar use o **botão direito**
+
+---
+
+background-image: url(img/qgis_vetor_add_poligonos.png), url(img/mActionCapturePolygon.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.5 Editar dados vetoriais
+
+## Capturar polígonos
+
+> Criar os polígonos com o **botão esquerdo**, para finalizar use o **botão direito**
+
+---
+
+background-image: url(img/qgis_vetor_operacoes.png)
+background-size: 800px, 100px
+background-position: 70% 85%, 95% 10%
+
+# 4.6 Operações de dados vetoriais
+
+## Algoritmos que modificam propriedades das camadas vetoriais
+
+- Geoprocessamento
+- Geometrias
+- Analisar
+- Investigar
+- Gerenciar dados
+
+---
+
+background-image: url(img/qgis_vetor_operacoes_buffer01.png), url(img/mAlgorithmBuffer.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.6 Operações de dados vetoriais
+
+## Criar amortecedor (**buffer**)
+
+> Geoprocessamento > Amortecedor (**buffer**)
+
+---
+
+background-image: url(img/qgis_vetor_operacoes_buffer02.png), url(img/mAlgorithmBuffer.svg)
+background-size: 500px, 100px
+background-position: 60% 90%, 95% 10%
+
+# 4.6 Operações de dados vetoriais
+
+## Criar amortecedor (**buffer**)
+
+- Entrada: vetor_pontos_sirgas2000_utm23s
+- Distância: 100 metros
+- Saída: vetor_pontos_buffer100m_sirgas2000_utm23s.shp
+
+---
+
+background-image: url(img/qgis_vetor_operacoes_buffer03.png), url(img/mAlgorithmBuffer.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.6 Operações de dados vetoriais
+
+## Criar amortecedor (**buffer**)
+
+> Geoprocessamento > Amortecedor (**buffer**)
+
+---
+
+background-image: url(img/geo_projection_onthefly.png)
+background-size: 700px
+background-position: 50% 60%
+
+# 4.7 Converter SRC de dados vetoriais
+
+## SRC diferentes
+
+> Muitas vezes iremos precisar ajudar o SRC das camadas
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Zobrazovanie GIS údajov v systéme S-JTSK03 v ArcGIS Desktop](https://www.arcgeo.sk/zobrazovanie-gis-udajov-v-systeme-s-jtsk03-v-arcgis-desktop/)
+
+---
+
+background-image: url(img/qgis_vetor_converter_src01.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 4.7 Converter SRC de dados vetoriais
+
+## Reprojetar: criar a mesma camada, mas com outro SRC
+
+> Vetor > Gerenciar dados > Reprojetar camada...
+
+---
+
+background-image: url(img/qgis_vetor_converter_src02.png)
+background-size: 550px
+background-position: 70% 85%
+
+# 4.7 Converter SRC de dados vetoriais
+
+## Reprojetar: criar a mesma camada, mas com outro SRC
+
+- Entrada: vetor_pontos_sirgas2000_utm23s
+- SRC: EPSG4326 - WGS84
+- Saída: vetor_pontos_wgs84_geo.shp
+
+---
+
+background-image: url(img/qgis_vetor_selecionar.png), url(img/mActionSelectRectangle.svg)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 4.8 Exportar dados vetoriais
+
+## Selecionar feição
+
+> Selecionar a ferramenta de seleção > Clicar em qualquer polígono de floresta
+
+---
+
+background-image: url(img/qgis_vetor_exportar01.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 4.8 Exportar dados vetoriais
+
+## Criar uma camada nova a partir da original
+
+> Clique com o botão direito na camada > Exportar > Salvar Feições selecionadas como...
+
+---
+
+background-image: url(img/qgis_vetor_exportar02.png)
+background-size: 400px
+background-position: 50% 85%
+
+# 4.8 Exportar dados vetoriais
+
+## Criar uma camada nova a partir da original
+
+> Nome da camada: **SP_3543907_USO_floresta_sirgas2000_utm23s.shp**
+
+---
+
+background-image: url(img/qgis_vetor_exportar03.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 4.8 Exportar dados vetoriais
+
+## Criamos apenas a camada com floresta
 
 ---
 
@@ -1784,7 +2144,56 @@ class: inverse, center, middle
 
 ---
 
-background-image: url(img/qgis_raster01.png)
+background-image: url(img/geo_raster.png)
+background-size: 500px
+background-position: 50% 75%
+
+# 5.1 Importação, criação e edição de dados matriciais
+
+## Dados matriciais
+
+---
+
+background-image: url(img/geo_raster_dem01.png), url(img/geo_dem.webp)
+background-size: 350px, 700px
+background-position: 5% 75%, 80% 75%
+
+# 5.1 Importar dados matriciais
+
+## MDE (Modelo Digital de Elevação) 
+
+> Infere a **elevação** por sensores ativos - MDT (Modelo Digital de Terreno) e MDS (Modelo Digital de Superfície)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Guth et al. (2021)](https://doi.org/10.3390/rs13183581)
+
+---
+
+background-image: url(img/geo_raster_srtm01.png), url(img/geo_raster_srtm02.png), url(img/geo_raster_srtm03.png), url(img/geo_srtm.jpg)
+background-size: 450px, 300px, 350px, 300px
+background-position: 5% 55%, 55% 25%, 95% 50%, 55% 75%
+
+# 5.1 Importar dados matriciais
+
+## SRTM (*Shuttle Radar Topography Mission*) 
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Farr et al. (2007)](https://doi.org/10.1002/joc.5086), [Guth et al. (2021)](https://doi.org/10.3390/rs13183581)
+
+---
+
+# 5.1 Importar dados matriciais
+
+## O artigo mais importante sobre Modelos de Elevação
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/YQQY6LIxosU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+background-image: url(img/qgis_raster_importar01.png), url(img/qgis_add_raster.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
@@ -1792,9 +2201,11 @@ background-position: 50% 85%, 95% 10%
 
 ## Arquivos matriciais
 
+> Camada > Adicionar Camada > Adicionar Camada Raster...
+
 ---
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-image: url(img/qgis_raster_importar02.png), url(img/qgis_add_raster.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
@@ -1802,81 +2213,254 @@ background-position: 50% 85%, 95% 10%
 
 ## Arquivos matriciais
 
-> Layer > Add Layer > Add Raster Layer...
+> Ir até o diretório **02_dados > 03_raster > srtm_rio_claro_sirgas2000_utm23s.tif**
 
 ---
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-image: url(img/qgis_raster_importar03.png), url(img/qgis_add_raster.svg)
+background-size: 600px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.1 Importar dados matriciais
+
+## Arquivos matriciais
+
+> Adicionar
+
+---
+
+background-image: url(img/qgis_raster_importar04.png), url(img/qgis_add_raster.svg)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
 # 5.1 Importar dados matriciais
 
-## Importar dados matriciais
+## Arquivos matriciais
+
+> Adicionado com cores em tons de cinza
 
 ---
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
+background-image: url(img/qgis_raster_propriedades01.png)
+background-size: 800px
+background-position: 50% 85%
 
 # 5.2 Propriedades de dados matriciais
 
----
+## Propriedades
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
-
-# 5.3 Editar dados matriciais
+> Click botão direito sobre o nome da camada > Propriedades...
 
 ---
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
+background-image: url(img/qgis_raster_propriedades02.png)
+background-size: 600px
+background-position: 50% 85%
 
-# 5.4 Arquivos matriciais
+# 5.2 Propriedades de dados matriciais
 
----
+## Propriedades
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
-
-# 5.5 Interação raster-vetor
-
----
-
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
-
-# 5.6 Conversão raster-vetor
+- Informação
+- Fonte
+- Simbologia
+- Transparência
+- Histograma
 
 ---
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
+background-image: url(img/qgis_raster_propriedades03.png)
+background-size: 600px
+background-position: 50% 85%
 
-# 5.1 Índices espectrais (NDVI)
+# 5.2 Propriedades de dados matriciais
 
----
+## Simbologia
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
-background-size: 800px, 100px
-background-position: 50% 85%, 95% 10%
-
-# 5.7 Converter SRC de dados matriciais
+> Simbologia > Banda simples falsa-cor > viridis > Classificar > OK
 
 ---
 
-background-image: url(img/qgis_raster01.png), url(img/qgis_add_raster.svg)
+background-image: url(img/qgis_raster_propriedades04.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 5.2 Propriedades de dados matriciais
+
+## Simbologia
+
+---
+
+background-image: url(img/qgis_raster_operacoes.png)
+background-size: 800px
+background-position: 80% 85%
+
+# 5.3 Operações de dados vetoriais
+
+## Algoritmos que modificam propriedades das camadas matriciais
+
+- Calculadora raster...
+- Alinhar Imagens (Rasters)...
+- Georreferenciador...
+- Análise
+- Projeções
+- Miscelânia
+- Extrair
+- Converter
+
+---
+
+background-image: url(img/qgis_raster_calculadora01.png), url(img/mActionShowRasterCalculator.png)
+background-size: 800px, 50px
+background-position: 50% 85%, 95% 10%
+
+# 5.3 Operações de dados vetoriais
+
+## Calculadora raster
+
+> Raster > Calculadora Raster...
+
+---
+
+background-image: url(img/qgis_raster_calculadora02.png), url(img/mActionShowRasterCalculator.png)
+background-size: 500px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.3 Operações de dados vetoriais
+
+## Calculadora raster
+
+> Expressão: "srtm_rio_claro_sirgas2000_utm23s@1" >= 700 
+
+---
+
+background-image: url(img/qgis_raster_calculadora03.png), url(img/mActionShowRasterCalculator.png)
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.8 Exportar dados matriciais
+# 5.3 Operações de dados vetoriais
+
+## Calculadora raster
+
+> Valores acima ou igual a 700 m (1 == branco), valores abaixo (0 == preto)
+
+---
+
+background-image: url(img/qgis_raster_extrair_mascara01.png), url(img/raster-clip.png)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.3 Operações de dados vetoriais
+
+## Interação raster-vetor - Extrair máscara
+
+> Raster > Extrair > Recortar raster pela camada de máscara
+
+---
+
+background-image: url(img/qgis_raster_extrair_mascara02.png), url(img/raster-clip.png)
+background-size: 550px, 100px
+background-position: 75% 85%, 95% 10%
+
+# 5.3 Operações de dados vetoriais
+
+## Interação raster-vetor - Extrair máscara
+
+- Camada de entrada: raster
+- Camada máscara: vetor
+- SRC original e destino iguais
+- srtm_rio_claro_unesp_sirgas2000_utm23s.tif
+
+---
+
+background-image: url(img/qgis_raster_extrair_mascara03.png), url(img/raster-clip.png)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.3 Operações de dados vetoriais
+
+## Interação raster-vetor - Extrair máscara
+
+> Camada raster ajustada para o limite do polígono
+
+---
+
+background-image: url(img/qgis_raster_src01.png), url(img/warp.png)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.4 Converter SRC de dados matriciais
+
+## Reprojetar: criar a mesma camada, mas com outro SRC
+
+> Raster > Projeções > Reprojetar coordenadas...
+
+---
+
+background-image: url(img/qgis_raster_src02.png), url(img/warp.png)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.4 Converter SRC de dados matriciais
+
+## Reprojetar: criar a mesma camada, mas com outro SRC
+
+- Entrada: srtm_rio_claro_unesp_sirgas2000_utm23s.tif
+- SRC original: EPSG 31983 - SIRGAS 2000 / UTM 23S
+- SRC destino: EPSG:4326 - WGS84
+- Método: bilinear (dados contínuos)
+- srtm_rio_claro_unesp_wgs84_geo.tif
+
+---
+
+background-image: url(img/qgis_raster_src03.png), url(img/warp.png)
+background-size: 800px, 100px
+background-position: 50% 85%, 95% 10%
+
+# 5.4 Converter SRC de dados matriciais
+
+## Reprojetar: criar a mesma camada, mas com outro SRC
+
+> Notem o deslocamento das células
+
+---
+
+background-image: url(img/qgis_raster_exportar01.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 5.5 Exportar dados matriciais
+
+## Criar uma camada nova a partir da original
+
+> Clique com o botão direito na camada > Exportar > Salvar como...
+
+---
+
+background-image: url(img/qgis_raster_exportar02.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 5.5 Exportar dados matriciais
+
+## Criar uma camada nova a partir da original
+
+- Saída: srtm_rio_claro_compress_sirgas2000_utm23s
+- SRC: EPSG 31983 - SIRGAS 2000 / UTM 23S
+- Resolução: 200x200
+- Opções de criação: alta compressão
+
+---
+
+background-image: url(img/qgis_raster_exportar02.png)
+background-size: 800px
+background-position: 50% 85%
+
+# 5.5 Exportar dados matriciais
+
+## Criar uma camada nova a partir da original
+
+> A célula agora possui 200 m
 
 ---
 
