@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Resumo
 
-O minicurso oferecerá alguns dos principais conceitos teórico-práticos para manipulação e visualização de dados geoespaciais no QGIS. Serão abordados os seguintes tópicos: (1) apresentações, (2) conceitos gerais de geoprocessamento, (3) interface e projeto do QGIS, (4) importação, criação e edição de dados vetoriais, (5) importação, criação e edição de dados matriciais e, (6) composição de mapas. Após a realização do minicurso espera-se que os alunos e alunas adquiram conceitos gerais da estrutura, manipulação e visualização de dados geoespaciais, assim como habilidades básicas para produção de mapas simples.
+O municurso oferecerá alguns dos principais conceitos teórico-práticos de geoprocessamento no QGIS. Serão abordados os seguintes tópicos: (1) apresentações, (2) conceitos gerais de geoprocessamento, (3) instalação, interface e projeto do QGIS, (4) importação, criação, edição e operações de dados vetoriais, (5) importação, criação, edição e operações de dados matriciais, (6) composição de mapas. Após a realização do minicurso, espera-se que as alunas e alunos adquiram conceitos gerais da estrutura, manipulação e visualização de dados geoespaciais, assim como habilidades básicas para produzir mapas simples utilizando o QGIS.
 
 ## Carga horária
 
@@ -43,7 +43,7 @@ Mais informações:
 1. Apresentações
 1. Minicurso
 1. Slides
-1. Conjunto de dados
+1. Material
 1. Conferindo os computadores
 
 ### 2 Conceitos gerais de geoprocessamento (30 min.)
@@ -55,56 +55,52 @@ Mais informações:
 1. Sistema de Informação Geográfica (SIG)
 1. Dados geoespaciais
 1. Dados vetoriais
-1. Tabela de atributos
-1. Formato de arquivos vetoriais
 1. Dados matriciais (gride ou raster)
-1. Formatos de arquivos matriciais (raster)
 1. Conversão de dados geoespaciais (vetor-raster)
+1. Banco de dados geoespaciais
 1. Principais fontes de dados geoespaciais
 1. Material para estudo sobre geoprocessamento
 
 ### 3 Instalação, interface e projeto do QGIS  (20 min.)
 
+1. Histórico e vantagens do QGIS
 1. Instalação do QGIS 
 1. Interface do QGIS
-1. Plugins do QGIS
+1. Complementos do QGIS
 1. Projeto do QGIS
 
-### 4 Importação, criação e edição de dados vetoriais  (40 min.)
+### 4 Importação, criação, edição e operações de dados vetoriais  (40 min.)
 
 1. Importar dados vetoriais
 1. Propriedades de dados vetoriais
 1. Tabela de atributos
 1. Criar dados vetoriais
 1. Editar dados vetoriais
-1. Converter CRS de dados vetoriais
+1. Operações de dados vetoriais
+1. Converter SRC de dados vetoriais
 1. Exportar dados vetoriais
 
-### 5 Importação, criação e edição de dados matriciais (40 min.)
+### 5 Importação, criação, edição e operações de dados matriciais (40 min.)
 
 1. Importar dados matriciais
 1. Propriedades de dados matriciais
-1. Editar dados matriciais
-1. Interação raster-vetor
-1. Conversão raster-vetor
-1. Índices espectrais (NDVI)
-1. Converter CRS de dados matriciais
+1. Operações de dados vetoriais
+1. Converter SRC de dados matriciais
 1. Exportar dados matriciais
 
 ### 6 Composição de mapas (40 min.)
 
-1. Compositor de mapas
 1. Principais elementos de um mapa
-1. Mapa principal
-1. Mapa secundário
-1. Título
-1. Legenda
-1. Barra de escala
-1. Indicador de orientação (Norte)
-1. Gride de coordenadas
-1. Descrição do CRS
-1. Fonte dos dados
-1. Além de outros elementos auxiliares
+  1. Mapa principal
+  1. Mapa secundário
+  1. Título
+  1. Legenda
+  1. Barra de escala
+  1. Indicador de orientação (Norte)
+  1. Grade de coordenadas
+  1. Descrição do SRC
+  1. Fonte dos dados
+1. Compositor de mapas
 1. Exportar mapa
 
 ## Bibliografia
@@ -125,7 +121,7 @@ Longley PA, Goodchild MF, Maguire DJ, Rhind DW. 2013. Sistemas e Ciência da Inf
 
 Minas Gerais – Secretaria de Estado de Meio Ambiente e Desenvolvimento Sustentável. 2019. Práticas de geoprocessamento em QGIS. 2 ed. Belo Horizonte: Semad. [[link]](http://www.meioambiente.mg.gov.br/images/stories/2019/GESTAO_AMBIENTAL/IDE/APOSTILA_QGIS_3.4_DGTA-SEMAD-190619.pdf)
 
-QGIS Project. 2011. Documentação para QGIS 3.16. v. 3.16. [[link]](https://docs.qgis.org/3.16/pt_BR/docs/index.html)
+QGIS Project. 2011. Documentação para QGIS 3.16. [[link]](https://docs.qgis.org/3.16/pt_BR/docs/index.html)
 
 Paese A, Uezu A, Lorini ML, Cunha A. 2015. Conservação da biodiversidade com SIG. Oficina de Textos. [[link]](https://www.ofitexto.com.br/livro/conservacao-da-biodiversidade-com-sig-livro-digital/)
 

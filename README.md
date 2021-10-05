@@ -9,10 +9,10 @@ Prof. Maurício Vancine
 3 horas
 
 **Vagas**  
-15 alunos(as)
+40 alunos(as)
 
 **Resumo**  
-O municurso oferecerá alguns dos principais conceitos teórico-práticos para manejo e visualização de dados geoespaciais no QGIS. Serão abordados os seguintes tópicos: (1) apresentações, (2) conceitos gerais de geoprocessamento, (3) interface e projeto do QGIS, (4) importação, criação e edição de dados vetoriais, (5) importação, criação e edição de dados matriciais, (6) composição de mapas. Após a realização do minicurso, espera-se que os alunos e alunas adquiram conceitos gerais da estrutura, manipulação e visualização de dados geoespaciais, assim como habilidades básicas para produzir mapas simples.
+O municurso oferecerá alguns dos principais conceitos teórico-práticos de geoprocessamento no QGIS. Serão abordados os seguintes tópicos: (1) apresentações, (2) conceitos gerais de geoprocessamento, (3) instalação, interface e projeto do QGIS, (4) importação, criação, edição e operações de dados vetoriais, (5) importação, criação, edição e operações de dados matriciais, (6) composição de mapas. Após a realização do minicurso, espera-se que as alunas e alunos adquiram conceitos gerais da estrutura, manipulação e visualização de dados geoespaciais, assim como habilidades básicas para produzir mapas simples utilizando o QGIS.
 
 ---
 
@@ -52,8 +52,10 @@ sudo apt install -y qgis
 
 ## Material
 
-[Slides](https://mauriciovancine.github.io/workshop-qgis/01_slides/slide_workshop_qgis.html)  
+[Slides](https://mauriciovancine.github.io/workshop-qgis/01_slides/slides_workshop_qgis.html#1)  
 
-[Conjunto de dados](https://github.com/mauriciovancine/workshop-qgis/blob/master/02_conjunto_dados.zip)
+[Dados](https://github.com/mauriciovancine/workshop-qgis/tree/master/02_dados)
+
+[Dados para mapa](https://github.com/mauriciovancine/workshop-qgis/tree/master/03_mapa)
 
 ---
