@@ -415,7 +415,7 @@ background-position: 85% 70%
 
 ## Escala
 
-### **Relação** entre a **medida real** (objeto ou lugar) e a **medida gráfica** (representado no papel ou computador)
+### **Relação** entre a **medida gráfica** (representado no papel ou computador) e a **medida real** (objeto ou lugar)
 
 --
 
