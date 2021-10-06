@@ -58,9 +58,9 @@ class: inverse, center, middle
 
 ---
 
-background-image: url(img/general_unesp_logo.jpg), url(img/person_mauricio_vancine.jpg), url(img/gif_frog.gif)
-background-size: 300px, 250px, 250px
-background-position: 85% 31%, 84% 85%, 60% 90%
+background-image: url(img/logo_leec_lab.png), url(img/general_unesp_logo.jpg), url(img/person_mauricio_vancine.jpg), url(img/gif_frog.gif)
+background-size: 150px, 300px, 250px, 250px
+background-position: 55% 31%, 84% 31%, 84% 85%, 55% 95%
 
 # 1.1 Apresentações
 
@@ -579,7 +579,7 @@ background-position: 40% 75%
 
 # 2.2 Cartografia
 
-### Sistema de Referência de Coordenadas (SRC)
+## Sistema de Referência de Coordenadas (SRC)
 
 ### Datum + Sistema de Coordenadas (geográfico ou projetado)
 
@@ -596,7 +596,7 @@ background-position: 85% 55%
 
 # 2.2 Cartografia
 
-## Sistemas de referências de coordenadas (SRC)
+## Sistema de Referências de Coordenadas (SRC)
 
 <br>
 
