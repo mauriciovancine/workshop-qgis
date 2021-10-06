@@ -67,6 +67,7 @@ Mais informações:
 1. Instalação do QGIS 
 1. Interface do QGIS
 1. Complementos do QGIS
+1. Ferramentas do QGIS
 1. Projeto do QGIS
 
 ### 4 Importação, criação, edição e operações de dados vetoriais  (40 min.)
