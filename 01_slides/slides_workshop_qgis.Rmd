@@ -130,18 +130,6 @@ background-position: 95% 45%
 
 ---
 
-background-image: url(img/general_starwars_teamwork.png)
-background-size: 500px
-background-position: 50% 80%
-
-# 1.2 Minicurso
-
-## Espaço seguro e amigável
-
-### Sintam-se à vontade para me interromper e tirar dúvidas
-
----
-
 background-image: url(img/general_sig.png)
 background-size: 300px
 background-position: 90% 75%
@@ -313,6 +301,18 @@ background-position: 50% 50%
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 [Café com Código](https://www.instagram.com/cafecomcodigo/?hl=pt)
+
+---
+
+background-image: url(img/general_starwars_teamwork.png)
+background-size: 500px
+background-position: 50% 80%
+
+# IMPORTANTE!!!
+
+## Espaço seguro e amigável
+
+### Sintam-se à vontade para me interromper e tirar dúvidas
 
 ---
 
@@ -1359,10 +1359,10 @@ background-position: 50% 65%, 95% 10%
 
 ## Ativar complementos nativos
 
-> Ferramenta de GPS
+> Ferramentas de GPS
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Ferramenta de GPS](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_gps/plugins_gps.html)
+[Ferramentas de GPS](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_gps/plugins_gps.html)
 
 ---
 
@@ -2434,7 +2434,7 @@ background-image: url(img/qgis_raster_operacoes.png)
 background-size: 800px
 background-position: 80% 85%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Algoritmos que modificam propriedades das camadas matriciais
 
@@ -2453,7 +2453,7 @@ background-image: url(img/qgis_raster_calculadora01.png), url(img/mActionShowRas
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Calculadora raster
 
@@ -2465,7 +2465,7 @@ background-image: url(img/qgis_raster_calculadora02.png), url(img/mActionShowRas
 background-size: 500px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Calculadora raster
 
@@ -2477,7 +2477,7 @@ background-image: url(img/qgis_raster_calculadora03.png), url(img/mActionShowRas
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Calculadora raster
 
@@ -2489,7 +2489,7 @@ background-image: url(img/qgis_raster_extrair_mascara01.png), url(img/raster-cli
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Interação raster-vetor - Extrair máscara
 
@@ -2501,7 +2501,7 @@ background-image: url(img/qgis_raster_extrair_mascara02.png), url(img/raster-cli
 background-size: 550px, 100px
 background-position: 75% 85%, 95% 10%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Interação raster-vetor - Extrair máscara
 
@@ -2516,7 +2516,7 @@ background-image: url(img/qgis_raster_extrair_mascara03.png), url(img/raster-cli
 background-size: 800px, 100px
 background-position: 50% 85%, 95% 10%
 
-# 5.3 Operações de dados vetoriais
+# 5.3 Operações de dados matriciais
 
 ## Interação raster-vetor - Extrair máscara
 
