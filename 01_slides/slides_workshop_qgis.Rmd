@@ -30,7 +30,7 @@ class: inverse, center, middle
 
 class: inverse, center, middle
 
-# Gostaria de agradecer também à SEB pelo convite!
+# Gostaria de agradecer também à organização da SEBio pelo convite!
 
 ---
 
@@ -174,7 +174,7 @@ background-position: 85% 60%
 1. Ferramentas do QGIS
 1. Projeto do QGIS
 
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 [QGIS logo](https://qgis.org/en/site/getinvolved/styleguide.html)
 
 ---
@@ -1036,47 +1036,48 @@ background-position: 95% 50%
 
 ## Vetoriais
 
-- **[IBGE](https://www.ibge.gov.br/geociencias/downloads-geociencias.html)**: limites territoriais e censitários do Brasil
-- **[FBDS](http://geo.fbds.org.br)**: uso da terra, APP e hidrografia - Mata Atlântica e Cerrado
-- **[GeoBank](http://geosgb.cprm.gov.br/)**: dados geológicos do Brasil
-- **[Pastagem.org](http://maps.lapig.iesa.ufg.br)**: dados de pastagens e gado para o Brasil
-- **[CanaSat](http://www.dsr.inpe.br/laf/canasat/)**: dados de cana-de-açúcar para o Brasil
-- **[CSR Maps](http://maps.csr.ufmg.br)**: diversos dados vetoriais para o Brasil
-- **[OpenStreetMap Data Extracts](http://download.geofabrik.de/index.html)**: dados do OpenStreetMap
-- **[Ecoregions](https://ecoregions2017.appspot.com/)**: dados de biorregiões e biomas do mundo  
-- **[GADM](https://gadm.org/)**: limites de áreas administrativas do mundo
-- **[Natural Earth](https://www.naturalearthdata.com/):** diversos limites para o mundo
-- **[Protected Planet](https://www.protectedplanet.net/en):** áreas protegidas para o mundo
-- **[UN Biodiversity Lab](https://www.unbiodiversitylab.org/)**: Diversas bases de dados para o mundo
-- **[HydroSHEDS](https://www.hydrosheds.org/)**: informações hidrológicas do mundo
-- **[Global Roads Inventory Project (GRIP)](https://www.globio.info/download-grip-dataset)**: dados de estradas do mundo todo 
+1. **[IBGE](https://www.ibge.gov.br/geociencias/downloads-geociencias.html)**: limites territoriais e censitários do Brasil
+1. **[FBDS](http://geo.fbds.org.br)**: uso da terra, APP e hidrografia 1. Mata Atlântica e Cerrado
+1. **[GeoBank](http://geosgb.cprm.gov.br/)**: dados geológicos do Brasil
+1. **[Pastagem.org](http://maps.lapig.iesa.ufg.br)**: dados de pastagens e gado para o Brasil
+1. **[CanaSat](http://www.dsr.inpe.br/laf/canasat/)**: dados de cana-de-açúcar para o Brasil
+1. **[CSR Maps](http://maps.csr.ufmg.br)**: diversos dados vetoriais para o Brasil
+1. **[OpenStreetMap Data Extracts](http://download.geofabrik.de/index.html)**: dados do OpenStreetMap
+1. **[Ecoregions](https://ecoregions2017.appspot.com/)**: dados de biorregiões e biomas do mundo  
+1. **[GADM](https://gadm.org/)**: limites de áreas administrativas do mundo
+1. **[Natural Earth](https://www.naturalearthdata.com/):** diversos limites para o mundo
+1. **[Protected Planet](https://www.protectedplanet.net/en):** áreas protegidas para o mundo
+1. **[UN Biodiversity Lab](https://www.unbiodiversitylab.org/)**: Diversas bases de dados para o mundo
+1. **[HydroSHEDS](https://www.hydrosheds.org/)**: informações hidrológicas do mundo
+1. **[Global Roads Inventory Project (GRIP)](https://www.globio.info/download-grip-dataset)**: dados de estradas do mundo todo 
 
 [Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1)
+
 ---
 
 background-image: url(img/geo_raster.jpg)
 background-size: 400px
-background-position: 95% 65%
+background-position: 95% 75%
 
 # 2.11 Principais fontes de dados geoespaciais
 
 ## Matriciais
 
-- **[MapBiomas](https://mapbiomas.org)**: uso e cobertura da terra para o Brasil, diversos anos
-- **[Bahlu](ftp://madeira.dea.ufv.br/bdados/bhalu/)**: Distribuições históricas de terras agrícolas e pastagens para todo o Brasil de 1940 a 2012
-- **[USGS](https://www.usgs.gov)**: dados de diversos satélites livres para o mundo
-- **[SRTM](http://srtm.csi.cgiar.org/)**: dados de elevação para o mundo
-- **[Global Forest Watch](https://www.globalforestwatch.org/)**: dados de uso e cobertura para todo o planeta
-- **[Geoservice Maps](https://geoservice.dlr.de/web/maps)**: dados de elevação e florestas para o mundo
-- **[GlobCover](http://due.esrin.esa.int/page_globcover.php)**: dados de uso e cobertura da terra para todo o planeta
-- **[Global Human Footprint](https://wcshumanfootprint.org/)**: dados de pegada ecológica para o mundo
-- **[Land-Use Harmonization (LUH2)](https://luh.umd.edu/)**: dados atuais e previsões de uso da terra
-- **[SoilGrids](https://soilgrids.org/)**: dados de solo para o mundo                         
-- **[WorldClim](https://www.worldclim.org/)**: dados climáticos para o mundo
-- **[CHELSA](https://chelsa-climate.org/)**: dados climáticos para o mundo
-- **[EarthEnv](https://www.earthenv.org/)**: dados de cobertura da terra, nuvens, relevo e hidrografia
-- **[MARSPEC](http://www.marspec.org)**: dados de condições do oceano para o mundo
-- **[Bio-ORACLE](https://www.bio-oracle.org/)**: dados de condições do oceano para o mundo    
+1. **[MapBiomas](https://mapbiomas.org)**: uso e cobertura da terra para o Brasil, diversos anos
+1. **[Bahlu](ftp://madeira.dea.ufv.br/bdados/bhalu/)**: Distribuições históricas de terras agrícolas e pastagens para todo o Brasil de 1940 a 2012
+1. **[USGS](https://www.usgs.gov)**: dados de diversos satélites livres para o mundo
+1. **[SRTM](http://srtm.csi.cgiar.org/)**: dados de elevação para o mundo
+1. **[Global Forest Watch](https://www.globalforestwatch.org/)**: dados de uso e cobertura para todo o planeta
+1. **[Geoservice Maps](https://geoservice.dlr.de/web/maps)**: dados de elevação e florestas para o mundo
+1. **[GlobCover](http://due.esrin.esa.int/page_globcover.php)**: dados de uso e cobertura da terra para todo o planeta
+1. **[Global Human Footprint](https://wcshumanfootprint.org/)**: dados de pegada ecológica para o mundo
+1. **[Land-Use Harmonization (LUH2)](https://luh.umd.edu/)**: dados atuais e previsões de uso da terra
+1. **[SoilGrids](https://soilgrids.org/)**: dados de solo para o mundo                         
+1. **[WorldClim](https://www.worldclim.org/)**: dados climáticos para o mundo
+1. **[CHELSA](https://chelsa-climate.org/)**: dados climáticos para o mundo
+1. **[EarthEnv](https://www.earthenv.org/)**: dados de cobertura da terra, nuvens, relevo e hidrografia
+1. **[MARSPEC](http://www.marspec.org)**: dados de condições do oceano para o mundo
+1. **[Bio-ORACLE](https://www.bio-oracle.org/)**: dados de condições do oceano para o mundo   
 
 [Shin et al. (2017)](https://catalog.flatworldknowledge.com/catalog/editions/campbell_2_1-essentials-of-geographic-information-systems-2-1)
 
@@ -1093,7 +1094,6 @@ background-position: 50% 65%
 ### **Geoprocessamento sem complicação (2008)**
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-
 [Fitz (2008)](https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/)
 
 ---
@@ -1109,7 +1109,6 @@ background-position: 8% 65%, 58% 65%
 ### **QGIS ABC ao XYZ (2016)  |  QGIS e geoprocessamento na prática (2017)**
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-
 [Bossle (2016) & Bossle (2017)](https://ecojustus.com.br/livros)
 
 ---
@@ -1125,7 +1124,6 @@ background-position: 50% 65%
 ### **Explorando o QGIS 3.X (2020)**
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-
 [Dalla Corte et al. (2020)](https://github.com/anadallacorte/LIVROQGIS2020)
 
 ---
@@ -1141,7 +1139,6 @@ background-position: 50% 65%
 ### **Remote Sensing and GIS for Ecologists (2016)**
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-
 [Wegmann et al. (2016)](http://book.ecosens.org/rsebook/)
 
 ---
@@ -1157,8 +1154,22 @@ background-position: 50% 65%
 ### **An Introduction to Spatial Data Analysis (2020)**
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-
 [Wegmann et al. (2020)](http://book.ecosens.org/gsbook/)
+
+---
+
+background-image: url(img/divulgacao_apostila.png)
+background-size: 300px
+background-position: 50% 65%
+
+# 2.12 Material para estudo sobre geoprocessamento
+
+## Apostila
+
+### **Apostila Qgis 3.x (2021)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+[Kyle Felipe Vieira Roberto (2021)](https://apostila-qgis.kylefelipe.com/)
 
 ---
 
