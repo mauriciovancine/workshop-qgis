@@ -1,0 +1,44 @@
+---
+title: "Geoprocessamento com QGIS"
+author: "Maurício Vancine"
+format: 
+  revealjs:
+    incremental: true   
+    #logo: "img/logo.png"
+    footer: "Slides por [Maurício Vancine](https://beatrizmilz.com), feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Código disponível no [GitHub](https://github.com/beatrizmilz/2022-SER-quarto)."
+    theme: ["custom.scss"]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+---
+
+## Licença
+
+#### Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)
+
+- **Atribuição** — Você deve dar o crédito apropriado, prover um link para a licença e indicar se mudanças foram feitas. Você deve fazê-lo em qualquer circunstância razoável, mas de nenhuma maneira que sugira que o licenciante apoia você ou o seu uso
+
+- **NãoComercial** — Você não pode usar o material para fins comerciais
+
+- **CompartilhaIgual** — Se você remixar, transformar, ou criar a partir do material, tem de distribuir as suas contribuições sob a mesma licença que o original. 
+
+Saiba mais em: [Creative Commons](https://br.creativecommons.net/licencas/)
+
+---
+
+## 1.1 Apresentações
+
+### Maurício Vancine
+
+##### Ecólogo (2014) | Mestre em Zoologia (2018) | Doutorando em Ecologia (2020-?)
+
+**Pesquisa**: Ecologia Espacial, Modelagem Ecológica, Ecologia e Conservação de Anfíbios
+
+**Habilidades**: Modelos de Distribuição de Espécies (SDMs), Análise de Dados Ecológicos e Geoespaciais, *Open source* [R, QGIS, GRASS GIS, GNU/Linux, ...]
+
+<br>
+
+**Informações:**
+
+[mauriciovancine.github.io](https://mauriciovancine.github.io)
