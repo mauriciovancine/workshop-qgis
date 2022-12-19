@@ -327,16 +327,6 @@
   <p class="date">Novembro de 2022 <br><br><br> Licença: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR">CC BY-NC-SA</a></p>
 </section>
 
-<section class="title-slide slide level1 center">
-<h1>Gostaria de agradecê-los pela presença, sejam muito bem-vindes!</h1>
-
-</section>
-
-<section>
-<section class="title-slide slide level1 center">
-<h1>Gostaria também de agradecer à organização da SEE pelo convite!</h1>
-
-</section>
 <section class="slide level2">
 <h2>Maurício Vancine</h2>
 <div class="columns">
@@ -507,15 +497,15 @@
 <center>
 <img src="img/general_starwars_teamwork.png" style="width:50%">
 </center>
-</section></section>
+</section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>1. Geoprocessamento</h1>
 
 </section>
-<section class="slide level2 smaller">
+<section class="slide level2">
 <h2>Definição</h2>
-<p>“…Geoprocessamento é um <strong>conjunto de técnicas computacionais</strong> que opera sobre <strong>bases de dados georreferenciados</strong> (que são registros de ocorrências), para os transformar em <strong>informações relevantes</strong> (que é um acréscimo de conhecimento)…” (alterado de Xavier-da-Silva (2001) p.12-13)</p>
+<p>Conjunto de técnicas computacionais que opera sobre bases de dados georreferenciados para transformá-los em informações relevantes</p>
 <center>
 <img src="img/geo_geoprocessing.jpg" style="width:60%">
 </center>
@@ -525,7 +515,7 @@
 </section>
 <section class="slide level2 smaller">
 <h2>Aplicações</h2>
-<p>O geoprocessamento busca entender os <strong>padrões espaciais</strong> como o ambiente físico, fenômenos climáticos, humanos, sociais ou econômicos, a partir de dados <strong>dados espaciais</strong> para gerar <strong>informações espaciais</strong></p>
+<p>Busca entender os padrões espaciais como o ambiente físico, fenômenos climáticos, humanos, sociais ou econômicos, a partir de dados dados espaciais para gerar informações espaciais</p>
 <div class="fragment">
 <ol type="1">
 <li>Mapeamento temático (municípios, bacias hidrográficas, países, etc.)</li>
@@ -543,6 +533,124 @@
 <div class="footer">
 <p><a href="https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/">Fitz et al.&nbsp;(2008)</a>, <a href="https://www.geoaplicada.com/geoinformatica-geoprocessamento-e-geotecnologias/o_que_e_geoprocessamento/">O que é geoprocessamento - GeoAplicada (2018)</a></p>
 </div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Elementos</h2>
+<ol type="1">
+<li>Cartografia digital (CD)</li>
+<li><em>Global Positioning System</em> (GPS)</li>
+<li>Sensoriamento Remoto (RS)</li>
+<li>Sistemas de Informações Geográficas (SIG)</li>
+</ol>
+<center>
+<img src="img/geoprocessamento_elementos.png" style="width:100%">
+</center>
+<div class="footer">
+<p><a href="http://www.ufrrj.br/lga/tiagomarino/artigos/oqueegeoprocessamento.pdf">Xavier-da-Silva (2009)</a>, <a href="https://www.esri.com/en-us/what-is-gis/overview">ESRI</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Cartografia</h2>
+<p><strong>Conceitos</strong></p>
+<ol type="1">
+<li>Escala</li>
+<li>Sistemas de coordenadas</li>
+<li>Datum</li>
+<li>Sistema de Referência de <br> Coordenadas (SRC)</li>
+</ol>
+<p><img data-src="img/geo_cartografia.jpg" class="absolute" style="top: 250px; right: -100px; width: 500px; height: 400px; "></p>
+</section>
+<section class="slide level2">
+<h2>Escala</h2>
+<p>Relação entre a medida gráfica (representado no papel ou computador) e a medida real (objeto ou lugar)</p>
+<p><br></p>
+<p>d (distância gráfica): 0.01 m (1 cm)</p>
+<p>D (distância real): 250 m</p>
+<p>E (escala) = d / D = 0.01 m / 250 m</p>
+<p>E = 1/25000 ou 1:25000</p>
+<p><img data-src="img/geo_scale_bar.png" class="absolute" style="top: 500px; right: -50px; width: 400px; height: 150px; "></p>
+</section>
+<section class="slide level2">
+<h2>Sistema de coordenadas</h2>
+<p><strong>Sistema de coordenadas geográfico (graus)</strong></p>
+<ol type="1">
+<li>Graus, minutos e segundos<br>
+Longitude: 42°42’42” O<br>
+Latitude: 23°23’23” S</li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Graus decimais<br>
+Longitude: -42.71167<br>
+Latitude: -23.38972</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Conversão</strong>: 42 + (42/60) + (42/3600) = 42.71167 <br> <strong>Conversão</strong>: 23 + (23/60) + (23/3600) = 23.38972</p>
+<p><img data-src="img/geo_coordenadas_geograficas.png" class="absolute" style="top: 200px; right: -100px; width: 650px; height: 350px; "></p>
+<div class="footer">
+<p><a href="https://spark.adobe.com/page/WXwQFzH7DqYAw/">5 Themes of Geography</a></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Sistema de coordenadas</h2>
+<p><strong>Sistema de coordenadas projetado (metros)</strong></p>
+<p><img data-src="img/geo_proj_families.png" class="absolute" style="top: 200px; right: 550px; width: 500px; height: 400px; "> <img data-src="img/geo_proj.png" class="absolute" style="top: 170px; right: 0px; width: 500px; height: 450px; "></p>
+<div class="footer">
+<p><a href="https://docs.qgis.org/3.22/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html">Guia do Usuário QGIS</a>, <a href="https://r-tmap.github.io/tmap-book/index.html">Tennekes &amp; Nowosad (in prep.)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Sistema de coordenadas</h2>
+<p><strong>Sistema de coordenadas projetado (metros)</strong></p>
+<p>Universal Transversa de Mercator (UTM)</p>
+<p>X UTM: 706832 m E</p>
+<p>Y UTM: 4344683 m N</p>
+<p>Zona: 10S</p>
+<p><img data-src="img/geo_utm_zones.png" class="absolute" style="top: 250px; right: -100px; width: 700px; height: 400px; "></p>
+<div class="footer">
+<p><a href="https://docs.qgis.org/3.22/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html">Guia do Usuário QGIS</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Datum</h2>
+<p>Relação do sistema de coordenadas com a superfície da Terra</p>
+<p><br></p>
+<p><strong>1. Geocêntricos</strong></p>
+<p>WGS84</p>
+<p>SIRGAS2000</p>
+<p><br></p>
+<p><strong>2. Topocêntricos</strong></p>
+<p>SAD69</p>
+<p>Córrego Alegre</p>
+<p><img data-src="img/geo_datum_bg.png" class="absolute" style="top: 250px; right: -70px; width: 700px; height: 350px; "></p>
+<div class="footer">
+<p><a href="http://www.geomatica.eng.uerj.br/docentes/araujo/cartografia_para_geoprocessamento">Cartografia para Geoprocessamento</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Sistema de Referência de Coordenadas (SRC)</h2>
+<p>Datum + Sistema de Coordenadas (geográfico ou projetado)</p>
+<center>
+<img src="img/crs_bg.png" style="width:85%">
+</center>
+<div class="footer">
+<p><a href="https://express.adobe.com/page/WXwQFzH7DqYAw/">5 Themes of Geography</a>, <a href="http://www.geomatica.eng.uerj.br/docentes/araujo/cartografia_para_geoprocessamento">Cartografia para Geoprocessamento</a>, <a href="https://docs.qgis.org/3.22/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html">Guia do Usuário QGIS</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>EPSG (<em>European Petroleum Survey Group</em>)</h2>
+<p><br></p>
+<ul>
+<li>EPSG: 4326 <a href="https://epsg.io/4326">WGS84 Geográfico</a></li>
+<li>EPSG: 4674 <a href="https://epsg.io/4674">SIRGAS2000 Geográfico</a></li>
+<li>EPSG: 32723 <a href="https://epsg.io/32723">WGS84 UTM23S</a></li>
+<li>EPSG: 31983 <a href="https://epsg.io/31983">SIRGAS2000 UTM23S</a></li>
+</ul>
+<div class="footer">
+<p><a href="https://epsg.io/">epsg.io</a></p>
 </div>
 </section></section>
 <section class="title-slide slide level1 center">
